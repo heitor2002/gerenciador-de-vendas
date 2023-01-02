@@ -1,8 +1,10 @@
+import { useState } from "react";
 import fetchClients from "../fetchClients";
 import SingleClient from "./box-components/SingleClient";
 
 const Clients = () => {
   const { clientsInformation } = fetchClients("http://localhost:3000/clients");
+  const [searchTerm, setSearchTerm] = useState("")
   console.log(clientsInformation);
 
   return (
@@ -18,6 +20,9 @@ const Clients = () => {
             name="search-name"
             id="search-name"
             className="search-name"
+            onChange={(e) => {
+              setSearchTerm(e.target.value)
+            }}
           />
           <h5>Numero de clientes registrados: 48</h5>
           <div className="information-and-filters">
@@ -30,7 +35,13 @@ const Clients = () => {
             </select>
           </div>
           <div className="clients-cards">
-            {clientsInformation.map((client) => {
+            {clientsInformation.filter(value => {
+              if(searchTerm == ""){
+                return value
+              }else if(value.name.toLowerCase().includes(searchTerm.toLowerCase())){
+                return value
+              }
+            }).map((client) => {
               return <SingleClient name={client.name} nickname={client.nickname} id={client.id} />;
             })}
           </div>

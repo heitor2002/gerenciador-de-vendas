@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import fetchClients from "../fetchClients";
 import InformationClient from "./box-components/InformationClient";
@@ -9,12 +9,7 @@ const PageClient = () => {
     "http://localhost:3000/clients/" + id
   );
 
-  const [addressClient, setAddressClient] = useState("")
-
-  if(clientsInformation.contact){
-    const address = clientsInformation.contact.address
-    console.log(address)
-  }
+  console.log(clientsInformation)
 
   return (
     <>
@@ -30,7 +25,7 @@ const PageClient = () => {
                 Apelido: <span>{clientsInformation.nickname}</span>
               </h3>
               <h3>
-                Cidade: <span>Santo Anastácio</span>
+                Cidade: <span>{}</span>
               </h3>
               <h3>
                 Endereço: <span>Rui Barbosa</span>,
