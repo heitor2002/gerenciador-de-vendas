@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+.flex-panel-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container {
+  width: 80vw;
+  max-width: 1000px;
+  padding: 20px 2%;
+}
+
+.title-page {
+  padding: 30px 0;
+  border-bottom: 1px solid black;
+  font-size: 1.3rem;
+}
+
+header {
+  width: 20vw;
+  height: 100vh;
+  background-color: #2d5461;
+  text-align: center;
+  padding: 20px 2%;
+  color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+header h2 {
+  font-size: 2rem;
+}
+
+header ul {
+  list-style-type: none;
+  margin-top: 30px;
+}
+
+header ul a {
+  text-decoration: none;
+}
+
+header ul a li {
+  width: 100%;
+  padding: 10px 0;
+  background-color: transparent;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  color: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+header ul a li:hover {
+  color: #2d5461;
+  background-color: #ccc;
+}
+
+.content-clients-page {
+  padding: 30px 0;
+}
+
+.content-clients-page .information-and-filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.content-clients-page .information-and-filters h5 {
+  font-size: 0.8rem;
+}
+
+.content-clients-page .information-and-filters select {
+  width: 100%;
+  max-width: 200px;
+  height: 40px;
+  padding: 0 10px;
+}
+
+.content-clients-page .information-and-filters select option {
+  height: 40px;
+}
+
+.content-clients-page h5 {
+  margin-top: 10px;
+}
+
+.content-clients-page h2 {
+  color: #2d5461;
+}
+
+.content-clients-page input {
+  width: 100%;
+  max-width: 300px;
+  height: 30px;
+  margin-top: 15px;
+  padding: 0 10px;
+}
+
+.content-clients-page .clients-cards {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.content-clients-page .clients-cards .single-cards {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 5px;
+  border: 1px solid #ccc;
+  gap: 10px;
+  font-weight: 300;
+}
+
+.content-clients-page .clients-cards .single-cards h2 {
+  font-size: 1.3rem;
+}
+
+.content-clients-page .clients-cards .single-cards h2:nth-of-type(2) {
+  font-size: 1rem;
+}
+
+.content-clients-page .clients-cards .single-cards h3 {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.content-clients-page .clients-cards .single-cards button {
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  border: 0;
+  background-color: #2d5461;
+  color: white;
+  cursor: pointer;
+}
+
+.single-client {
+  padding: 30px 0;
+}
+
+.single-client h2 {
+  color: #2d5461;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.single-client h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.single-client h3 span {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.requests {
+  padding: 30px 0;
+}
+
+.requests .new-request {
+  width: 100px;
+  height: 100px;
+  background-color: #b4b4b4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.requests .new-request .icon_plus {
+  color: white;
+  font-size: 3rem;
+}
+
+.requests .all-requests {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+}
+
+.requests .all-requests .single-request {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 5px;
+  border: 1px solid #b4b4b4;
+}
+
+.requests .all-requests .single-request h3 {
+  color: #2d5461;
+  font-size: .9rem;
+}
+
+.requests .all-requests .single-request h2 {
+  font-size: 1.1rem;
+  margin: 5px;
+}
+
+.requests .all-requests .single-request button {
+  width: 100%;
+  height: 30px;
+  background-color: #2d5461;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  margin-top: 30px;
+  border: 1px solid #2d5461;
+}
+
+table tr {
+  padding: 10px 0;
+}
+
+table tr td {
+  padding: 10px 5px;
+  background-color: #ccc;
+}
+/*# sourceMappingURL=main.css.map */

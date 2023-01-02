@@ -1,0 +1,33 @@
+header{
+    width: 20vw;
+    height: 100vh;
+    background-color: $primary-color;
+    text-align: center;
+    padding: 20px 2%;
+    color: white;
+    position: sticky;
+    top: 0;
+    h2{
+        font-size: 2rem;
+    }
+    ul{
+        list-style-type: none;
+        margin-top: 30px;
+        a{
+            text-decoration: none;
+            li{
+                width: 100%;
+                padding: 10px 0;
+                background-color: transparent;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                color: white;
+                transition: .3s;
+                &:hover{
+                    color: $primary-color;
+                    background-color: #ccc;
+                }
+            }
+        }
+    }
+}
