@@ -35,16 +35,14 @@
         {
             "id": 2,
             "name": "Ângela Pinheiro",
-            "nickname": "",
+            "nickname": "Apelido",
             "status": true,
-            "contact": [
-                {
-                    "phone": 18991037755,
-                    "city": "Santo Anastácio",
-                    "address": "Rua Dom Sebastião",
-                    "addressNumber": 252
-                }
-            ],
+            "contact": {
+                "phone": 18991037755,
+                "city": "Santo Anastácio",
+                "address": "Rua Dom Sebastião",
+                "addressNumber": 252
+            },
             "sales": [
                 {
                     "id": 1981553,

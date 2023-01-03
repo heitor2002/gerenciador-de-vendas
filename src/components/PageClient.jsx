@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import fetchClients from "../fetchClients";
 import InformationClient from "./box-components/InformationClient";
@@ -25,14 +25,14 @@ const PageClient = () => {
                 Apelido: <span>{clientsInformation.nickname}</span>
               </h3>
               <h3>
-                Cidade: <span>{}</span>
+                Cidade: <span>{clientsInformation.contact?.city}</span>
               </h3>
               <h3>
-                Endereço: <span>Rui Barbosa</span>,
-                <span>1228</span>
+                Endereço: <span>{clientsInformation.contact?.address}</span>,
+                <span> {clientsInformation.contact?.addressNumber}</span>
               </h3>
               <h3>
-                Telefone: <span>99999999</span>
+                Telefone: <span>{clientsInformation.contact?.phone}</span>
               </h3>
             </div>
           </>
