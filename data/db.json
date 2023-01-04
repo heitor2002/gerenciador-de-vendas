@@ -30,12 +30,12 @@
                     "quantity": 3
                 }
             ],
-            "total-sales": 600
+            "total-sales": 0
         },
         {
             "id": 2,
             "name": "Ângela Pinheiro",
-            "nickname": "Apelido",
+            "nickname": "",
             "status": true,
             "contact": {
                 "phone": 18991037755,
@@ -55,15 +55,10 @@
                     "product": "Eco Tupper Amarela",
                     "price": 15,
                     "quantity": 5
-                },
-                {
-                    "id": 1781951,
-                    "product": "Saladeira",
-                    "price": 19,
-                    "quantity": 3
                 }
             ],
-            "total-sales": 600
+            "balance": 0,
+            "total-sales": 0
         }
     ]
 }

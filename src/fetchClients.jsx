@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
 const fetchClients = (url) => {
-  const [clientsInformation, setclientsInformation] = useState([]);
+  const [clientsInformation, setClientsInformation] = useState([]);
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setclientsInformation(data);
+        setClientsInformation(data);
       });
   }, [url]);
   return { clientsInformation };

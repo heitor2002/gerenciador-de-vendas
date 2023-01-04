@@ -172,6 +172,116 @@ header ul a li:hover {
   font-weight: 500;
 }
 
+.single-client .requests-list {
+  width: 100%;
+  max-height: 500px;
+  overflow: auto;
+}
+
+.single-client .requests-list h2 {
+  font-size: 2rem;
+  margin: 15px 0;
+}
+
+.single-client .requests-list table {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.single-client .requests-list table th {
+  min-width: 100px;
+  padding: 10px 0;
+  background-color: white;
+}
+
+.single-client .requests-list table tr {
+  background-color: #ccc;
+}
+
+.single-client .requests-list table tr:nth-child(2n) {
+  background-color: #b4b4b4;
+}
+
+.single-client .requests-list table tr td {
+  padding: 10px 5px;
+}
+
+.single-client .requests-list table tr td.payment-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+
+.single-client .requests-list table tr td.payment-buttons input[type="number"] {
+  width: 100%;
+  max-width: 150px;
+  height: 30px;
+  padding: 0 8px;
+}
+
+.single-client .requests-list table tr td.payment-buttons input[type="submit"] {
+  width: 100%;
+  max-width: 100px;
+  height: 30px;
+  padding: 0 8px;
+  border: 0;
+  color: white;
+  background-color: #47a123;
+}
+
+.single-client div.payment-table {
+  width: 100%;
+}
+
+.single-client div.payment-table table th {
+  min-width: 100px;
+  padding: 10px 0;
+  background-color: white;
+}
+
+.single-client div.payment-table table tr {
+  background-color: #ccc;
+}
+
+.single-client div.payment-table table tr:nth-child(2n) {
+  background-color: #b4b4b4;
+}
+
+.single-client div.payment-table table tr td {
+  padding: 10px 5px;
+}
+
+.single-client div.payment-table table tr td.payment-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+
+.single-client div.payment-table table tr td.payment-buttons input[type="number"] {
+  width: 100%;
+  max-width: 150px;
+  height: 30px;
+  padding: 0 8px;
+}
+
+.single-client div.payment-table table tr td.payment-buttons input[type="submit"] {
+  width: 100%;
+  max-width: 100px;
+  height: 30px;
+  padding: 0 8px;
+  border: 0;
+  color: white;
+  background-color: #47a123;
+}
+
 .requests {
   padding: 30px 0;
 }
@@ -234,18 +344,18 @@ header ul a li:hover {
   cursor: pointer;
 }
 
-table {
+.table-stock table {
   width: 100%;
   text-align: left;
   margin-top: 30px;
   border: 1px solid #2d5461;
 }
 
-table tr {
+.table-stock table tr {
   padding: 10px 0;
 }
 
-table tr td {
+.table-stock table tr td {
   padding: 10px 5px;
   background-color: #ccc;
 }

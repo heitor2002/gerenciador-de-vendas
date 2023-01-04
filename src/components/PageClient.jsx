@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import fetchClients from "../fetchClients";
 import InformationClient from "./box-components/InformationClient";
@@ -9,7 +9,25 @@ const PageClient = () => {
     "http://localhost:3000/clients/" + id
   );
 
-  console.log(clientsInformation)
+  const sales = clientsInformation.sales;
+  const someValue = sales?.map((item) => {
+    let productValue = item.quantity * item.price;
+    return productValue;
+  });
+
+  const accumulatedValue = someValue
+    ?.reduce((acc, item) => {
+      return acc + item;
+    },0)
+    .toFixed(2);
+
+  var status = "";
+
+  if (accumulatedValue != 0) {
+    status = "Devendo";
+  } else {
+    status = "Pago";
+  }
 
   return (
     <>
@@ -20,20 +38,58 @@ const PageClient = () => {
               <h2>{clientsInformation.name}</h2>
             </div>
             <div className="single-client">
-              <h2>Informações:</h2>
-              <h3>
-                Apelido: <span>{clientsInformation.nickname}</span>
-              </h3>
-              <h3>
-                Cidade: <span>{clientsInformation.contact?.city}</span>
-              </h3>
-              <h3>
-                Endereço: <span>{clientsInformation.contact?.address}</span>,
-                <span> {clientsInformation.contact?.addressNumber}</span>
-              </h3>
-              <h3>
-                Telefone: <span>{clientsInformation.contact?.phone}</span>
-              </h3>
+              <InformationClient
+                nickname={clientsInformation.nickname}
+                city={clientsInformation.contact?.city}
+                address={clientsInformation.contact?.address}
+                phone={clientsInformation.contact?.phone}
+              />
+              {/* <InformationClient /> */}
+              <div className="requests-list">
+                <h2>Pedidos:</h2>
+                <table>
+                  <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço Unitário</th>
+                    <th>Valor total</th>
+                  </tr>
+                  {sales?.map((singleProduct) => {
+                    return (
+                      <tr>
+                        <td>{singleProduct.product}</td>
+                        <td>{singleProduct.quantity}</td>
+                        <td>R$ {singleProduct.price.toFixed(2)}</td>
+                        <td>
+                          {"R$ "}
+                          {(
+                            singleProduct.quantity * singleProduct.price
+                          ).toFixed(2)}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </table>
+              </div>
+              <div className="payment-table">
+                <table style={{ textAlign: "center" }}>
+                  <tr>
+                    <th>Saldo</th>
+                    <th>Pagamento</th>
+                    <th>Status</th>
+                  </tr>
+                  <tr>
+                    <td style={{ fontWeight: "bold", color: "red" }}>
+                      R$ -{accumulatedValue}
+                    </td>
+                    <td className="payment-buttons">
+                      <input type="number" placeholder="Valor" />
+                      <input type="submit" value="Adicionar" />
+                    </td>
+                    <td>{status}</td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </>
         )}

@@ -81,4 +81,90 @@
             font-weight: 500;
         }
     }
+    .requests-list {
+        width: 100%;
+        max-height: 500px;
+        overflow: auto;
+        h2 {
+            font-size: 2rem;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border: 1px solid #ccc;
+            th {
+                min-width: 100px;
+                padding: 10px 0;
+                background-color: white;
+            }
+            tr {
+                background-color: #ccc;
+                &:nth-child(2n) {
+                    background-color: $grey;
+                }
+                td {
+                    padding: 10px 5px;
+                }
+                td.payment-buttons {
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+                    input[type="number"] {
+                        width: 100%;
+                        max-width: 150px;
+                        height: 30px;
+                        padding: 0 8px;
+                    }
+                    input[type="submit"] {
+                        width: 100%;
+                        max-width: 100px;
+                        height: 30px;
+                        padding: 0 8px;
+                        border: 0;
+                        color: white;
+                        background-color: $green;
+                    }
+                }
+            }
+        }
+    }
+    div.payment-table {
+        width: 100%;
+        table {
+            th {
+                min-width: 100px;
+                padding: 10px 0;
+                background-color: white;
+            }
+            tr {
+                background-color: #ccc;
+                &:nth-child(2n) {
+                    background-color: $grey;
+                }
+                td {
+                    padding: 10px 5px;
+                }
+                td.payment-buttons {
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+                    input[type="number"] {
+                        width: 100%;
+                        max-width: 150px;
+                        height: 30px;
+                        padding: 0 8px;
+                    }
+                    input[type="submit"] {
+                        width: 100%;
+                        max-width: 100px;
+                        height: 30px;
+                        padding: 0 8px;
+                        border: 0;
+                        color: white;
+                        background-color: $green;
+                    }
+                }
+            }
+        }
+    }
 }
