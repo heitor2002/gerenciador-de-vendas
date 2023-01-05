@@ -23,12 +23,7 @@ const PageClient = () => {
     .toFixed(2);
 
   var status = "";
-
-  if (accumulatedValue >= 0) {
-    status = "Pago";
-  } else {
-    status = "Devendo";
-  }
+  var colorStatus = "";
 
   const mapPaymentHistory = clientsInformation.paymentHistory?.map(
     (typeInfo) => {
@@ -36,9 +31,19 @@ const PageClient = () => {
     }
   );
 
-  const addedValue = mapPaymentHistory?.reduce((acc, item) => {
-    return acc + item;
-  }).toFixed(2)
+  const addedValue = mapPaymentHistory
+    ?.reduce((acc, item) => {
+      return acc + item;
+    })
+    .toFixed(2);
+
+  if (addedValue - accumulatedValue >= 0) {
+    status = "Pago";
+    colorStatus = "#47a123";
+  } else {
+    status = "Devendo";
+    colorStatus = "#b32917";
+  }
 
   return (
     <>
@@ -86,6 +91,7 @@ const PageClient = () => {
                 status={status}
                 accumulatedValue={accumulatedValue}
                 addedValue={addedValue}
+                colorStatus={colorStatus}
               />
               <div className="payment-history">
                 <h2>Histórico de pagamento:</h2>
@@ -115,7 +121,12 @@ const PageClient = () => {
                   })}
                 </table>
               </div>
-              <h2 id="added-value">Valor agregado: <span style={{fontSize: "2rem", color: "#47a123"}}>R$ {addedValue}</span></h2>
+              <h2 id="added-value">
+                Valor agregado:{" "}
+                <span style={{ fontSize: "2rem", color: "#47a123" }}>
+                  R$ {addedValue}
+                </span>
+              </h2>
             </div>
           </>
         )}
