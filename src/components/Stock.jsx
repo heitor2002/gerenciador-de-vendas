@@ -19,54 +19,7 @@ const Stock = () => {
               <td>R$ {19}</td>
               <td>R$ {19 * 5}</td>
             </tr>
-            <tr>
-              <td>Jeitosinho</td>
-              <td>{5}</td>
-              <td>R$ {19}</td>
-              <td>R$ {19 * 5}</td>
-            </tr>
-            <tr>
-              <td>Jeitosinho</td>
-              <td>{5}</td>
-              <td>R$ {19}</td>
-              <td>R$ {19 * 5}</td>
-            </tr>
-            <tr>
-              <td>Jeitosinho</td>
-              <td>{5}</td>
-              <td>R$ {19}</td>
-              <td>R$ {19 * 5}</td>
-            </tr>
-            <tr>
-              <td>Jeitosinho</td>
-              <td>{5}</td>
-              <td>R$ {19}</td>
-              <td>R$ {19 * 5}</td>
-            </tr>
-            <tr>
-              <td>Jeitosinho</td>
-              <td>{5}</td>
-              <td>R$ {19}</td>
-              <td>R$ {19 * 5}</td>
-            </tr>
-            <tr>
-              <td>Jeitosinho</td>
-              <td>{5}</td>
-              <td>R$ {19}</td>
-              <td>R$ {19 * 5}</td>
-            </tr>
-            <tr>
-              <td>Jeitosinho</td>
-              <td>{5}</td>
-              <td>R$ {19}</td>
-              <td>R$ {19 * 5}</td>
-            </tr>
-            <tr>
-              <td>Jeitosinho</td>
-              <td>{5}</td>
-              <td>R$ {19}</td>
-              <td>R$ {19 * 5}</td>
-            </tr>
+            
           </table>
         </div>
       </div>

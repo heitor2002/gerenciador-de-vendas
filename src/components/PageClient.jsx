@@ -1,7 +1,8 @@
-import { useLayoutEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import fetchClients from "../fetchClients";
 import InformationClient from "./box-components/InformationClient";
+import { IoMdClose } from "react-icons/io";
+import PaymentTable from "./box-components/PaymentTable";
 
 const PageClient = () => {
   const { id } = useParams();
@@ -10,24 +11,34 @@ const PageClient = () => {
   );
 
   const sales = clientsInformation.sales;
-  const someValue = sales?.map((item) => {
+  const someValueBalance = sales?.map((item) => {
     let productValue = item.quantity * item.price;
     return productValue;
   });
 
-  const accumulatedValue = someValue
+  const accumulatedValue = someValueBalance
     ?.reduce((acc, item) => {
       return acc + item;
-    },0)
+    }, 0)
     .toFixed(2);
 
   var status = "";
 
-  if (accumulatedValue != 0) {
-    status = "Devendo";
-  } else {
+  if (accumulatedValue >= 0) {
     status = "Pago";
+  } else {
+    status = "Devendo";
   }
+
+  const mapPaymentHistory = clientsInformation.paymentHistory?.map(
+    (typeInfo) => {
+      return typeInfo.payment;
+    }
+  );
+
+  const addedValue = mapPaymentHistory?.reduce((acc, item) => {
+    return acc + item;
+  }).toFixed(2)
 
   return (
     <>
@@ -71,25 +82,40 @@ const PageClient = () => {
                   })}
                 </table>
               </div>
-              <div className="payment-table">
-                <table style={{ textAlign: "center" }}>
+              <PaymentTable
+                status={status}
+                accumulatedValue={accumulatedValue}
+                addedValue={addedValue}
+              />
+              <div className="payment-history">
+                <h2>Histórico de pagamento:</h2>
+                <table>
                   <tr>
-                    <th>Saldo</th>
-                    <th>Pagamento</th>
-                    <th>Status</th>
+                    <th>Data de pagamento</th>
+                    <th>Valor adicionado</th>
+                    <th>Saldo atualizado:</th>
+                    <th>Excluir elemento</th>
                   </tr>
-                  <tr>
-                    <td style={{ fontWeight: "bold", color: "red" }}>
-                      R$ -{accumulatedValue}
-                    </td>
-                    <td className="payment-buttons">
-                      <input type="number" placeholder="Valor" />
-                      <input type="submit" value="Adicionar" />
-                    </td>
-                    <td>{status}</td>
-                  </tr>
+
+                  {clientsInformation.paymentHistory?.map((infoHistory) => {
+                    return (
+                      <>
+                        <tr>
+                          <td>{infoHistory.date}</td>
+                          <td>{infoHistory.payment}</td>
+                          <td>{}</td>
+                          <td>
+                            <button className="close-button">
+                              <IoMdClose />
+                            </button>
+                          </td>
+                        </tr>
+                      </>
+                    );
+                  })}
                 </table>
               </div>
+              <h2 id="added-value">Valor agregado: <span style={{fontSize: "2rem", color: "#47a123"}}>R$ {addedValue}</span></h2>
             </div>
           </>
         )}

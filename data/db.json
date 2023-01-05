@@ -28,8 +28,39 @@
                     "product": "Saladeira",
                     "price": 19,
                     "quantity": 3
+                },
+                {
+                    "id": 1981951,
+                    "product": "Saladeira",
+                    "price": 19,
+                    "quantity": 3
+                },
+                {
+                    "id": 1981951,
+                    "product": "Saladeira",
+                    "price": 19,
+                    "quantity": 3
                 }
             ],
+            "paymentHistory": [
+                {
+                    "date": 2,
+                    "payment": 0
+                },
+                {
+                    "date": 2,
+                    "payment": 3
+                },
+                {
+                    "date": 2,
+                    "payment": 500
+                },
+                {
+                    "date": 2,
+                    "payment": 0
+                }
+            ],
+            "balance": 0,
             "total-sales": 0
         },
         {
@@ -55,6 +86,28 @@
                     "product": "Eco Tupper Amarela",
                     "price": 15,
                     "quantity": 5
+                }
+            ],
+            "paymentHistory": [
+                {
+                    "date": 0,
+                    "payment": 0
+                },
+                {
+                    "date": 0,
+                    "payment": 0
+                },
+                {
+                    "date": 0,
+                    "payment": 0
+                },
+                {
+                    "date": 0,
+                    "payment": 0
+                },
+                {
+                    "date": 0,
+                    "payment": 0
                 }
             ],
             "balance": 0,

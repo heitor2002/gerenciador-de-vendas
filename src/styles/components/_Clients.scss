@@ -130,6 +130,8 @@
     }
     div.payment-table {
         width: 100%;
+        display: flex;
+        justify-content: center;
         table {
             th {
                 min-width: 100px;
@@ -162,9 +164,52 @@
                         border: 0;
                         color: white;
                         background-color: $green;
+                        cursor: pointer;
                     }
                 }
             }
         }
+    }
+    .payment-history {
+        // padding: 20px 0;
+        margin-top: 20px;
+        max-height: 300px;
+        overflow: auto;
+        table {
+            width: 100%;
+            text-align: center;
+            border: 1px solid #ccc;
+            th {
+                padding: 10px 0;
+                color: $primary-color;
+            }
+            td {
+                padding: 10px 0;
+                background-color: #ccc;
+                &:nth-child(2n){
+                    background-color: $grey;
+                }
+                &:last-child{
+                    background-color: white;
+                }
+            }
+            button.close-button {
+                width: 80%;
+                border: 0;
+                font-size: 1.5rem;
+                background-color: $primary-color;
+                cursor: pointer;
+                color: white;
+                padding: 10px 0;
+                transition: .3s;
+                &:hover {
+                    background-color: $red;
+                }
+            }
+        }
+    }
+    h2#added-value{
+        color: $primary-color;
+        margin-top: 20px;
     }
 }
