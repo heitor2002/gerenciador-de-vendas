@@ -147,24 +147,26 @@
                     padding: 10px 5px;
                 }
                 td.payment-buttons {
-                    display: flex;
-                    justify-content: center;
-                    gap: 10px;
-                    input[type="number"] {
-                        width: 100%;
-                        max-width: 150px;
-                        height: 30px;
-                        padding: 0 8px;
-                    }
-                    input[type="submit"] {
-                        width: 100%;
-                        max-width: 100px;
-                        height: 30px;
-                        padding: 0 8px;
-                        border: 0;
-                        color: white;
-                        background-color: $green;
-                        cursor: pointer;
+                    form {
+                        display: flex;
+                        justify-content: center;
+                        gap: 10px;
+                        input[type="number"] {
+                            width: 100%;
+                            max-width: 150px;
+                            height: 30px;
+                            padding: 0 8px;
+                        }
+                        input[type="submit"] {
+                            width: 100%;
+                            max-width: 100px;
+                            height: 30px;
+                            padding: 0 8px;
+                            border: 0;
+                            color: white;
+                            background-color: $green;
+                            cursor: pointer;
+                        }
                     }
                 }
             }
@@ -186,10 +188,10 @@
             td {
                 padding: 10px 0;
                 background-color: #ccc;
-                &:nth-child(2n){
+                &:nth-child(2n) {
                     background-color: $grey;
                 }
-                &:last-child{
+                &:last-child {
                     background-color: white;
                 }
             }
@@ -201,14 +203,14 @@
                 cursor: pointer;
                 color: white;
                 padding: 10px 0;
-                transition: .3s;
+                transition: 0.3s;
                 &:hover {
                     background-color: $red;
                 }
             }
         }
     }
-    h2#added-value{
+    h2#added-value {
         color: $primary-color;
         margin-top: 20px;
         text-align: right;

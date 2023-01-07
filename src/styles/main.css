@@ -261,7 +261,7 @@ header ul a li:hover {
   padding: 10px 5px;
 }
 
-.single-client div.payment-table table tr td.payment-buttons {
+.single-client div.payment-table table tr td.payment-buttons form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -271,14 +271,14 @@ header ul a li:hover {
   gap: 10px;
 }
 
-.single-client div.payment-table table tr td.payment-buttons input[type="number"] {
+.single-client div.payment-table table tr td.payment-buttons form input[type="number"] {
   width: 100%;
   max-width: 150px;
   height: 30px;
   padding: 0 8px;
 }
 
-.single-client div.payment-table table tr td.payment-buttons input[type="submit"] {
+.single-client div.payment-table table tr td.payment-buttons form input[type="submit"] {
   width: 100%;
   max-width: 100px;
   height: 30px;
@@ -327,8 +327,8 @@ header ul a li:hover {
   cursor: pointer;
   color: white;
   padding: 10px 0;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .single-client .payment-history table button.close-button:hover {

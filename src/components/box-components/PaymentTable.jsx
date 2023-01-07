@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 const PaymentTable = (props) => {
+  const [payment, setPayment] = useState(0);
+
   return (
     <div className="payment-table">
       <table style={{ textAlign: "center" }}>
@@ -9,13 +13,17 @@ const PaymentTable = (props) => {
         </tr>
         <tr>
           <td style={{ fontWeight: "bold", color: `${props.colorStatus}` }}>
-            R$ {(props.addedValue - props.accumulatedValue ).toFixed(2)}
+            R$ {(props.addedValue - props.accumulatedValue).toFixed(2)}
           </td>
           <td className="payment-buttons">
-            <input type="number" placeholder="Valor" />
-            <input type="submit" value="Adicionar" />
+            <form>
+              <input type="number" placeholder="Valor" value={payment} />
+              <input type="submit" value="Adicionar" />
+            </form>
           </td>
-          <td style={{ fontWeight: "bold", color: `${props.colorStatus}` }}>{props.status}</td>
+          <td style={{ fontWeight: "bold", color: `${props.colorStatus}` }}>
+            {props.status}
+          </td>
         </tr>
       </table>
     </div>
