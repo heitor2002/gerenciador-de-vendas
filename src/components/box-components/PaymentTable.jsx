@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 const PaymentTable = (props) => {
-  const [payment, setPayment] = useState(0);
+  const [payment, setPayment] = useState();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(payment)
+  };
 
   return (
     <div className="payment-table">
@@ -16,8 +20,8 @@ const PaymentTable = (props) => {
             R$ {(props.addedValue - props.accumulatedValue).toFixed(2)}
           </td>
           <td className="payment-buttons">
-            <form>
-              <input type="number" placeholder="Valor" value={payment} />
+            <form onSubmit={handleSubmit}>
+              <input type="number" placeholder="Valor" value={payment} onChange={(e) => setPayment(e.target.value)} />
               <input type="submit" value="Adicionar" />
             </form>
           </td>
