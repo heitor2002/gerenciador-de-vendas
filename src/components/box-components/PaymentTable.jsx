@@ -2,9 +2,21 @@ import { useState } from "react";
 
 const PaymentTable = (props) => {
   const [payment, setPayment] = useState();
+  const setDate = () => {
+    var day;
+    var month;
+    var year;
+    const createDate = new Date();
+    day = createDate.getDate();
+    month = createDate.getMonth() + 1;
+    year = createDate.getFullYear();
+    var printDate = `${day}/${month}/${year}`;
+    console.log(printDate)
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(payment)
+    setDate();
+    console.log(payment);
   };
 
   return (
@@ -21,7 +33,12 @@ const PaymentTable = (props) => {
           </td>
           <td className="payment-buttons">
             <form onSubmit={handleSubmit}>
-              <input type="number" placeholder="Valor" value={payment} onChange={(e) => setPayment(e.target.value)} />
+              <input
+                type="number"
+                placeholder="Valor"
+                value={payment}
+                onChange={(e) => setPayment(e.target.value)}
+              />
               <input type="submit" value="Adicionar" />
             </form>
           </td>

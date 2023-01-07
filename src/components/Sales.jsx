@@ -3,7 +3,6 @@ import fetchClients from "../fetchClients";
 import SingleClient from "./box-components/SingleClient";
 
 const Sales = () => {
-
   return (
     <>
       <div className="container">
@@ -22,10 +21,8 @@ const Sales = () => {
             }}
           />
           <h5>Numero de clientes registrados: 48</h5>
-
-          
         </div>
-      </div> 
+      </div>
     </>
   );
 };
