@@ -2,18 +2,6 @@ import { useState } from "react";
 
 const PaymentTable = (props) => {
 
-  const updateDate = () => {
-    var day;
-    var month;
-    var year;
-    const createDate = new Date();
-    day = createDate.getDate();
-    month = createDate.getMonth() + 1;
-    year = createDate.getFullYear();
-    var printDate = `${day}/${month}/${year}`;
-    console.log(printDate);
-  };
-
   const [payment, setPayment] = useState(null);
   const [date, setDate] = useState(function(){
     var day;
