@@ -44,19 +44,7 @@
             ],
             "paymentHistory": [
                 {
-                    "date": 2,
-                    "payment": 100
-                },
-                {
-                    "date": 2,
-                    "payment": 0
-                },
-                {
-                    "date": 2,
-                    "payment": 0
-                },
-                {
-                    "date": 2,
+                    "date": 0,
                     "payment": 0
                 }
             ],
@@ -92,29 +80,13 @@
                 {
                     "date": 0,
                     "payment": 0
-                },
-                {
-                    "date": 0,
-                    "payment": 0
-                },
-                {
-                    "date": 0,
-                    "payment": 0
-                },
-                {
-                    "date": 0,
-                    "payment": 0
-                },
-                {
-                    "date": 0,
-                    "payment": 0
                 }
             ],
             "balance": "",
             "total-sales": 0
         }
     ],
-    "requests":[
+    "requests": [
         {
             "id": 1,
             "dateRequest": "04/01/2023",
