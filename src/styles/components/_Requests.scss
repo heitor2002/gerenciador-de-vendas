@@ -1,6 +1,6 @@
-.requests{
+.requests {
     padding: 30px 0;
-    .new-request{
+    button.new-request {
         width: 100px;
         height: 100px;
         background-color: $grey;
@@ -8,31 +8,32 @@
         justify-content: center;
         align-items: center;
         border-radius: 8px;
+        border: 0;
         cursor: pointer;
-        .icon_plus{
+        .icon_plus {
             color: white;
             font-size: 3rem;
         }
     }
-    .all-requests{
+    .all-requests {
         margin-top: 15px;
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        .single-request{
+        .single-request {
             width: 100%;
             max-width: 300px;
             padding: 10px 5px;
             border: 1px solid $grey;
-            h3{
+            h3 {
                 color: $primary-color;
-                font-size: .9rem;
+                font-size: 0.9rem;
             }
-            h2{
+            h2 {
                 font-size: 1.1rem;
                 margin: 5px;
             }
-            button{
+            button {
                 width: 100%;
                 height: 30px;
                 background-color: $primary-color;
@@ -40,6 +41,86 @@
                 border: 0;
                 cursor: pointer;
             }
+        }
+    }
+}
+
+.new-request {
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    padding: 30px 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    form.form-new-request {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex: 1 1 200px;
+        gap: 10px;
+        input{
+            padding: 5px;
+        }
+        input[type="text"]{
+            width: 100%;
+            max-width: 500px;
+        }
+        input[type="number"]{
+            width: 100%;
+            max-width: 100px;
+        }
+        input[type="submit"]{
+            width: 100%;
+            max-width: 100px;
+            border: 0;
+            background-color: $primary-color;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
+
+.container-requests{
+    margin-top: 30px;
+    width: 100%;
+    overflow: auto;
+    border: 1px solid #ccc;
+    table{
+        width: 100%;
+        tr{
+            padding: 10px;
+            th{
+                background-color: $grey;
+                min-width: 100px;
+            }
+            td{
+                padding: 10px;
+                text-align: center;
+                button{
+                    width: 100%;
+                    border: 0;
+                    background-color: $primary-color;
+                    color: white;
+                    font-size: 1.5rem;
+                    transition: .3s;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: $red;
+                    }
+                }
+            }
+        }
+    }
+    button{
+        width: 100%;
+        height: 50px;
+        font-size: 1.2rem;
+        background-color: $green;
+        border: 0;
+        cursor: pointer;
+        color: white;
+        transition: .3s;
+        &:hover{
+            background-color: green;
         }
     }
 }

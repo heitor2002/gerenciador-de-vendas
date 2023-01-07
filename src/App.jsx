@@ -9,6 +9,7 @@ import Clientes from "./components/Clients";
 import Stock from "./components/Stock";
 import Analytics from "./components/Analytics";
 import PageClient from "./components/PageClient";
+import FormRequests from "./components/FormRequests";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="/stock" element={<Stock />} />
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/clientes/:id" element={<PageClient />} />
+              <Route path="/requests/form-requests" element={<FormRequests />} />
             </Routes>
           </div>
         </div>

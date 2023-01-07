@@ -42,7 +42,7 @@ const Clients = () => {
                 return value
               }
             }).map((client) => {
-              return <SingleClient name={client.name} nickname={client.nickname} id={client.id} />;
+              return <SingleClient name={client.name} nickname={client.nickname} id={client.id} balance={client.balance} />;
             })}
           </div>
         </div>

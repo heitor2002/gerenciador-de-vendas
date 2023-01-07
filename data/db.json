@@ -45,7 +45,7 @@
             "paymentHistory": [
                 {
                     "date": 2,
-                    "payment": 0
+                    "payment": 100
                 },
                 {
                     "date": 2,
@@ -60,7 +60,7 @@
                     "payment": 0
                 }
             ],
-            "balance": 0,
+            "balance": "",
             "total-sales": 0
         },
         {
@@ -110,8 +110,21 @@
                     "payment": 0
                 }
             ],
-            "balance": 0,
+            "balance": "",
             "total-sales": 0
+        }
+    ],
+    "requests":[
+        {
+            "id": 1,
+            "dateRequest": "04/01/2023",
+            "listRequest": [
+                {
+                    "productName": "Jeitosinho Amarelo",
+                    "price": 19,
+                    "quantity": 3
+                }
+            ]
         }
     ]
 }

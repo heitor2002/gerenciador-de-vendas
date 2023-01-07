@@ -338,13 +338,14 @@ header ul a li:hover {
 .single-client h2#added-value {
   color: #2d5461;
   margin-top: 20px;
+  text-align: right;
 }
 
 .requests {
   padding: 30px 0;
 }
 
-.requests .new-request {
+.requests button.new-request {
   width: 100px;
   height: 100px;
   background-color: #b4b4b4;
@@ -358,10 +359,11 @@ header ul a li:hover {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 8px;
+  border: 0;
   cursor: pointer;
 }
 
-.requests .new-request .icon_plus {
+.requests button.new-request .icon_plus {
   color: white;
   font-size: 3rem;
 }
@@ -385,7 +387,7 @@ header ul a li:hover {
 
 .requests .all-requests .single-request h3 {
   color: #2d5461;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .requests .all-requests .single-request h2 {
@@ -400,6 +402,108 @@ header ul a li:hover {
   color: white;
   border: 0;
   cursor: pointer;
+}
+
+.new-request {
+  width: 100%;
+  background-color: #e6e6e6;
+  padding: 30px 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.new-request form.form-new-request {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 200px;
+          flex: 1 1 200px;
+  gap: 10px;
+}
+
+.new-request form.form-new-request input {
+  padding: 5px;
+}
+
+.new-request form.form-new-request input[type="text"] {
+  width: 100%;
+  max-width: 500px;
+}
+
+.new-request form.form-new-request input[type="number"] {
+  width: 100%;
+  max-width: 100px;
+}
+
+.new-request form.form-new-request input[type="submit"] {
+  width: 100%;
+  max-width: 100px;
+  border: 0;
+  background-color: #2d5461;
+  color: white;
+  cursor: pointer;
+}
+
+.container-requests {
+  margin-top: 30px;
+  width: 100%;
+  overflow: auto;
+  border: 1px solid #ccc;
+}
+
+.container-requests table {
+  width: 100%;
+}
+
+.container-requests table tr {
+  padding: 10px;
+}
+
+.container-requests table tr th {
+  background-color: #b4b4b4;
+  min-width: 100px;
+}
+
+.container-requests table tr td {
+  padding: 10px;
+  text-align: center;
+}
+
+.container-requests table tr td button {
+  width: 100%;
+  border: 0;
+  background-color: #2d5461;
+  color: white;
+  font-size: 1.5rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.container-requests table tr td button:hover {
+  background-color: #b32917;
+}
+
+.container-requests button {
+  width: 100%;
+  height: 50px;
+  font-size: 1.2rem;
+  background-color: #47a123;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.container-requests button:hover {
+  background-color: green;
 }
 
 .table-stock table {

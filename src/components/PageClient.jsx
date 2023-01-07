@@ -4,7 +4,7 @@ import InformationClient from "./box-components/InformationClient";
 import { IoMdClose } from "react-icons/io";
 import PaymentTable from "./box-components/PaymentTable";
 
-const PageClient = () => {
+const PageClient = (props) => {
   const { id } = useParams();
   const { clientsInformation } = fetchClients(
     "http://localhost:3000/clients/" + id
@@ -22,8 +22,8 @@ const PageClient = () => {
     }, 0)
     .toFixed(2);
 
-  var status = "";
   var colorStatus = "";
+  var statusCard = "";
 
   const mapPaymentHistory = clientsInformation.paymentHistory?.map(
     (typeInfo) => {
@@ -38,12 +38,17 @@ const PageClient = () => {
     .toFixed(2);
 
   if (addedValue - accumulatedValue >= 0) {
-    status = "Pago";
+    clientsInformation.balance = "Pago";
     colorStatus = "#47a123";
+    statusCard = "Pago";
   } else {
-    status = "Devendo";
     colorStatus = "#b32917";
+    clientsInformation.balance = "Devendo";
+    statusCard = "Devendo";
   }
+
+
+  console.log(clientsInformation);
 
   return (
     <>
@@ -88,7 +93,7 @@ const PageClient = () => {
                 </table>
               </div>
               <PaymentTable
-                status={status}
+                status={clientsInformation.balance}
                 accumulatedValue={accumulatedValue}
                 addedValue={addedValue}
                 colorStatus={colorStatus}

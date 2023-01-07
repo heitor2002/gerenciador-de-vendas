@@ -9,9 +9,11 @@ const Requests = () => {
           <h2>Pedidos</h2>
         </div>
         <div className="requests">
-          <div className="new-request">
-            <BsPlusLg className="icon_plus" />
-          </div>
+          <Link to={"/requests/form-requests"}>
+            <button className="new-request">
+              <BsPlusLg className="icon_plus" />
+            </button>
+          </Link>
           <div className="all-requests">
             <div className="single-request">
               <h3>Data: 31/12/2022</h3>
