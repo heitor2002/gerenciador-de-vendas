@@ -1,11 +1,25 @@
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const FormNewRequest = () => {
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(null);
   const [productQuantity, setProductQuantity] = useState(null);
   const [productsList, setProductsList] = useState([]);
+  const [dateRequest, setDateRequest] = useState(function () {
+    var day;
+    var month;
+    var year;
+    const createDate = new Date();
+    day = createDate.getDate();
+    month = createDate.getMonth() + 1;
+    year = createDate.getFullYear();
+    var updateDate = `${day}/${month}/${year}`;
+    return updateDate;
+  });
+
+  const navigate = useNavigate();
 
   const handleListProduct = (e) => {
     e.preventDefault();
@@ -20,6 +34,19 @@ const FormNewRequest = () => {
         (item) => item.productName !== singleProduct.productName
       )
     );
+  };
+
+  const handleSubmitRequest = () => {
+    const dataRequest = { dateRequest, productsList };
+    fetch("http://localhost:3000/requests", {
+      method: "Post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataRequest),
+    }).then(() => {
+      navigate("/requests")
+    });
   };
 
   return (
@@ -52,6 +79,7 @@ const FormNewRequest = () => {
           <input type="submit" value={"Enviar"} />
         </form>
       </div>
+      
       <div className="container-requests">
         <table>
           <tr>
@@ -84,13 +112,12 @@ const FormNewRequest = () => {
             );
           })}
         </table>
-        
       </div>
       {productsList.length !== 0 && (
-          <button className="send-request" onClick={() => console.log(productsList)}>
-            Concluir pedido
-          </button>
-        )}
+        <button className="send-request" onClick={() => handleSubmitRequest()}>
+          Concluir pedido
+        </button>
+      )}
     </>
   );
 };

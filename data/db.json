@@ -88,15 +88,25 @@
   ],
   "requests": [
     {
-      "id": 1,
-      "dateRequest": "04/01/2023",
-      "listRequest": [
+      "dateRequest": "11/1/2023",
+      "productsList": [
         {
-          "productName": "Jeitosinho Amarelo",
-          "price": 19,
-          "quantity": 3
+          "productName": "Jeitosinho Rosa",
+          "productPrice": "19",
+          "productQuantity": "20"
+        },
+        {
+          "productName": "Saladeira",
+          "productPrice": "50",
+          "productQuantity": "3"
+        },
+        {
+          "productName": "Eco Tupper",
+          "productPrice": "20",
+          "productQuantity": "10"
         }
-      ]
+      ],
+      "id": 1
     }
   ]
 }
