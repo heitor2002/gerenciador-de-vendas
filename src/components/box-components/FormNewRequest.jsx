@@ -49,6 +49,15 @@ const FormNewRequest = () => {
     });
   };
 
+  const someValueProduct = productsList.map(item => {
+    let accumulatedProduct = item.productPrice * item.productQuantity
+    return accumulatedProduct
+  })
+
+  const accumulatedRequestValue = someValueProduct.reduce((acc, item) => {
+    return acc + item;
+  },0).toFixed(2)
+  
   return (
     <>
       <div className="new-request">
@@ -79,7 +88,7 @@ const FormNewRequest = () => {
           <input type="submit" value={"Enviar"} />
         </form>
       </div>
-      <h2>Valor total do pedido:</h2>
+      <h2 style={{marginTop: "20px"}}>Valor total do pedido: <span style={{color: "red"}}>R${accumulatedRequestValue}</span></h2>
       <div className="container-requests">
         <table>
           <tr>
@@ -114,7 +123,8 @@ const FormNewRequest = () => {
         </table>
       </div>
       {productsList.length !== 0 && (
-        <button className="send-request" onClick={() => handleSubmitRequest()}>
+        <button className="send-request" >
+          {/* onClick={() => handleSubmitRequest()} */}
           Concluir pedido
         </button>
       )}
