@@ -13,7 +13,7 @@ const FormRequests = () => {
           <h2>Novo pedido:</h2>
         </div>
         <FormNewRequest />
-        <AllRequests listProducts={dataStock} />
+        {/* <AllRequests listProducts={dataStock} /> */}
       </div>
     </>
   );

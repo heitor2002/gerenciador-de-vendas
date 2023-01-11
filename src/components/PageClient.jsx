@@ -47,9 +47,6 @@ const PageClient = (props) => {
     statusCard = "Devendo";
   }
 
-
-  console.log(clientsInformation);
-
   return (
     <>
       <div className="container">

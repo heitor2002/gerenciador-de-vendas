@@ -1,9 +1,16 @@
 import { useState } from "react";
+import { json, useParams } from "react-router-dom";
+import fetchClients from "../../fetchClients";
 
 const PaymentTable = (props) => {
+  const { id } = useParams();
+  const { clientsInformation } = fetchClients(
+    "http://localhost:3000/clients/" + id
+  );
+  console.log(clientsInformation);
 
   const [payment, setPayment] = useState(null);
-  const [date, setDate] = useState(function(){
+  const [date, setDate] = useState(function () {
     var day;
     var month;
     var year;
@@ -17,7 +24,8 @@ const PaymentTable = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(payment, date);
+    const registeredPayment = { payment, date };
+    console.log(registeredPayment);
   };
 
   return (

@@ -23,10 +23,10 @@ const AllRequests = (props) => {
             <th>Excluir</th>
           </tr>
           <tr>
-            <td>Jeitosinho Amarelo</td>
-            <td>19</td>
-            <td>3</td>
-            <td>57</td>
+            <td>{props.productName}</td>
+            <td>{props.productPrice}</td>
+            <td>{props.productQuantity}</td>
+            <td>{props.productPrice * props.productQuantity}</td>
             <td>
               <button>
                 <IoMdClose />
