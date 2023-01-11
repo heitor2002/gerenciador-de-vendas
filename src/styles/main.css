@@ -453,6 +453,7 @@ header ul a li:hover {
 .container-requests {
   margin-top: 30px;
   width: 100%;
+  max-height: 600px;
   overflow: auto;
   border: 1px solid #ccc;
 }
@@ -481,8 +482,8 @@ header ul a li:hover {
   background-color: #2d5461;
   color: white;
   font-size: 1.5rem;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -490,7 +491,7 @@ header ul a li:hover {
   background-color: #b32917;
 }
 
-.container-requests button {
+.send-request {
   width: 100%;
   height: 50px;
   font-size: 1.2rem;
@@ -498,11 +499,11 @@ header ul a li:hover {
   border: 0;
   cursor: pointer;
   color: white;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.container-requests button:hover {
+.send-request:hover {
   background-color: green;
 }
 

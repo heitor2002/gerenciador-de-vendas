@@ -84,12 +84,13 @@ const FormNewRequest = () => {
             );
           })}
         </table>
-        {productsList.length !== 0 && (
-          <button onClick={() => console.log(productsList)}>
+        
+      </div>
+      {productsList.length !== 0 && (
+          <button className="send-request" onClick={() => console.log(productsList)}>
             Concluir pedido
           </button>
         )}
-      </div>
     </>
   );
 };
