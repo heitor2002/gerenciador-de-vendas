@@ -79,7 +79,7 @@ const FormNewRequest = () => {
           <input type="submit" value={"Enviar"} />
         </form>
       </div>
-      
+      <h2>Valor total do pedido:</h2>
       <div className="container-requests">
         <table>
           <tr>
