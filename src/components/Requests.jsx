@@ -1,8 +1,12 @@
 import { BsPlusLg } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import fetchClients from "../fetchClients";
 import CardRequest from "./box-components/CardRequest";
 
 const Requests = () => {
+  const { clientsInformation } = fetchClients("http://localhost:3000/requests");
+  console.log(clientsInformation);
+
   return (
     <>
       <div className="container">
@@ -16,7 +20,15 @@ const Requests = () => {
             </button>
           </Link>
           <div className="all-requests">
-            <CardRequest />
+            {clientsInformation.map((data) => {
+              return (
+                <CardRequest
+                  dateRequest={data.dateRequest}
+                  addedValue={data.accumulatedRequestValue}
+                  id={data.id}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
