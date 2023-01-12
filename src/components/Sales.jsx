@@ -1,6 +1,6 @@
 import { useState } from "react";
 import fetchClients from "../fetchClients";
-import SingleClient from "./box-components/SingleClient";
+import SingleClient from "./clientsPage/SingleClient";
 
 const Sales = () => {
   return (

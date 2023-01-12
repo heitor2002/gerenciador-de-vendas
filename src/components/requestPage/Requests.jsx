@@ -1,7 +1,7 @@
 import { BsPlusLg } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import fetchClients from "../fetchClients";
-import CardRequest from "./box-components/CardRequest";
+import fetchClients from "../../fetchClients";
+import CardRequest from "./CardRequest";
 
 const Requests = () => {
   const { clientsInformation } = fetchClients("http://localhost:3000/requests");

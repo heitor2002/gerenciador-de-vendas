@@ -1,10 +1,6 @@
-import fetchClients from "../fetchClients";
-import AllRequests from "./box-components/AllRequests";
-import FormNewRequest from "./box-components/FormNewRequest";
+import FormNewRequest from "./FormNewRequest";
 
 const FormRequests = () => {
-
-  const {clientsInformation:dataStock} = fetchClients("http://localhost:3000/requests")
 
   return (
     <>

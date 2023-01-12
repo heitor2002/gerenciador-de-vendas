@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import fetchClients from "../fetchClients";
-import InformationClient from "./box-components/InformationClient";
+import fetchClients from "../../fetchClients";
+import InformationClient from "./InformationClient";
 import { IoMdClose } from "react-icons/io";
-import PaymentTable from "./box-components/PaymentTable";
+import PaymentTable from "./PaymentTable";
 
 const PageClient = (props) => {
   const { id } = useParams();

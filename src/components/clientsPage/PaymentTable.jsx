@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { json, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import fetchClients from "../../fetchClients";
 
 const PaymentTable = (props) => {

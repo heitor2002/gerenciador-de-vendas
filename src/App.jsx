@@ -1,16 +1,16 @@
 import reactLogo from "./assets/react.svg";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import Sales from "./components/Sales";
-import Requests from "./components/Requests";
-import "./styles/main.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Clientes from "./components/Clients";
+import Clientes from "./components/clientsPage/Clients";
 import Stock from "./components/Stock";
 import Analytics from "./components/Analytics";
-import PageClient from "./components/PageClient";
-import FormRequests from "./components/FormRequests";
-import SingleRequestPage from "./requestPage/SingleRequestPage";
+import PageClient from "./components/clientsPage/PageClient";
+import Requests from "./components/requestPage/Requests";
+import FormRequests from "./components/requestPage/FormRequests";
+import SingleRequestPage from "./components/requestPage/SingleRequestPage";
+import "./styles/main.css";
 
 function App() {
   return (

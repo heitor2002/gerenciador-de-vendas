@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import fetchClients from "../fetchClients";
+import fetchClients from "../../fetchClients";
 
 const SingleRequestPage = () => {
   const { id } = useParams();

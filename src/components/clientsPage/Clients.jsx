@@ -1,6 +1,6 @@
 import { useState } from "react";
-import fetchClients from "../fetchClients";
-import SingleClient from "./box-components/SingleClient";
+import fetchClients from "../../fetchClients";
+import SingleClient from "./SingleClient";
 
 const Clients = () => {
   const { clientsInformation } = fetchClients("http://localhost:3000/clients");
