@@ -7,7 +7,7 @@ const SingleRequestPage = () => {
     "http://localhost:3000/requests/" + id
   );
   const allProductsRequest = clientsInformation.productsList;
-  console.log(allProductsRequest);
+  
   return (
     <>
       <div className="container">
@@ -39,6 +39,24 @@ const SingleRequestPage = () => {
               );
             })}
           </table>
+        </div>
+        <button className="delete-request">Deletar Pedido</button>
+      </div>
+      <div className="confirm-overlay">
+        <div className="confirmation-box">
+          <h2>Tem certeza que deseja excluir este pedido?</h2>
+          <p>
+            Não será possível recuperar os dados novamente, portanto, todos os
+            valores do caixa serão redefinidos de acordo com esta alteração.
+          </p>
+          <div className="confirmation-buttons">
+            <button style={{ backgroundColor: "#b32917" }}>
+              Sim, desejo excluir
+            </button>
+            <button style={{ backgroundColor: "rgb(45, 84, 97)" }}>
+              Cancelar
+            </button>
+          </div>
         </div>
       </div>
     </>
