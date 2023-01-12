@@ -32,9 +32,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -90,6 +87,12 @@
 .confirmation-box .confirmation-buttons button:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
+}
+
+.active-confirm-overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 header {

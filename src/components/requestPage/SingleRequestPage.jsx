@@ -6,7 +6,22 @@ const SingleRequestPage = () => {
   const { dataFetchInformations } = fetchClients(
     "http://localhost:3000/requests/" + id
   );
+
   const allProductsRequest = dataFetchInformations.productsList;
+
+  const activeOverlay = () => {
+    let overlay = document.querySelector(".confirm-overlay")
+    overlay.classList.add("active-confirm-overlay")
+  }
+
+  const desactiveOverlay = () => {
+    let overlay = document.querySelector(".confirm-overlay")
+    overlay.classList.remove("active-confirm-overlay")
+  }
+
+  const confirmDeleteOrder = () => {
+    fetch("http://localhost:3000/requests/")
+  }
   
   return (
     <>
@@ -40,7 +55,7 @@ const SingleRequestPage = () => {
             })}
           </table>
         </div>
-        <button className="delete-request">Deletar Pedido</button>
+        <button className="delete-request" onClick={activeOverlay}>Deletar Pedido</button>
       </div>
       <div className="confirm-overlay">
         <div className="confirmation-box">
@@ -53,7 +68,7 @@ const SingleRequestPage = () => {
             <button style={{ backgroundColor: "#b32917" }}>
               Sim, desejo excluir
             </button>
-            <button style={{ backgroundColor: "rgb(45, 84, 97)" }}>
+            <button style={{ backgroundColor: "rgb(45, 84, 97)" }} onClick={desactiveOverlay}>
               Cancelar
             </button>
           </div>
