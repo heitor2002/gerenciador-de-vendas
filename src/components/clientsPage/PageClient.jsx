@@ -6,11 +6,11 @@ import PaymentTable from "./PaymentTable";
 
 const PageClient = (props) => {
   const { id } = useParams();
-  const { clientsInformation } = fetchClients(
+  const { dataFetchInformations } = fetchClients(
     "http://localhost:3000/clients/" + id
   );
 
-  const sales = clientsInformation.sales;
+  const sales = dataFetchInformations.sales;
   const someValueBalance = sales?.map((item) => {
     let productValue = item.quantity * item.price;
     return productValue;
@@ -25,7 +25,7 @@ const PageClient = (props) => {
   var colorStatus = "";
   var statusCard = "";
 
-  const mapPaymentHistory = clientsInformation.paymentHistory?.map(
+  const mapPaymentHistory = dataFetchInformations.paymentHistory?.map(
     (typeInfo) => {
       return typeInfo.payment;
     }
@@ -38,29 +38,29 @@ const PageClient = (props) => {
     .toFixed(2);
 
   if (addedValue - accumulatedValue >= 0) {
-    clientsInformation.balance = "Pago";
+    dataFetchInformations.balance = "Pago";
     colorStatus = "#47a123";
     statusCard = "Pago";
   } else {
     colorStatus = "#b32917";
-    clientsInformation.balance = "Devendo";
+    dataFetchInformations.balance = "Devendo";
     statusCard = "Devendo";
   }
 
   return (
     <>
       <div className="container">
-        {clientsInformation && (
+        {dataFetchInformations && (
           <>
             <div className="title-page">
-              <h2>{clientsInformation.name}</h2>
+              <h2>{dataFetchInformations.name}</h2>
             </div>
             <div className="single-client">
               <InformationClient
-                nickname={clientsInformation.nickname}
-                city={clientsInformation.contact?.city}
-                address={clientsInformation.contact?.address}
-                phone={clientsInformation.contact?.phone}
+                nickname={dataFetchInformations.nickname}
+                city={dataFetchInformations.contact?.city}
+                address={dataFetchInformations.contact?.address}
+                phone={dataFetchInformations.contact?.phone}
               />
               {/* <InformationClient /> */}
               <div className="requests-list">
@@ -90,7 +90,7 @@ const PageClient = (props) => {
                 </table>
               </div>
               <PaymentTable
-                status={clientsInformation.balance}
+                status={dataFetchInformations.balance}
                 accumulatedValue={accumulatedValue}
                 addedValue={addedValue}
                 colorStatus={colorStatus}
@@ -105,7 +105,7 @@ const PageClient = (props) => {
                     <th>Excluir elemento</th>
                   </tr>
 
-                  {clientsInformation.paymentHistory?.map((infoHistory) => {
+                  {dataFetchInformations.paymentHistory?.map((infoHistory) => {
                     return (
                       <>
                         <tr>

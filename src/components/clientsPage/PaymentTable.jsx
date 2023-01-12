@@ -4,10 +4,9 @@ import fetchClients from "../../fetchClients";
 
 const PaymentTable = (props) => {
   const { id } = useParams();
-  const { clientsInformation } = fetchClients(
+  const { dataFetchInformations } = fetchClients(
     "http://localhost:3000/clients/" + id
   );
-  console.log(clientsInformation);
 
   const [payment, setPayment] = useState(null);
   const [date, setDate] = useState(function () {

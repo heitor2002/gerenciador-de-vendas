@@ -3,19 +3,19 @@ import fetchClients from "../../fetchClients";
 
 const SingleRequestPage = () => {
   const { id } = useParams();
-  const { clientsInformation } = fetchClients(
+  const { dataFetchInformations } = fetchClients(
     "http://localhost:3000/requests/" + id
   );
-  const allProductsRequest = clientsInformation.productsList;
+  const allProductsRequest = dataFetchInformations.productsList;
   
   return (
     <>
       <div className="container">
         <div className="title-page">
-          <h2>Data do pedido: {clientsInformation.dateRequest}</h2>
+          <h2>Data do pedido: {dataFetchInformations.dateRequest}</h2>
           <h2>
             Valor total da compra: R$
-            {clientsInformation.accumulatedRequestValue}
+            {dataFetchInformations.accumulatedRequestValue}
           </h2>
         </div>
         <div className="single-page-table">

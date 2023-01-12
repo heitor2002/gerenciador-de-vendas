@@ -3,9 +3,9 @@ import fetchClients from "../../fetchClients";
 import SingleClient from "./SingleClient";
 
 const Clients = () => {
-  const { clientsInformation } = fetchClients("http://localhost:3000/clients");
+  const { dataFetchInformations } = fetchClients("http://localhost:3000/clients");
   const [searchTerm, setSearchTerm] = useState("")
-  console.log(clientsInformation);
+  console.log(dataFetchInformations);
 
   return (
     <>
@@ -35,7 +35,7 @@ const Clients = () => {
             </select>
           </div>
           <div className="clients-cards">
-            {clientsInformation.filter(value => {
+            {dataFetchInformations.filter(value => {
               if(searchTerm == ""){
                 return value
               }else if(value.name.toLowerCase().includes(searchTerm.toLowerCase())){
