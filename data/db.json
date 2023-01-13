@@ -86,50 +86,5 @@
       "total-sales": 0
     }
   ],
-  "requests": [
-    {
-      "dateRequest": "12/1/2023",
-      "productsList": [
-        {
-          "productName": "Jeitoso",
-          "productPrice": "26",
-          "productQuantity": "4"
-        },
-        {
-          "productName": "Saladeira",
-          "productPrice": "50",
-          "productQuantity": "3"
-        },
-        {
-          "productName": "Eco Tupper",
-          "productPrice": "19",
-          "productQuantity": "5"
-        }
-      ],
-      "accumulatedRequestValue": "349.00",
-      "id": 1
-    },
-    {
-      "dateRequest": "12/1/2023",
-      "productsList": [
-        {
-          "productName": "fsdf",
-          "productPrice": "12",
-          "productQuantity": "12"
-        },
-        {
-          "productName": "fsdf",
-          "productPrice": "12",
-          "productQuantity": "12"
-        },
-        {
-          "productName": "fsdf",
-          "productPrice": "12",
-          "productQuantity": "12"
-        }
-      ],
-      "accumulatedRequestValue": "432.00",
-      "id": 2
-    }
-  ]
+  "requests": []
 }

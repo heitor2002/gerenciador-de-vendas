@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import fetchClients from "../../fetchClients";
 
 const SingleRequestPage = () => {
@@ -6,6 +6,7 @@ const SingleRequestPage = () => {
   const { dataFetchInformations } = fetchClients(
     "http://localhost:3000/requests/" + id
   );
+  const navigate = useNavigate()
 
   const allProductsRequest = dataFetchInformations.productsList;
 
@@ -20,7 +21,11 @@ const SingleRequestPage = () => {
   }
 
   const confirmDeleteOrder = () => {
-    fetch("http://localhost:3000/requests/")
+    fetch("http://localhost:3000/requests/" + id, {
+      method: "DELETE"
+    }).then(() => {
+      navigate("/requests")
+    })
   }
   
   return (
@@ -65,7 +70,7 @@ const SingleRequestPage = () => {
             valores do caixa serão redefinidos de acordo com esta alteração.
           </p>
           <div className="confirmation-buttons">
-            <button style={{ backgroundColor: "#b32917" }}>
+            <button style={{ backgroundColor: "#b32917" }} onClick={confirmDeleteOrder}>
               Sim, desejo excluir
             </button>
             <button style={{ backgroundColor: "rgb(45, 84, 97)" }} onClick={desactiveOverlay}>
