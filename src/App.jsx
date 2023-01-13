@@ -11,6 +11,7 @@ import Requests from "./components/requestPage/Requests";
 import FormRequests from "./components/requestPage/FormRequests";
 import SingleRequestPage from "./components/requestPage/SingleRequestPage";
 import "./styles/main.css";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <Route path="/clientes/:id" element={<PageClient />} />
               <Route path="/requests/form-requests" element={<FormRequests />} />
               <Route path="/requests/:id" element={<SingleRequestPage />}/>
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
         </div>
