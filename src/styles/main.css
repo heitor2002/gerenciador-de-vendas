@@ -334,6 +334,39 @@ header ul a li:hover {
 .client-register {
   padding: 20px 0;
 }
+.client-register form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.client-register form label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(45, 84, 97);
+}
+.client-register form input {
+  width: 100%;
+  max-width: 300px;
+  padding: 5px;
+}
+.client-register form button {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 20px;
+  padding: 10px 0;
+  background-color: #47a123;
+  font-size: 1.3rem;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.client-register form button:hover {
+  background-color: rgb(4, 151, 4);
+  transform: scale(1.01);
+}
 
 .requests {
   padding: 30px 0;

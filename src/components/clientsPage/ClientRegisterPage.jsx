@@ -3,39 +3,38 @@ const ClientRegisterPage = () => {
     <>
       <div className="container">
         <div className="title-page">
-          <h2>Cadastrar novo cliente</h2>
+          <center><h2>Cadastrar novo cliente</h2></center>
         </div>
         <div className="client-register">
-            <form>
-                <div>
-                <label>Nome:</label>
-                <br />
-                <input type="text" name="name" id="name" />
-                </div>
-                <div>
-                <label>Apelido:</label>
-                <br />
-                <input type="text" name="nickname" id="nickname" />
-                </div>
-                <div>
-                <label>Telefone:</label>
-                <br />
-                <input type="number" name="cell" id="cell" />
-                </div>
-                <div>
-                <label>Cidade:</label>
-                <br />
-                <input type="text" name="city" id="city" />
-                </div>
-                <div>
-                <label>Endereço:</label>
-                <br />
-                <input type="text" name="addressNumber" id="addressNumber" placeholder="Rua Gonçalo de Carvalho"/>
-                <br />
-                <input type="number" name="addressNumber" id="addressNumber" placeholder="0000"/>
-                </div>
-                <button>Cadastrar</button>
-            </form>
+          <form>
+            <label>Nome:</label>
+            <input type="text" name="name" id="name" />
+            <label>Apelido:</label>
+            <input
+              type="text"
+              name="nickname"
+              id="nickname"
+              placeholder="Opcional*"
+            />
+            <label>Cidade:</label>
+            <input type="text" name="city" id="city" placeholder="Porto Alegre"/>
+            <label>Endereço:</label>
+            <input
+              type="text"
+              name="address"
+              id="address"
+              placeholder="Rua Gonçalo de Carvalho"
+            />
+            <input
+              type="number"
+              name="addressNumber"
+              id="addressNumber"
+              placeholder="0000"
+            />
+            <label>Telefone:</label>
+            <input type="number" name="cell" id="cell" />
+            <button>Cadastrar</button>
+          </form>
         </div>
       </div>
     </>
