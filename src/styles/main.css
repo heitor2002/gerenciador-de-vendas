@@ -141,6 +141,15 @@ header ul a li:hover {
   margin-top: 15px;
   padding: 0 10px;
 }
+.content-clients-page a button {
+  background-color: rgb(45, 84, 97);
+  height: 35px;
+  padding: 0 10px;
+  margin-top: 15px;
+  border: 0;
+  color: white;
+  cursor: pointer;
+}
 .content-clients-page .clients-cards {
   width: 100%;
   display: flex;

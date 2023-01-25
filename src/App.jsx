@@ -12,6 +12,7 @@ import FormRequests from "./components/requestPage/FormRequests";
 import SingleRequestPage from "./components/requestPage/SingleRequestPage";
 import "./styles/main.css";
 import NotFound from "./components/NotFound";
+import ClientRegisterPage from "./components/clientsPage/ClientRegisterPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="/sales" element={<Sales />} />
               <Route path="/requests" element={<Requests />} />
               <Route path="/clients" element={<Clientes />} />
+              <Route path="/client-register" element={<ClientRegisterPage />}/>
               <Route path="/stock" element={<Stock />} />
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/clientes/:id" element={<PageClient />} />

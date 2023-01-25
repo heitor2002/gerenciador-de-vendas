@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import fetchClients from "../../fetchClients";
 import SingleClient from "./SingleClient";
 
@@ -24,6 +25,8 @@ const Clients = () => {
               setSearchTerm(e.target.value)
             }}
           />
+          <br/>
+          <Link to={"/client-register"}><button>Adicionar novo cliente</button></Link>
           <h5>Numero de clientes registrados: 48</h5>
           <div className="information-and-filters">
             <select name="filters-clients" id="filters-clients">
