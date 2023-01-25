@@ -1,4 +1,17 @@
+import fetchClients from "../fetchClients";
+
 const Stock = () => {
+  const { dataFetchInformations } = fetchClients(
+    "http://localhost:3000/requests"
+  );
+
+  const productStockList = dataFetchInformations.map((info) => {
+    let arrayProducts = info.productsList;
+    return arrayProducts;
+  });
+
+  const arrayStock = productStockList.flat();
+
   return (
     <>
       <div className="container">
@@ -7,19 +20,20 @@ const Stock = () => {
         </div>
         <div className="table-stock">
           <table>
+            <h2>Data:</h2>
             <tr>
               <th>Produto</th>
               <th>Quantidade</th>
-              <th>Preço Unitário</th>
-              <th>Valor total</th>
             </tr>
-            <tr>
-              <td>Jeitosinho</td>
-              <td>{5}</td>
-              <td>R$ {19}</td>
-              <td>R$ {19 * 5}</td>
-            </tr>
-            
+            {arrayStock.map((info) => {
+              let quantityString = parseInt(info.productQuantity);
+              return (
+                <tr>
+                  <td>{info.productName}</td>
+                  <td>{quantityString}</td>
+                </tr>
+              );
+            })}
           </table>
         </div>
       </div>

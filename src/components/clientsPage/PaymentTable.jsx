@@ -8,8 +8,13 @@ const PaymentTable = (props) => {
     "http://localhost:3000/clients/" + id
   );
 
+  //OBTER TODOS OS DADOS DO CLIENTE
+
+  //GUARDAR EM UMA CONST TODOS ESSES DADOS
+
+  //POR ULTIMO SEPARAR OS DADOS QUE SERÃO ATUALIZADOS --BALANCE & PAYMENTHISTORY--
   const [payment, setPayment] = useState(null);
-  const [date, setDate] = useState(function () {
+  const [datePaymentHistory, setDatePaymentHistory] = useState(function () {
     var day;
     var month;
     var year;
@@ -21,10 +26,19 @@ const PaymentTable = (props) => {
     return printDate;
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmitHistoryPayment = (e) => {
     e.preventDefault();
-    const registeredPayment = { payment, date };
-    console.log(registeredPayment);
+    const dataUpdateHistory = {
+      payment,
+      datePaymentHistory,
+    };
+    fetch("http://localhost:3000/clients/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dataUpdateHistory)
+    }).then(() => console.log("Sucess"))
   };
 
   return (
@@ -40,7 +54,7 @@ const PaymentTable = (props) => {
             R$ {(props.addedValue - props.accumulatedValue).toFixed(2)}
           </td>
           <td className="payment-buttons">
-            <form onSubmit={handleSubmit}>
+            <form>
               <label>R$ </label>
               <input
                 type="number"
@@ -49,7 +63,11 @@ const PaymentTable = (props) => {
                 onChange={(e) => setPayment(e.target.value)}
                 required
               />
-              <input type="submit" value="Adicionar" />
+              <input
+                type="submit"
+                value="Adicionar"
+                onClick={handleSubmitHistoryPayment}
+              />
             </form>
           </td>
           <td style={{ fontWeight: "bold", color: `${props.colorStatus}` }}>
