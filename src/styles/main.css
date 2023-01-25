@@ -331,6 +331,10 @@ header ul a li:hover {
   text-align: right;
 }
 
+.client-register {
+  padding: 20px 0;
+}
+
 .requests {
   padding: 30px 0;
 }
