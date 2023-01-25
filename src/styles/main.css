@@ -2,14 +2,11 @@
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
 .flex-panel-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -32,12 +29,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   display: none;
 }
 
@@ -46,33 +39,23 @@
   max-width: 500px;
   padding: 20px 10px;
   background-color: white;
-  -webkit-box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
 }
-
 .confirmation-box h2 {
   font-size: 1.3rem;
-  color: #2d5461;
+  color: rgb(45, 84, 97);
   text-align: center;
 }
-
 .confirmation-box p {
   margin-top: 20px;
 }
-
 .confirmation-box .confirmation-buttons {
   margin-top: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   gap: 10px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
 .confirmation-box .confirmation-buttons button {
   width: 100%;
   max-width: 200px;
@@ -80,25 +63,20 @@
   border: 0;
   color: white;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  transition: 0.3s;
 }
-
 .confirmation-box .confirmation-buttons button:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .active-confirm-overlay {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 header {
   width: 20vw;
   height: 100vh;
-  background-color: #2d5461;
+  background-color: rgb(45, 84, 97);
   text-align: center;
   padding: 20px 2%;
   color: white;
@@ -106,20 +84,16 @@ header {
   position: sticky;
   top: 0;
 }
-
 header h2 {
   font-size: 2rem;
 }
-
 header ul {
   list-style-type: none;
   margin-top: 30px;
 }
-
 header ul a {
   text-decoration: none;
 }
-
 header ul a li {
   width: 100%;
   padding: 10px 0;
@@ -127,50 +101,39 @@ header ul a li {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   color: white;
-  -webkit-transition: .3s;
-  transition: .3s;
+  transition: 0.3s;
 }
-
 header ul a li:hover {
-  color: #2d5461;
+  color: rgb(45, 84, 97);
   background-color: #ccc;
 }
 
 .content-clients-page {
   padding: 30px 0;
 }
-
 .content-clients-page .information-and-filters {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-top: 10px;
   gap: 10px;
 }
-
 .content-clients-page .information-and-filters h5 {
   font-size: 0.8rem;
 }
-
 .content-clients-page .information-and-filters select {
   width: 100%;
   max-width: 200px;
   height: 40px;
   padding: 0 10px;
 }
-
 .content-clients-page .information-and-filters select option {
   height: 40px;
 }
-
 .content-clients-page h5 {
   margin-top: 10px;
 }
-
 .content-clients-page h2 {
-  color: #2d5461;
+  color: rgb(45, 84, 97);
 }
-
 .content-clients-page input {
   width: 100%;
   max-width: 300px;
@@ -178,18 +141,13 @@ header ul a li:hover {
   margin-top: 15px;
   padding: 0 10px;
 }
-
 .content-clients-page .clients-cards {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 10px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin-top: 30px;
 }
-
 .content-clients-page .clients-cards .single-cards {
   width: 100%;
   max-width: 300px;
@@ -198,26 +156,22 @@ header ul a li:hover {
   gap: 10px;
   font-weight: 300;
 }
-
 .content-clients-page .clients-cards .single-cards h2 {
   font-size: 1.3rem;
 }
-
 .content-clients-page .clients-cards .single-cards h2:nth-of-type(2) {
   font-size: 1rem;
 }
-
 .content-clients-page .clients-cards .single-cards h3 {
   font-size: 1.1rem;
   margin-top: 10px;
 }
-
 .content-clients-page .clients-cards .single-cards button {
   width: 100%;
   height: 30px;
   margin-top: 10px;
   border: 0;
-  background-color: #2d5461;
+  background-color: rgb(45, 84, 97);
   color: white;
   cursor: pointer;
 }
@@ -225,75 +179,58 @@ header ul a li:hover {
 .single-client {
   padding: 30px 0;
 }
-
 .single-client h2 {
-  color: #2d5461;
+  color: rgb(45, 84, 97);
   font-size: 1.6rem;
   margin-bottom: 10px;
 }
-
 .single-client h3 {
   font-size: 1.2rem;
   font-weight: bold;
 }
-
 .single-client h3 span {
   font-size: 1.1rem;
   font-weight: 500;
 }
-
 .single-client .requests-list {
   width: 100%;
   max-height: 500px;
   overflow: auto;
 }
-
 .single-client .requests-list h2 {
   font-size: 2rem;
   margin: 15px 0;
 }
-
 .single-client .requests-list table {
   width: 100%;
   border: 1px solid #ccc;
 }
-
 .single-client .requests-list table th {
   min-width: 100px;
   padding: 10px 0;
   background-color: white;
 }
-
 .single-client .requests-list table tr {
   background-color: #ccc;
 }
-
 .single-client .requests-list table tr:nth-child(2n) {
-  background-color: #b4b4b4;
+  background-color: rgb(180, 180, 180);
 }
-
 .single-client .requests-list table tr td {
   padding: 10px 5px;
 }
-
 .single-client .requests-list table tr td.payment-buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   gap: 10px;
 }
-
-.single-client .requests-list table tr td.payment-buttons input[type="number"] {
+.single-client .requests-list table tr td.payment-buttons input[type=number] {
   width: 100%;
   max-width: 150px;
   height: 30px;
   padding: 0 8px;
 }
-
-.single-client .requests-list table tr td.payment-buttons input[type="submit"] {
+.single-client .requests-list table tr td.payment-buttons input[type=submit] {
   width: 100%;
   max-width: 100px;
   height: 30px;
@@ -302,53 +239,37 @@ header ul a li:hover {
   color: white;
   background-color: #47a123;
 }
-
 .single-client div.payment-table {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .single-client div.payment-table table th {
   min-width: 100px;
   padding: 10px 0;
   background-color: white;
 }
-
 .single-client div.payment-table table tr {
   background-color: #ccc;
 }
-
 .single-client div.payment-table table tr:nth-child(2n) {
-  background-color: #b4b4b4;
+  background-color: rgb(180, 180, 180);
 }
-
 .single-client div.payment-table table tr td {
   padding: 10px 5px;
 }
-
 .single-client div.payment-table table tr td.payment-buttons form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   gap: 10px;
 }
-
-.single-client div.payment-table table tr td.payment-buttons form input[type="number"] {
+.single-client div.payment-table table tr td.payment-buttons form input[type=number] {
   width: 100%;
   max-width: 150px;
   height: 30px;
   padding: 0 8px;
 }
-
-.single-client div.payment-table table tr td.payment-buttons form input[type="submit"] {
+.single-client div.payment-table table tr td.payment-buttons form input[type=submit] {
   width: 100%;
   max-width: 100px;
   height: 30px;
@@ -358,55 +279,45 @@ header ul a li:hover {
   background-color: #47a123;
   cursor: pointer;
 }
-
 .single-client .payment-history {
   margin-top: 20px;
   max-height: 300px;
   overflow: auto;
 }
-
 .single-client .payment-history table {
   width: 100%;
   text-align: center;
   border: 1px solid #ccc;
 }
-
 .single-client .payment-history table th {
   padding: 10px 0;
-  color: #2d5461;
+  color: rgb(45, 84, 97);
 }
-
 .single-client .payment-history table td {
   padding: 10px 0;
   background-color: #ccc;
 }
-
 .single-client .payment-history table td:nth-child(2n) {
-  background-color: #b4b4b4;
+  background-color: rgb(180, 180, 180);
 }
-
 .single-client .payment-history table td:last-child {
   background-color: white;
 }
-
 .single-client .payment-history table button.close-button {
   width: 80%;
   border: 0;
   font-size: 1.5rem;
-  background-color: #2d5461;
+  background-color: rgb(45, 84, 97);
   cursor: pointer;
   color: white;
   padding: 10px 0;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-
 .single-client .payment-history table button.close-button:hover {
   background-color: #b32917;
 }
-
 .single-client h2#added-value {
-  color: #2d5461;
+  color: rgb(45, 84, 97);
   margin-top: 20px;
   text-align: right;
 }
@@ -414,61 +325,45 @@ header ul a li:hover {
 .requests {
   padding: 30px 0;
 }
-
 .requests button.new-request {
   width: 100px;
   height: 100px;
-  background-color: #b4b4b4;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: rgb(180, 180, 180);
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 8px;
   border: 0;
   cursor: pointer;
 }
-
 .requests button.new-request .icon_plus {
   color: white;
   font-size: 3rem;
 }
-
 .requests .all-requests {
   margin-top: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 10px;
 }
-
 .requests .all-requests .single-request {
   width: 100%;
   max-width: 300px;
   padding: 10px 5px;
-  border: 1px solid #b4b4b4;
+  border: 1px solid rgb(180, 180, 180);
 }
-
 .requests .all-requests .single-request h3 {
-  color: #2d5461;
+  color: rgb(45, 84, 97);
   font-size: 0.9rem;
 }
-
 .requests .all-requests .single-request h2 {
   font-size: 1.1rem;
   margin: 5px;
 }
-
 .requests .all-requests .single-request button {
   width: 100%;
   height: 30px;
-  background-color: #2d5461;
+  background-color: rgb(45, 84, 97);
   color: white;
   border: 0;
   cursor: pointer;
@@ -476,46 +371,34 @@ header ul a li:hover {
 
 .new-request {
   width: 100%;
-  background-color: #e6e6e6;
+  background-color: rgb(230, 230, 230);
   padding: 30px 20px;
   margin-top: 30px;
   border-radius: 10px;
 }
-
 .new-request form.form-new-request {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 200px;
-          flex: 1 1 200px;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 1 1 200px;
   gap: 10px;
 }
-
 .new-request form.form-new-request input {
   padding: 5px;
 }
-
-.new-request form.form-new-request input[type="text"] {
+.new-request form.form-new-request input[type=text] {
   width: 100%;
   max-width: 500px;
 }
-
-.new-request form.form-new-request input[type="number"] {
+.new-request form.form-new-request input[type=number] {
   width: 100%;
   max-width: 100px;
 }
-
-.new-request form.form-new-request input[type="submit"] {
+.new-request form.form-new-request input[type=submit] {
   width: 100%;
   max-width: 100px;
   border: 0;
-  background-color: #2d5461;
+  background-color: rgb(45, 84, 97);
   color: white;
   cursor: pointer;
 }
@@ -527,36 +410,29 @@ header ul a li:hover {
   overflow: auto;
   border: 1px solid #ccc;
 }
-
 .container-requests table {
   width: 100%;
 }
-
 .container-requests table tr {
   padding: 10px;
 }
-
 .container-requests table tr th {
-  background-color: #b4b4b4;
+  background-color: rgb(180, 180, 180);
   min-width: 100px;
 }
-
 .container-requests table tr td {
   padding: 10px;
   text-align: center;
 }
-
 .container-requests table tr td button {
   width: 100%;
   border: 0;
-  background-color: #2d5461;
+  background-color: rgb(45, 84, 97);
   color: white;
   font-size: 1.5rem;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   cursor: pointer;
 }
-
 .container-requests table tr td button:hover {
   background-color: #b32917;
 }
@@ -569,10 +445,8 @@ header ul a li:hover {
   border: 0;
   cursor: pointer;
   color: white;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-
 .send-request:hover {
   background-color: green;
 }
@@ -581,22 +455,18 @@ header ul a li:hover {
   width: 100%;
   overflow: auto;
 }
-
 .container .single-page-table table tr:nth-child(2n) {
   background-color: #ccc;
 }
-
 .container .single-page-table table th {
   min-width: 200px;
   padding: 20px 0;
-  border-bottom: 1px solid #2d5461;
+  border-bottom: 1px solid rgb(45, 84, 97);
 }
-
 .container .single-page-table table td {
   padding: 10px 0;
   text-align: center;
 }
-
 .container .delete-request {
   width: 100%;
   max-width: 200px;
@@ -607,27 +477,29 @@ header ul a li:hover {
   font-size: 1rem;
   margin-top: 20px;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  transition: 0.3s;
 }
-
 .container .delete-request:hover {
-  background-color: #571414;
+  background-color: rgb(87, 20, 20);
 }
 
 .table-stock table {
   width: 100%;
   text-align: left;
   margin-top: 30px;
-  border: 1px solid #2d5461;
+  border: 1px solid rgb(45, 84, 97);
 }
-
 .table-stock table tr {
   padding: 10px 0;
+  background-color: rgb(180, 180, 180);
 }
-
-.table-stock table tr td {
-  padding: 10px 5px;
+.table-stock table tr:nth-of-type(1) {
+  background-color: white;
+}
+.table-stock table tr:nth-of-type(2n) {
   background-color: #ccc;
 }
-/*# sourceMappingURL=main.css.map */
+.table-stock table tr td {
+  padding: 10px 5px;
+  font-size: 0.9rem;
+}/*# sourceMappingURL=main.css.map */

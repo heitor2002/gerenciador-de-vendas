@@ -20,7 +20,6 @@ const Stock = () => {
         </div>
         <div className="table-stock">
           <table>
-            <h2>Data:</h2>
             <tr>
               <th>Produto</th>
               <th>Quantidade</th>
