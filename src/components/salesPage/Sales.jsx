@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import fetchClients from "../../fetchClients";
-import SingleClient from "./SingleClient";
+import SingleClient from "../clientsPage/SingleClient";
 
-const Clients = () => {
+const Sales = () => {
   const { dataFetchInformations } = fetchClients(
     "http://localhost:3000/clients"
   );
@@ -14,10 +14,10 @@ const Clients = () => {
     <>
       <div className="container">
         <div className="title-page">
-          <h2>Visualizar clientes</h2>
+          <h2>Página de vendas</h2>
         </div>
         <div className="content-clients-page">
-          <h2>Consultar cliente</h2>
+          <h2>Selecione o cliente</h2>
           <input
             type="text"
             name="search-name"
@@ -28,19 +28,7 @@ const Clients = () => {
             }}
           />
           <br />
-          <Link to={"/client-register"}>
-            <button>Adicionar novo cliente</button>
-          </Link>
           <h5>Numero de clientes registrados: 48</h5>
-          <div className="information-and-filters">
-            <select name="filters-clients" id="filters-clients">
-              <option value="">Filtrar por:</option>
-              <option value="">Devendo</option>
-              <option value="">Ordem Alfabética</option>
-              <option value="">Maior consumidor</option>
-              <option value="">Menor consumidor</option>
-            </select>
-          </div>
           <div className="clients-cards">
             {dataFetchInformations
               .filter((value) => {
@@ -58,7 +46,6 @@ const Clients = () => {
                     name={client.clientName}
                     nickname={client.clientNickname}
                     id={client.id}
-                    balance={client.balance}
                   />
                 );
               })}
@@ -69,4 +56,4 @@ const Clients = () => {
   );
 };
 
-export default Clients;
+export default Sales;

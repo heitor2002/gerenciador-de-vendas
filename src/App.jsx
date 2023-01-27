@@ -2,7 +2,7 @@ import reactLogo from "./assets/react.svg";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Header from "./components/Header";
-import Sales from "./components/Sales";
+import Sales from "./components/salesPage/Sales";
 import Clientes from "./components/clientsPage/Clients";
 import Stock from "./components/Stock";
 import Analytics from "./components/Analytics";
