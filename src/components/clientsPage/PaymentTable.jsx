@@ -4,10 +4,20 @@ import fetchClients from "../../fetchClients";
 
 const PaymentTable = (props) => {
   const { id } = useParams();
-  const { dataFetchInformations } = fetchClients(
+  const { dataFetchInformations: paymentHistory } = fetchClients(
+    "http://localhost:3000/paymentHistory"
+  );
+  const { dataFetchInformations: clientsInformation } = fetchClients(
     "http://localhost:3000/clients/" + id
   );
-  
+  const clientKeyPaymentHistory = clientsInformation.clientKey;
+
+  const filterKey = paymentHistory.filter(item => {
+    return item.clientKeyPaymentHistory == clientKeyPaymentHistory
+  })
+
+  console.log(filterKey)
+
   const [payment, setPayment] = useState(null);
   const [datePaymentHistory, setDatePaymentHistory] = useState(function () {
     var day;
@@ -26,14 +36,15 @@ const PaymentTable = (props) => {
     const dataUpdateHistory = {
       payment,
       datePaymentHistory,
+      clientKeyPaymentHistory,
     };
-    fetch("http://localhost:3000/clients/", {
+    fetch("http://localhost:3000/paymentHistory", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(dataUpdateHistory)
-    }).then(() => console.log("Sucess"))
+      body: JSON.stringify(dataUpdateHistory),
+    }).then(() => console.log("Sucess"));
   };
 
   return (
