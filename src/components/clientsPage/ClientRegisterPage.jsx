@@ -41,8 +41,8 @@ const ClientRegisterPage = () => {
       body: JSON.stringify(dataClientRegister),
     }).then(() => {
       console.log("Registrado");
+      window.location.reload();
     });
-    // console.log(clientName, clientNickname, clientCity, clientAddress, clientNumberAddress, clientTellNumber);
   };
   return (
     <>
