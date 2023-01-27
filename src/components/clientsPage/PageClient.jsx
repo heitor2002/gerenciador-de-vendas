@@ -58,9 +58,9 @@ const PageClient = (props) => {
             <div className="single-client">
               <InformationClient
                 nickname={dataFetchInformations.nickname}
-                city={dataFetchInformations.contact?.city}
-                address={dataFetchInformations.contact?.address}
-                phone={dataFetchInformations.contact?.phone}
+                city={dataFetchInformations.city}
+                address={dataFetchInformations.address}
+                phone={dataFetchInformations.phone}
               />
               {/* <InformationClient /> */}
               <div className="requests-list">

@@ -4,12 +4,10 @@
       "id": 1,
       "name": "Regina Soares",
       "nickname": "Regina Trabalho",
-      "contact": {
-        "phone": 18991027755,
-        "city": "Santo Anastácio",
-        "address": "Rua Dom Sebastião",
-        "addressNumber": 255
-      },
+      "phone": 18991027755,
+      "city": "Santo Anastácio",
+      "address": "Rua Dom Sebastião",
+      "addressNumber": 255,
       "sales": [
         {
           "id": 1981953,
@@ -50,42 +48,10 @@
       ],
       "balance": "",
       "total-sales": 0
-    },
-    {
-      "id": 2,
-      "name": "Ângela Pinheiro",
-      "nickname": "",
-      "status": true,
-      "contact": {
-        "phone": 18991037755,
-        "city": "Santo Anastácio",
-        "address": "Rua Dom Sebastião",
-        "addressNumber": 252
-      },
-      "sales": [
-        {
-          "id": 1981553,
-          "product": "Jeitosinho rosa",
-          "price": 19,
-          "quantity": 3
-        },
-        {
-          "id": 1681951,
-          "product": "Eco Tupper Amarela",
-          "price": 15,
-          "quantity": 5
-        }
-      ],
-      "paymentHistory": [
-        {
-          "date": 0,
-          "payment": 0
-        }
-      ],
-      "balance": "",
-      "total-sales": 0
     }
   ],
+  "paymentHistory": [],
+  "sales": [],
   "requests": [
     {
       "dateRequest": "16/1/2023",

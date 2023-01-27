@@ -7,12 +7,21 @@ const ClientRegisterPage = () => {
   const [clientAddress, setClientAddress] = useState("");
   const [clientNumberAddress, setClientNumberAddress] = useState();
   const [clientTellNumber, setClientTellNumber] = useState();
-  const [clientSales, setClientSales] = useState([])
-  const [clientPaymentHistory, setClientPaymentHistory] = useState([])
+  const [clientSales, setClientSales] = useState([]);
+  const [clientPaymentHistory, setClientPaymentHistory] = useState([]);
 
   const handleSubmitClientRegister = (e) => {
     e.preventDefault();
-    console.log(clientName, clientNickname, clientCity, clientAddress, clientNumberAddress, clientTellNumber);
+    let numAllLetters = clientName.length;
+    let clientKey =
+      clientName
+        .split(" ")
+        .join("")
+        .slice(numAllLetters - 6) +
+      clientTellNumber.slice(clientTellNumber.length - 5) +
+      clientNumberAddress.slice(clientNumberAddress.length - 1);
+    console.log(clientKey);
+    // console.log(clientName, clientNickname, clientCity, clientAddress, clientNumberAddress, clientTellNumber);
   };
   return (
     <>
