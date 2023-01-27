@@ -6,11 +6,23 @@ import PaymentTable from "./PaymentTable";
 
 const PageClient = (props) => {
   const { id } = useParams();
-  const { dataFetchInformations } = fetchClients(
+  const { dataFetchInformations:clientsInformation } = fetchClients(
     "http://localhost:3000/clients/" + id
   );
 
-  const sales = dataFetchInformations.sales;
+  const { dataFetchInformations: paymentHistory } = fetchClients(
+    "http://localhost:3000/paymentHistory"
+  );
+
+  const clientKeyPaymentHistory = clientsInformation.clientKey;
+
+  const filterKey = paymentHistory.filter(item => {
+    return item.clientKeyPaymentHistory == clientKeyPaymentHistory
+  })
+
+  console.log(filterKey)
+
+  const sales = clientsInformation.sales;
   const someValueBalance = sales?.map((item) => {
     let productValue = item.quantity * item.price;
     return productValue;
@@ -25,7 +37,7 @@ const PageClient = (props) => {
   var colorStatus = "";
   var statusCard = "";
 
-  const mapPaymentHistory = dataFetchInformations.paymentHistory?.map(
+  const mapPaymentHistory = clientsInformation.paymentHistory?.map(
     (typeInfo) => {
       return typeInfo.payment;
     }
@@ -38,31 +50,31 @@ const PageClient = (props) => {
     .toFixed(2);
 
   if (addedValue - accumulatedValue >= 0) {
-    dataFetchInformations.balance = "Pago";
+    clientsInformation.balance = "Pago";
     colorStatus = "#47a123";
     statusCard = "Pago";
   } else {
     colorStatus = "#b32917";
-    dataFetchInformations.balance = "Devendo";
+    clientsInformation.balance = "Devendo";
     statusCard = "Devendo";
   }
 
   return (
     <>
       <div className="container">
-        {dataFetchInformations && (
+        {clientsInformation && (
           <>
             <div className="title-page">
-              <h2>{dataFetchInformations.clientName}</h2>
+              <h2>{clientsInformation.clientName}</h2>
             </div>
             <div className="single-client">
               <InformationClient
-                nickname={dataFetchInformations.clientNickname}
-                city={dataFetchInformations.clientCity}
-                address={dataFetchInformations.clientAddress}
-                district={dataFetchInformations.clientDistrict}
-                addressNumber={dataFetchInformations.clientNumberAddress}
-                phone={dataFetchInformations.clientTellNumber}
+                nickname={clientsInformation.clientNickname}
+                city={clientsInformation.clientCity}
+                address={clientsInformation.clientAddress}
+                district={clientsInformation.clientDistrict}
+                addressNumber={clientsInformation.clientNumberAddress}
+                phone={clientsInformation.clientTellNumber}
               />
               {/* <InformationClient /> */}
               <div className="requests-list">
@@ -92,7 +104,7 @@ const PageClient = (props) => {
                 </table>
               </div>
               <PaymentTable
-                status={dataFetchInformations.balance}
+                status={clientsInformation.balance}
                 accumulatedValue={accumulatedValue}
                 addedValue={addedValue}
                 colorStatus={colorStatus}
@@ -107,12 +119,14 @@ const PageClient = (props) => {
                     <th>Excluir elemento</th>
                   </tr>
 
-                  {dataFetchInformations.paymentHistory?.map((infoHistory) => {
+                  {filterKey.map((infoHistory) => {
+                    let datePayment =  infoHistory.datePaymentHistory;
+                    let paymentIntNumber = parseFloat(infoHistory.payment).toFixed(2)
                     return (
                       <>
                         <tr>
-                          <td>{infoHistory.date}</td>
-                          <td>{infoHistory.payment}</td>
+                          <td>{datePayment}</td>
+                          <td>R$ {paymentIntNumber}</td>
                           <td>{}</td>
                           <td>
                             <button className="close-button">

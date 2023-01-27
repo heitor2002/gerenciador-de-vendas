@@ -25,10 +25,10 @@
   ],
   "paymentHistory": [
     {
-      "id": 1,
-      "paymentDate": "10/10/2010",
-      "paymentValue": 20,
-      "clientKey": "res111113"
+      "payment": "10",
+      "datePaymentHistory": "27/1/2022",
+      "clientKeyPaymentHistory": "res111113",
+      "id": 1
     },
     {
       "payment": "10",
@@ -47,6 +47,30 @@
       "datePaymentHistory": "27/1/2023",
       "clientKeyPaymentHistory": "ira231232",
       "id": 4
+    },
+    {
+      "payment": "15",
+      "datePaymentHistory": "27/1/2023",
+      "clientKeyPaymentHistory": "ira231232",
+      "id": 5
+    },
+    {
+      "payment": "14",
+      "datePaymentHistory": "27/1/2023",
+      "clientKeyPaymentHistory": "res111113",
+      "id": 6
+    },
+    {
+      "payment": "20.30",
+      "datePaymentHistory": "27/1/2023",
+      "clientKeyPaymentHistory": "ira231232",
+      "id": 7
+    },
+    {
+      "payment": "20.3",
+      "datePaymentHistory": "27/1/2023",
+      "clientKeyPaymentHistory": "ira231232",
+      "id": 8
     }
   ],
   "sales": [],

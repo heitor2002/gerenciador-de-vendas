@@ -16,8 +16,6 @@ const PaymentTable = (props) => {
     return item.clientKeyPaymentHistory == clientKeyPaymentHistory
   })
 
-  console.log(filterKey)
-
   const [payment, setPayment] = useState(null);
   const [datePaymentHistory, setDatePaymentHistory] = useState(function () {
     var day;
