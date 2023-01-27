@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import fetchClients from "../../fetchClients";
 import SingleClient from "../clientsPage/SingleClient";
+import CardSingleClientSales from "./CardSingleClientSales";
 
 const Sales = () => {
   const { dataFetchInformations } = fetchClients(
@@ -42,7 +43,7 @@ const Sales = () => {
               })
               .map((client) => {
                 return (
-                  <SingleClient
+                  <CardSingleClientSales
                     name={client.clientName}
                     nickname={client.clientNickname}
                     id={client.id}
