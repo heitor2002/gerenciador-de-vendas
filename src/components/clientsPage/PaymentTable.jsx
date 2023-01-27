@@ -42,7 +42,7 @@ const PaymentTable = (props) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(dataUpdateHistory),
-    }).then(() => console.log("Sucess"));
+    }).then(() => window.location.reload());
   };
 
   return (
