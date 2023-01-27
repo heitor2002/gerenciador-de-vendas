@@ -6,7 +6,7 @@ import PaymentTable from "./PaymentTable";
 
 const PageClient = (props) => {
   const { id } = useParams();
-  const { dataFetchInformations:clientsInformation } = fetchClients(
+  const { dataFetchInformations: clientsInformation } = fetchClients(
     "http://localhost:3000/clients/" + id
   );
 
@@ -16,11 +16,19 @@ const PageClient = (props) => {
 
   const clientKeyPaymentHistory = clientsInformation.clientKey;
 
-  const filterKey = paymentHistory.filter(item => {
-    return item.clientKeyPaymentHistory == clientKeyPaymentHistory
-  })
+  const filterKey = paymentHistory.filter((item) => {
+    return item.clientKeyPaymentHistory == clientKeyPaymentHistory;
+  });
 
-  console.log(filterKey)
+  console.log(filterKey);
+
+  const allPayments = filterKey.map((payment) => {
+    return parseFloat(payment.payment);
+  });
+
+  const accumulatedAllPayments = allPayments.reduce((acc, item) => {
+    return acc + item;
+  }, 0);
 
   const sales = clientsInformation.sales;
   const someValueBalance = sales?.map((item) => {
@@ -120,8 +128,10 @@ const PageClient = (props) => {
                   </tr>
 
                   {filterKey.map((infoHistory) => {
-                    let datePayment =  infoHistory.datePaymentHistory;
-                    let paymentIntNumber = parseFloat(infoHistory.payment).toFixed(2)
+                    let datePayment = infoHistory.datePaymentHistory;
+                    let paymentIntNumber = parseFloat(
+                      infoHistory.payment
+                    ).toFixed(2);
                     return (
                       <>
                         <tr>
@@ -142,7 +152,7 @@ const PageClient = (props) => {
               <h2 id="added-value">
                 Valor agregado:{" "}
                 <span style={{ fontSize: "2rem", color: "#47a123" }}>
-                  R$ {addedValue}
+                  R$ {accumulatedAllPayments.toFixed(2)}
                 </span>
               </h2>
             </div>
