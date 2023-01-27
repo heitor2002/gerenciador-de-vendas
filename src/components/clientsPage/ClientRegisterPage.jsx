@@ -5,6 +5,7 @@ const ClientRegisterPage = () => {
   const [clientNickname, setClientNickname] = useState("");
   const [clientCity, setClientCity] = useState("");
   const [clientAddress, setClientAddress] = useState("");
+  const [clientDistrict, setClientDistrict] = useState("");
   const [clientNumberAddress, setClientNumberAddress] = useState();
   const [clientTellNumber, setClientTellNumber] = useState();
   const [clientSales, setClientSales] = useState([]);
@@ -77,6 +78,15 @@ const ClientRegisterPage = () => {
               id="addressNumber"
               placeholder="0000"
               value={clientNumberAddress}
+              onChange={(e) => setClientNumberAddress(e.target.value)}
+              required
+            />
+            <input
+              type="text"
+              name="district"
+              id="district"
+              placeholder="Bairro Independência"
+              value={clientDistrict}
               onChange={(e) => setClientNumberAddress(e.target.value)}
               required
             />
