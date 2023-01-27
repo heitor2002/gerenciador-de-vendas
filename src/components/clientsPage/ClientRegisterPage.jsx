@@ -13,15 +13,35 @@ const ClientRegisterPage = () => {
 
   const handleSubmitClientRegister = (e) => {
     e.preventDefault();
+    //CRIAR CHAVE PARA CLIENTE
     let numAllLetters = clientName.length;
-    let clientKey =
+    const clientKey =
       clientName
         .split(" ")
         .join("")
         .slice(numAllLetters - 6) +
       clientTellNumber.slice(clientTellNumber.length - 5) +
       clientNumberAddress.slice(clientNumberAddress.length - 1);
-    console.log(clientKey);
+    //ENVIAR DADOS PARA DB.JSON
+    const dataClientRegister = {
+      clientName,
+      clientNickname,
+      clientCity,
+      clientAddress,
+      clientDistrict,
+      clientNumberAddress,
+      clientTellNumber,
+      clientKey,
+    };
+    fetch("http://localhost:3000/clients", {
+      method: "Post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataClientRegister),
+    }).then(() => {
+      console.log("Registrado");
+    });
     // console.log(clientName, clientNickname, clientCity, clientAddress, clientNumberAddress, clientTellNumber);
   };
   return (
@@ -87,7 +107,7 @@ const ClientRegisterPage = () => {
               id="district"
               placeholder="Bairro Independência"
               value={clientDistrict}
-              onChange={(e) => setClientNumberAddress(e.target.value)}
+              onChange={(e) => setClientDistrict(e.target.value)}
               required
             />
             <label>Telefone:</label>
