@@ -12,6 +12,7 @@ const InformationClient = (props) => {
         Endereço: <span>{props.address}</span>,
         <span> {props.addressNumber}</span>
       </h3>
+      <h3>Bairro: <span>{props.district}</span></h3>
       <h3>
         Telefone: <span>{props.phone}</span>
       </h3>

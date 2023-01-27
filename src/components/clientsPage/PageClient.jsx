@@ -53,14 +53,16 @@ const PageClient = (props) => {
         {dataFetchInformations && (
           <>
             <div className="title-page">
-              <h2>{dataFetchInformations.name}</h2>
+              <h2>{dataFetchInformations.clientName}</h2>
             </div>
             <div className="single-client">
               <InformationClient
-                nickname={dataFetchInformations.nickname}
-                city={dataFetchInformations.city}
-                address={dataFetchInformations.address}
-                phone={dataFetchInformations.phone}
+                nickname={dataFetchInformations.clientNickname}
+                city={dataFetchInformations.clientCity}
+                address={dataFetchInformations.clientAddress}
+                district={dataFetchInformations.clientDistrict}
+                addressNumber={dataFetchInformations.clientNumberAddress}
+                phone={dataFetchInformations.clientTellNumber}
               />
               {/* <InformationClient /> */}
               <div className="requests-list">

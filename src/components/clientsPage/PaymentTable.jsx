@@ -7,12 +7,7 @@ const PaymentTable = (props) => {
   const { dataFetchInformations } = fetchClients(
     "http://localhost:3000/clients/" + id
   );
-
-  //OBTER TODOS OS DADOS DO CLIENTE
-
-  //GUARDAR EM UMA CONST TODOS ESSES DADOS
-
-  //POR ULTIMO SEPARAR OS DADOS QUE SERÃO ATUALIZADOS --BALANCE & PAYMENTHISTORY--
+  
   const [payment, setPayment] = useState(null);
   const [datePaymentHistory, setDatePaymentHistory] = useState(function () {
     var day;
