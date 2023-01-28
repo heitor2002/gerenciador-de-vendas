@@ -60,8 +60,8 @@ const SingleClientSales = () => {
           <div className="selected-product">
             <div className="card-selected-product">
               <h2>Produto: {selectedProductName}</h2>
-              <h3>Quantidade disponível: {selectedProductQuantity}</h3>
-              <h3>Comprado por: R${selectedProductPrice}</h3>
+              <h3>Quantidade disponível: <span>{selectedProductQuantity}</span></h3>
+              <h3>Comprado por: R$ <span>{selectedProductPrice}</span></h3>
               <form>
                 <label>Preço da venda: R$</label>
                 <input
