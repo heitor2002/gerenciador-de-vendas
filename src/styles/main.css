@@ -556,6 +556,7 @@ header ul a li:hover {
 }
 .flex-content-list-products-for-sale .list-products {
   width: 50%;
+  max-width: 500px;
   max-height: 500px;
   overflow-y: auto;
   padding: 10px 20px;
@@ -580,4 +581,49 @@ header ul a li:hover {
   transform: scale(1.03);
   background-color: rgb(45, 84, 97);
   color: white;
+}
+.flex-content-list-products-for-sale .selected-product {
+  width: 50%;
+  max-width: 500px;
+}
+.flex-content-list-products-for-sale .selected-product .card-selected-product {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(45, 84, 97);
+}
+.flex-content-list-products-for-sale .selected-product .card-selected-product h2 {
+  font-size: 1.6rem;
+  color: rgb(45, 84, 97);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.flex-content-list-products-for-sale .selected-product .card-selected-product h3 {
+  font-size: 1rem;
+  color: rgb(45, 84, 97);
+  font-weight: bold;
+}
+.flex-content-list-products-for-sale .selected-product .card-selected-product form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.flex-content-list-products-for-sale .selected-product .card-selected-product form label {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+.flex-content-list-products-for-sale .selected-product .card-selected-product form input {
+  padding: 5px;
+}
+.flex-content-list-products-for-sale .selected-product .card-selected-product form input[type=submit] {
+  padding: 10px 0;
+  cursor: pointer;
+  background-color: #47a123;
+  border: 0;
+  color: white;
+  font-size: 1.3rem;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+.flex-content-list-products-for-sale .selected-product .card-selected-product form input[type=submit]:hover {
+  background-color: green;
 }/*# sourceMappingURL=main.css.map */

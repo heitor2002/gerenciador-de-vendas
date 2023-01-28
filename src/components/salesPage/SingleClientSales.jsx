@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import fetchClients from "../../fetchClients";
 
@@ -9,6 +10,9 @@ const SingleClientSales = () => {
   const { dataFetchInformations: fetchStock } = fetchClients(
     "http://localhost:3000/requests"
   );
+
+  const [productPrice, setProductPrice] = useState(null)
+  const [productQuantity, setProductQuantity] = useState(1)
 
   const productStockList = fetchStock.map((info) => {
     let arrayProducts = info.productsList;
@@ -36,6 +40,23 @@ const SingleClientSales = () => {
                 )
               })}
             </ul>
+          </div>
+          <div className="selected-product">
+            <div className="card-selected-product">
+              <h2>Produto: </h2>
+              <h3>Quantidade disponível:</h3>
+              <h3>Comprado por: R$</h3>
+              <form>
+                <label>Preço da venda: R$</label>
+                <input type="number" name="sale_price" id="sale_price" value={productPrice}/>
+                <br />
+                <label>Quantidade:</label>
+                <input type="number" name="sale_quantity" id="sale_quantity" value={productQuantity}/>
+                <br />
+                <h3>Valor total da venda: R$</h3>
+                <input type="submit" value="Vender" name="acao" />
+              </form>
+            </div>
           </div>
         </div>
       </div>
