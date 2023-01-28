@@ -46,8 +46,8 @@ const SingleClientSales = () => {
                     <li
                       onClick={() => {
                         setSelectedProductName(productName);
-                        setSelectedProductPrice(productPrice);
-                        setSelectedProductQuantity(productQuantity);
+                        setSelectedProductPrice(parseFloat(productPrice).toFixed(2));
+                        setSelectedProductQuantity(parseInt(productQuantity));
                       }}
                     >
                       {productName}
