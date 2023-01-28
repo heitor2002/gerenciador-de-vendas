@@ -602,6 +602,10 @@ header ul a li:hover {
   color: rgb(45, 84, 97);
   font-weight: bold;
 }
+.flex-content-list-products-for-sale .selected-product .card-selected-product h3 span {
+  color: black;
+  font-size: 1.2rem;
+}
 .flex-content-list-products-for-sale .selected-product .card-selected-product form {
   margin-top: 10px;
   display: flex;
