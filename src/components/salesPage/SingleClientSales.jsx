@@ -19,6 +19,8 @@ const SingleClientSales = () => {
     return arrayProducts;
   });
 
+  var amount = productPrice * productQuantity
+
   const arrayStock = productStockList.flat();
 
   console.log(fetchClient)
@@ -48,12 +50,12 @@ const SingleClientSales = () => {
               <h3>Comprado por: R$</h3>
               <form>
                 <label>Preço da venda: R$</label>
-                <input type="number" name="sale_price" id="sale_price" value={productPrice}/>
+                <input type="number" name="sale_price" id="sale_price" value={productPrice} onChange={(e) => setProductPrice(e.target.value)}/>
                 <br />
                 <label>Quantidade:</label>
-                <input type="number" name="sale_quantity" id="sale_quantity" value={productQuantity}/>
+                <input type="number" name="sale_quantity" id="sale_quantity" value={productQuantity} onChange={(e) => setProductQuantity(e.target.value)}/>
                 <br />
-                <h3>Valor total da venda: R$</h3>
+                <h3>Valor total da venda: R$ {amount.toFixed(2)}</h3>
                 <input type="submit" value="Vender" name="acao" />
               </form>
             </div>
