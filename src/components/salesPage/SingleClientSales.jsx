@@ -26,6 +26,28 @@ const SingleClientSales = () => {
 
   const arrayStock = productStockList.flat();
 
+  const activeOverlay = () => {
+    let overlay = document.querySelector(".confirm-overlay");
+    overlay.classList.add("active-confirm-overlay");
+  };
+
+  const desactiveOverlay = () => {
+    let overlay = document.querySelector(".confirm-overlay")
+    overlay.classList.remove("active-confirm-overlay")
+  }
+
+  const handleSubmitSale = (e) => {
+    e.preventDefault();
+    const verifyPrice = productPrice <= selectedProductPrice;
+    if (verifyPrice) {
+      activeOverlay();
+    } else {
+      const productSold = { selectedProductName };
+      console.log(productSold, verifyPrice);
+      alert("Enviado");
+    }
+  };
+
   // console.log(fetchClient)
   // console.log(arrayStock)
   return (
@@ -46,7 +68,9 @@ const SingleClientSales = () => {
                     <li
                       onClick={() => {
                         setSelectedProductName(productName);
-                        setSelectedProductPrice(parseFloat(productPrice).toFixed(2));
+                        setSelectedProductPrice(
+                          parseFloat(productPrice).toFixed(2)
+                        );
                         setSelectedProductQuantity(parseInt(productQuantity));
                       }}
                     >
@@ -60,9 +84,13 @@ const SingleClientSales = () => {
           <div className="selected-product">
             <div className="card-selected-product">
               <h2>Produto: {selectedProductName}</h2>
-              <h3>Quantidade disponível: <span>{selectedProductQuantity}</span></h3>
-              <h3>Comprado por: R$ <span>{selectedProductPrice}</span></h3>
-              <form>
+              <h3>
+                Quantidade disponível: <span>{selectedProductQuantity}</span>
+              </h3>
+              <h3>
+                Comprado por: R$ <span>{selectedProductPrice}</span>
+              </h3>
+              <form onSubmit={handleSubmitSale}>
                 <label>Preço da venda: R$</label>
                 <input
                   type="number"
@@ -70,6 +98,8 @@ const SingleClientSales = () => {
                   id="sale_price"
                   value={productPrice}
                   onChange={(e) => setProductPrice(e.target.value)}
+                  step="any"
+                  required
                 />
                 <br />
                 <label>Quantidade:</label>
@@ -79,12 +109,30 @@ const SingleClientSales = () => {
                   id="sale_quantity"
                   value={productQuantity}
                   onChange={(e) => setProductQuantity(e.target.value)}
+                  required
                 />
                 <br />
                 <h3>Valor total da venda: R$ {amount.toFixed(2)}</h3>
                 <input type="submit" value="Vender" name="acao" />
               </form>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="confirm-overlay">
+        <div className="confirmation-box">
+          <h2>Atenção!</h2>
+          <p>
+            Você está fazendo uma venda abaixo do valor do produto, não
+            obtendo lucro com a respectiva venda, você tem certeza disso?
+          </p>
+          <div className="confirmation-buttons">
+            <button style={{ backgroundColor: "#b32917" }}>
+              Sim, vender mesmo assim
+            </button>
+            <button style={{ backgroundColor: "rgb(45, 84, 97)" }} onClick={desactiveOverlay}>
+              Cancelar
+            </button>
           </div>
         </div>
       </div>
