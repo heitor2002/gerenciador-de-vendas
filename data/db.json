@@ -47,6 +47,18 @@
       "datePaymentHistory": "27/1/2023",
       "clientKeyPaymentHistory": "res111113",
       "id": 4
+    },
+    {
+      "payment": "15",
+      "datePaymentHistory": "29/1/2023",
+      "clientKeyPaymentHistory": "res111113",
+      "id": 5
+    },
+    {
+      "payment": "34",
+      "datePaymentHistory": "29/1/2023",
+      "clientKeyPaymentHistory": "res111113",
+      "id": 6
     }
   ],
   "sales": [
@@ -63,6 +75,20 @@
       "floatInputQuantity": 2,
       "clientKey": "ira231232",
       "id": 2
+    },
+    {
+      "selectedProductName": "Jeitosinho Rosa",
+      "floatInputPrice": 21,
+      "floatInputQuantity": 3,
+      "clientKey": "ira231232",
+      "id": 3
+    },
+    {
+      "selectedProductName": "Jeitosinho",
+      "floatInputPrice": 20,
+      "floatInputQuantity": 2,
+      "clientKey": "res111113",
+      "id": 4
     }
   ],
   "requests": [

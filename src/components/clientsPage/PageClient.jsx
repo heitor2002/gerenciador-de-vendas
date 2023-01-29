@@ -5,6 +5,7 @@ import { IoMdClose } from "react-icons/io";
 import PaymentTable from "./PaymentTable";
 
 const PageClient = (props) => {
+  //REQUISIÇÕES DE DB.JSON
   const { id } = useParams();
   const { dataFetchInformations: clientsInformation } = fetchClients(
     "http://localhost:3000/clients/" + id
@@ -16,7 +17,9 @@ const PageClient = (props) => {
 
   const { dataFetchInformations: sold } = fetchClients(
     "http://localhost:3000/sales"
-  ); 
+  );
+
+  //MANIPULAÇÃO DE DADOS DE DB.JSON
 
   const clientKeyPaymentHistory = clientsInformation.clientKey;
 
@@ -24,13 +27,9 @@ const PageClient = (props) => {
     return item.clientKeyPaymentHistory == clientKeyPaymentHistory;
   });
 
-  const filterKeySold = sold.filter(item => {
-    return item.clientKey == clientsInformation.clientKey
-  })
-
-  console.log(filterKeySold)
-
-  // console.log(filterKey);
+  const filterKeySold = sold.filter((item) => {
+    return item.clientKey == clientsInformation.clientKey;
+  });
 
   const allPayments = filterKey.map((payment) => {
     return parseFloat(payment.payment);
@@ -40,42 +39,23 @@ const PageClient = (props) => {
     return acc + item;
   }, 0);
 
-  const sales = clientsInformation.sales;
-  const someValueBalance = sales?.map((item) => {
-    let productValue = item.quantity * item.price;
-    return productValue;
+  const debtPayments = filterKeySold.map((item) => {
+    let totalChargePerProduct = item.floatInputPrice * item.floatInputQuantity;
+    return totalChargePerProduct;
   });
 
-  const accumulatedValue = someValueBalance
-    ?.reduce((acc, item) => {
-      return acc + item;
-    }, 0)
-    .toFixed(2);
+  const balance = debtPayments.reduce((acc, item) => {
+    return acc + item;
+  }, 0);
 
-  var colorStatus = "";
-  var statusCard = "";
+  var verifyBalance = accumulatedAllPayments - balance;
 
-  const mapPaymentHistory = clientsInformation.paymentHistory?.map(
-    (typeInfo) => {
-      return typeInfo.payment;
-    }
-  );
+  var colorBalance = "";
+  var statusMessage = "";
+  balance >= 0
+  ? (colorBalance = "#47a123") && (statusMessage = "Pago")
+  : (colorBalance = "#b32917") && (statusMessage = "Devendo");
 
-  const addedValue = mapPaymentHistory
-    ?.reduce((acc, item) => {
-      return acc + item;
-    })
-    .toFixed(2);
-
-  if (addedValue - accumulatedValue >= 0) {
-    clientsInformation.balance = "Pago";
-    colorStatus = "#47a123";
-    statusCard = "Pago";
-  } else {
-    colorStatus = "#b32917";
-    clientsInformation.balance = "Devendo";
-    statusCard = "Devendo";
-  }
 
   return (
     <>
@@ -113,7 +93,8 @@ const PageClient = (props) => {
                         <td>
                           {"R$ "}
                           {(
-                            singleProduct.floatInputQuantity * singleProduct.floatInputPrice
+                            singleProduct.floatInputQuantity *
+                            singleProduct.floatInputPrice
                           ).toFixed(2)}
                         </td>
                       </tr>
@@ -122,10 +103,9 @@ const PageClient = (props) => {
                 </table>
               </div>
               <PaymentTable
-                status={clientsInformation.balance}
-                accumulatedValue={accumulatedValue}
-                addedValue={addedValue}
-                colorStatus={colorStatus}
+                verifyBalance={verifyBalance}
+                colorStatus={colorBalance}
+                statusMessage={statusMessage}
               />
               <div className="payment-history">
                 <h2>Histórico de pagamento:</h2>

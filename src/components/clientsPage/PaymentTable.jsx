@@ -55,7 +55,7 @@ const PaymentTable = (props) => {
         </tr>
         <tr>
           <td style={{ fontWeight: "bold", color: `${props.colorStatus}` }}>
-            R$ {(props.addedValue - props.accumulatedValue).toFixed(2)}
+            R$ {(props.verifyBalance).toFixed(2)}
           </td>
           <td className="payment-buttons">
             <form>
@@ -75,7 +75,7 @@ const PaymentTable = (props) => {
             </form>
           </td>
           <td style={{ fontWeight: "bold", color: `${props.colorStatus}` }}>
-            {props.status}
+            {props.statusMessage}
           </td>
         </tr>
       </table>
