@@ -38,13 +38,15 @@ const SingleClientSales = () => {
 
   const handleSubmitSale = (e) => {
     e.preventDefault();
-    const verifyPrice = productPrice <= selectedProductPrice;
+    let floatInput = parseFloat(productPrice)
+    let floatPrice = parseFloat(selectedProductPrice)
+    let floatQuantity = parseFloat(selectedProductQuantity)
+    const verifyPrice = floatInput <= floatPrice;
     if (verifyPrice) {
       activeOverlay();
     } else {
       const productSold = { selectedProductName };
-      console.log(productSold, verifyPrice);
-      alert("Enviado");
+      alert("Sucess")
     }
   };
 
