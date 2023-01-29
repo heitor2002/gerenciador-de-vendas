@@ -32,21 +32,26 @@ const SingleClientSales = () => {
   };
 
   const desactiveOverlay = () => {
-    let overlay = document.querySelector(".confirm-overlay")
-    overlay.classList.remove("active-confirm-overlay")
-  }
+    let overlay = document.querySelector(".confirm-overlay");
+    overlay.classList.remove("active-confirm-overlay");
+  };
 
   const handleSubmitSale = (e) => {
     e.preventDefault();
-    let floatInput = parseFloat(productPrice)
-    let floatPrice = parseFloat(selectedProductPrice)
-    let floatQuantity = parseFloat(selectedProductQuantity)
-    const verifyPrice = floatInput <= floatPrice;
+    let floatInputPrice = parseFloat(productPrice);
+    let floatPrice = parseFloat(selectedProductPrice);
+    let floatInputQuantity = parseFloat(productQuantity);
+    let floatQuantity = parseFloat(selectedProductQuantity);
+    const verifyPrice = floatInputPrice <= floatPrice;
+    const verifyQuantity =
+    floatInputQuantity < 1 || floatInputQuantity > floatQuantity;
     if (verifyPrice) {
       activeOverlay();
+    } else if (verifyQuantity) {
+      alert("Quantidade menor que 1 ou indisponível no estoque.");
     } else {
       const productSold = { selectedProductName };
-      alert("Sucess")
+      alert("Sucess");
     }
   };
 
@@ -125,14 +130,17 @@ const SingleClientSales = () => {
         <div className="confirmation-box">
           <h2>Atenção!</h2>
           <p>
-            Você está fazendo uma venda abaixo do valor do produto, não
-            obtendo lucro com a respectiva venda, você tem certeza disso?
+            Você está fazendo uma venda abaixo do valor do produto, não obtendo
+            lucro com a respectiva venda, você tem certeza disso?
           </p>
           <div className="confirmation-buttons">
             <button style={{ backgroundColor: "#b32917" }}>
               Sim, vender mesmo assim
             </button>
-            <button style={{ backgroundColor: "rgb(45, 84, 97)" }} onClick={desactiveOverlay}>
+            <button
+              style={{ backgroundColor: "rgb(45, 84, 97)" }}
+              onClick={desactiveOverlay}
+            >
               Cancelar
             </button>
           </div>

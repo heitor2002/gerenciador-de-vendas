@@ -8,7 +8,7 @@ const CardSingleClientSales = (props) => {
         <h2>Apelido: {props.nickname}</h2>
         <h3>Pagamento: {props.status}</h3>
         <Link to={`/sales/${props.id}`}>
-          <button>Vender</button>
+          <button style={{backgroundColor: "#47a123"}}>Vender</button>
         </Link>
       </div>
     </>
