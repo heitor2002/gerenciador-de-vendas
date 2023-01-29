@@ -49,7 +49,15 @@
       "id": 4
     }
   ],
-  "sales": [],
+  "sales": [
+    {
+      "selectedProductName": "Saladeira",
+      "floatInputPrice": 16,
+      "floatInputQuantity": 2,
+      "clientKey": "res111113",
+      "id": 1
+    }
+  ],
   "requests": [
     {
       "dateRequest": "16/1/2023",

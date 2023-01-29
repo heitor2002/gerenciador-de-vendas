@@ -45,17 +45,30 @@ const SingleClientSales = () => {
     const verifyPrice = floatInputPrice <= floatPrice;
     const verifyQuantity =
     floatInputQuantity < 1 || floatInputQuantity > floatQuantity;
+    const clientKey = fetchClient.clientKey
+
+    //VALIDAÇÃO DE PREÇO E QUANTIDADE
+
     if (verifyPrice) {
       activeOverlay();
     } else if (verifyQuantity) {
-      alert("Quantidade menor que 1 ou indisponível no estoque.");
+      console.log("Quantidade menor que 1 ou indisponível no estoque.");
     } else {
-      const productSold = { selectedProductName };
-      alert("Sucess");
+      const productSold = { selectedProductName, floatInputPrice, floatInputQuantity, clientKey };
+      fetch("http://localhost:3000/sales", {
+        method: "POST",
+        headers:{
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(productSold)
+      }).then(() => {
+        console.log("Enviado com sucesso")
+      })
+      // console.log(productSold);
     }
   };
 
-  // console.log(fetchClient)
+  console.log(fetchClient)
   // console.log(arrayStock)
   return (
     <>
