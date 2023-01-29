@@ -50,12 +50,12 @@ const PageClient = (props) => {
 
   var verifyBalance = accumulatedAllPayments - balance;
 
+  //CRIAÇÃO E ESTILIZAÇÃO DE STATUS DE PAGAMENTO DO CLIENTE
   var colorBalance = "";
   var statusMessage = "";
-  balance >= 0
-  ? (colorBalance = "#47a123") && (statusMessage = "Pago")
-  : (colorBalance = "#b32917") && (statusMessage = "Devendo");
-
+  verifyBalance >= 0
+    ? (colorBalance = "#47a123") && (statusMessage = "Pago")
+    : (colorBalance = "#b32917") && (statusMessage = "Devendo");
 
   return (
     <>
