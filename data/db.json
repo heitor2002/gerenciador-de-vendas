@@ -56,6 +56,13 @@
       "floatInputQuantity": 2,
       "clientKey": "res111113",
       "id": 1
+    },
+    {
+      "selectedProductName": "Jeitosinho",
+      "floatInputPrice": 23,
+      "floatInputQuantity": 2,
+      "clientKey": "ira231232",
+      "id": 2
     }
   ],
   "requests": [

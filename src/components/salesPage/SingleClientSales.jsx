@@ -68,7 +68,7 @@ const SingleClientSales = () => {
     }
   };
 
-  console.log(fetchClient)
+  // console.log(fetchClient)
   // console.log(arrayStock)
   return (
     <>

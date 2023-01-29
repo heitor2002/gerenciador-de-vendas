@@ -14,13 +14,23 @@ const PageClient = (props) => {
     "http://localhost:3000/paymentHistory"
   );
 
+  const { dataFetchInformations: sold } = fetchClients(
+    "http://localhost:3000/sales"
+  ); 
+
   const clientKeyPaymentHistory = clientsInformation.clientKey;
 
   const filterKey = paymentHistory.filter((item) => {
     return item.clientKeyPaymentHistory == clientKeyPaymentHistory;
   });
 
-  console.log(filterKey);
+  const filterKeySold = sold.filter(item => {
+    return item.clientKey == clientsInformation.clientKey
+  })
+
+  console.log(filterKeySold)
+
+  // console.log(filterKey);
 
   const allPayments = filterKey.map((payment) => {
     return parseFloat(payment.payment);
@@ -94,16 +104,16 @@ const PageClient = (props) => {
                     <th>Preço Unitário</th>
                     <th>Valor total</th>
                   </tr>
-                  {sales?.map((singleProduct) => {
+                  {filterKeySold.map((singleProduct) => {
                     return (
                       <tr>
-                        <td>{singleProduct.product}</td>
-                        <td>{singleProduct.quantity}</td>
-                        <td>R$ {singleProduct.price.toFixed(2)}</td>
+                        <td>{singleProduct.selectedProductName}</td>
+                        <td>{singleProduct.floatInputQuantity}</td>
+                        <td>R$ {singleProduct.floatInputPrice.toFixed(2)}</td>
                         <td>
                           {"R$ "}
                           {(
-                            singleProduct.quantity * singleProduct.price
+                            singleProduct.floatInputQuantity * singleProduct.floatInputPrice
                           ).toFixed(2)}
                         </td>
                       </tr>
