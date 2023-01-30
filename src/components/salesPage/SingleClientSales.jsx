@@ -44,8 +44,8 @@ const SingleClientSales = () => {
     let floatQuantity = parseFloat(selectedProductQuantity);
     const verifyPrice = floatInputPrice <= floatPrice;
     const verifyQuantity =
-    floatInputQuantity < 1 || floatInputQuantity > floatQuantity;
-    const clientKey = fetchClient.clientKey
+      floatInputQuantity < 1 || floatInputQuantity > floatQuantity;
+    const clientKey = fetchClient.clientKey;
 
     //VALIDAÇÃO DE PREÇO E QUANTIDADE
 
@@ -54,7 +54,19 @@ const SingleClientSales = () => {
     } else if (verifyQuantity) {
       console.log("Quantidade menor que 1 ou indisponível no estoque.");
     } else {
-      const productSold = { selectedProductName, floatInputPrice, floatInputQuantity, clientKey };
+      const productSold = {
+        selectedProductName,
+        floatInputPrice,
+        floatInputQuantity,
+        clientKey,
+      };
+      /*
+      VERIFICAÇÃO PARA RETIRADA DO ESTOQUE:
+      COMPARAR INPUT COM QUANTIDADE DISPONÍVEL;
+      SE {(QUANTIDADE DISPONÍVEL - VALOR DO INPUT) = 0 ==> DELETAR ELEMENTO JSON; }
+      SE NÃO {VERIFICAR O RESULTADO DE (QUANTIDADE DISPONÍVEL - VALOR DO INPUT) E ATUALIZAR ESTOQUE VIA PUT;}
+      */
+      /*
       fetch("http://localhost:3000/sales", {
         method: "POST",
         headers:{
@@ -64,7 +76,9 @@ const SingleClientSales = () => {
       }).then(() => {
         console.log("Enviado com sucesso")
       })
-      // console.log(productSold);
+      */
+      const verifyStockQuantity = floatQuantity;
+      console.log(verifyStockQuantity);
     }
   };
 
