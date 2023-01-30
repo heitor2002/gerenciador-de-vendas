@@ -12,10 +12,6 @@ const PaymentTable = (props) => {
   );
   const clientKeyPaymentHistory = clientsInformation.clientKey;
 
-  const filterKey = paymentHistory.filter(item => {
-    return item.clientKeyPaymentHistory == clientKeyPaymentHistory
-  })
-
   const [payment, setPayment] = useState(null);
   const [datePaymentHistory, setDatePaymentHistory] = useState(function () {
     var day;
@@ -58,7 +54,7 @@ const PaymentTable = (props) => {
             R$ {(props.verifyBalance).toFixed(2)}
           </td>
           <td className="payment-buttons">
-            <form>
+            <form onSubmit={handleSubmitHistoryPayment}>
               <label>R$ </label>
               <input
                 type="number"
@@ -70,7 +66,6 @@ const PaymentTable = (props) => {
               <input
                 type="submit"
                 value="Adicionar"
-                onClick={handleSubmitHistoryPayment}
               />
             </form>
           </td>
