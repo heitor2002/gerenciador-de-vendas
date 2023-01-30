@@ -59,24 +59,6 @@ const PageClient = (props) => {
 
   //EXCLUIR ITEM DO HISTÓRICO DE PAGAMENTO:
 
-  const activeOverlay = () => {
-    let overlay = document.querySelector(".confirm-overlay");
-    overlay.classList.add("active-confirm-overlay");
-  };
-
-  const desactiveOverlay = () => {
-    let overlay = document.querySelector(".confirm-overlay");
-    overlay.classList.remove("active-confirm-overlay");
-  };
-
-  const confirmDeleteOrder = () => {
-    fetch("http://localhost:3000/requests/" + id, {
-      method: "DELETE",
-    }).then(() => {
-      navigate("/requests");
-    });
-  };
-
   const handleDeleteHistoryPayment = (id) => {
     fetch("http://localhost:3000/paymentHistory/" + id, {
       method: "DELETE",
@@ -159,37 +141,14 @@ const PageClient = (props) => {
                           <td>
                             <button
                               className="close-button"
-                              onClick={activeOverlay}
+                              onClick={() =>
+                                handleDeleteHistoryPayment(infoHistory.id)
+                              }
                             >
                               <IoMdClose />
                             </button>
                           </td>
                         </tr>
-                        <div className="confirm-overlay">
-                          <div className="confirmation-box">
-                            <h2>Tem certeza que deseja excluir este pedido?</h2>
-                            <p>
-                              Não será possível recuperar os dados novamente,
-                              portanto, todos os valores do caixa serão
-                              redefinidos de acordo com esta alteração.
-                            </p>
-                            <div className="confirmation-buttons">
-                              <button
-                                style={{ backgroundColor: "#b32917" }}
-                                onClick={() =>
-                                  handleDeleteHistoryPayment(infoHistory.id)
-                                }
-                              >
-                                Sim, desejo excluir
-                              </button>
-                              <button
-                                style={{ backgroundColor: "rgb(45, 84, 97)" }}
-                              >
-                                Cancelar
-                              </button>
-                            </div>
-                          </div>
-                        </div>
                       </>
                     );
                   })}
