@@ -25,141 +25,49 @@
   ],
   "paymentHistory": [
     {
-      "payment": "10",
-      "datePaymentHistory": "27/1/2022",
+      "payment": "6",
+      "datePaymentHistory": "30/1/2023",
       "clientKeyPaymentHistory": "res111113",
       "id": 1
     },
     {
-      "payment": "10.20",
-      "datePaymentHistory": "27/1/2023",
-      "clientKeyPaymentHistory": "ira231232",
+      "payment": "10",
+      "datePaymentHistory": "30/1/2023",
+      "clientKeyPaymentHistory": "res111113",
       "id": 2
-    },
-    {
-      "payment": "30",
-      "datePaymentHistory": "27/1/2023",
-      "clientKeyPaymentHistory": "ira231232",
-      "id": 3
-    },
-    {
-      "payment": "13",
-      "datePaymentHistory": "27/1/2023",
-      "clientKeyPaymentHistory": "res111113",
-      "id": 4
-    },
-    {
-      "payment": "15",
-      "datePaymentHistory": "29/1/2023",
-      "clientKeyPaymentHistory": "res111113",
-      "id": 5
-    },
-    {
-      "payment": "34",
-      "datePaymentHistory": "29/1/2023",
-      "clientKeyPaymentHistory": "res111113",
-      "id": 6
-    },
-    {
-      "payment": "13",
-      "datePaymentHistory": "29/1/2023",
-      "clientKeyPaymentHistory": "ira231232",
-      "id": 7
-    },
-    {
-      "payment": "55.8",
-      "datePaymentHistory": "29/1/2023",
-      "clientKeyPaymentHistory": "ira231232",
-      "id": 8
-    },
-    {
-      "payment": "16",
-      "datePaymentHistory": "29/1/2023",
-      "clientKeyPaymentHistory": "res111113",
-      "id": 9
     }
   ],
   "sales": [
     {
       "selectedProductName": "Saladeira",
-      "floatInputPrice": 16,
-      "floatInputQuantity": 2,
+      "floatInputPrice": 62,
+      "floatInputQuantity": 3,
       "clientKey": "res111113",
       "id": 1
-    },
-    {
-      "selectedProductName": "Jeitosinho",
-      "floatInputPrice": 23,
-      "floatInputQuantity": 2,
-      "clientKey": "ira231232",
-      "id": 2
-    },
-    {
-      "selectedProductName": "Jeitosinho Rosa",
-      "floatInputPrice": 21,
-      "floatInputQuantity": 3,
-      "clientKey": "ira231232",
-      "id": 3
-    },
-    {
-      "selectedProductName": "Jeitosinho",
-      "floatInputPrice": 20,
-      "floatInputQuantity": 2,
-      "clientKey": "res111113",
-      "id": 4
-    },
-    {
-      "selectedProductName": "Saladeira",
-      "floatInputPrice": 16,
-      "floatInputQuantity": 1,
-      "clientKey": "res111113",
-      "id": 5
     }
   ],
   "requests": [
     {
-      "dateRequest": "16/1/2023",
+      "dateRequest": "29/1/2023",
       "productsList": [
         {
-          "productName": "Jeitosinho",
-          "productPrice": "19",
+          "productName": "Saladeira",
+          "productPrice": "50",
           "productQuantity": "3"
         },
         {
-          "productName": "Eco Tupper",
-          "productPrice": "15",
-          "productQuantity": "10"
-        },
-        {
-          "productName": "Saladeira",
-          "productPrice": "15",
-          "productQuantity": "10"
-        }
-      ],
-      "accumulatedRequestValue": "357.00",
-      "id": 1
-    },
-    {
-      "dateRequest": "16/1/2023",
-      "productsList": [
-        {
           "productName": "Jeitosinho Rosa",
-          "productPrice": "19",
-          "productQuantity": "10"
-        },
-        {
-          "productName": "Saladeira Azul",
-          "productPrice": "50",
+          "productPrice": "15",
           "productQuantity": "5"
         },
         {
           "productName": "Eco Tupper",
-          "productPrice": "50",
-          "productQuantity": "5"
+          "productPrice": "19",
+          "productQuantity": "9"
         }
       ],
-      "accumulatedRequestValue": "690.00",
-      "id": 2
+      "accumulatedRequestValue": "396.00",
+      "id": 1
     }
   ]
 }
