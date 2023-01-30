@@ -49,15 +49,28 @@ const FormNewRequest = () => {
 
   const handleSubmitRequest = () => {
     const dataRequest = { dateRequest, productsList, accumulatedRequestValue };
+    
     fetch("http://localhost:3000/requests", {
       method: "Post",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(dataRequest),
-    }).then(() => {
+    })
+    .then(() => {
+      dataRequest.productsList.forEach(item => {
+        let productName = item.productName;
+        let productPrice = parseFloat(item.productPrice);
+        let productQuantity = parseInt(item.productQuantity);
+        const stockProducts = {productName, productPrice, productQuantity}
+        fetch("")
+       })
+    })
+    .then(() => {
       navigate("/requests");
     });
+    
+   
   };
 
   return (
