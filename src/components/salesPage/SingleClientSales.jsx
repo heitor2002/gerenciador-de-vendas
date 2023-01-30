@@ -17,6 +17,8 @@ const SingleClientSales = () => {
   const [selectedProductPrice, setSelectedProductPrice] = useState(0);
   const [selectedProductQuantity, setSelectedProductQuantity] = useState(0);
 
+  
+
   const productStockList = fetchStock.map((info) => {
     let arrayProducts = info.productsList;
     return arrayProducts;
@@ -25,6 +27,8 @@ const SingleClientSales = () => {
   var amount = productPrice * productQuantity;
 
   const arrayStock = productStockList.flat();
+
+  
 
   const activeOverlay = () => {
     let overlay = document.querySelector(".confirm-overlay");
@@ -36,7 +40,7 @@ const SingleClientSales = () => {
     overlay.classList.remove("active-confirm-overlay");
   };
 
-  const handleSubmitSale = (e) => {
+  const handleSubmitSale = (e, id) => {
     e.preventDefault();
     let floatInputPrice = parseFloat(productPrice);
     let floatPrice = parseFloat(selectedProductPrice);
@@ -60,12 +64,18 @@ const SingleClientSales = () => {
         floatInputQuantity,
         clientKey,
       };
-      /*
-      VERIFICAÇÃO PARA RETIRADA DO ESTOQUE:
-      COMPARAR INPUT COM QUANTIDADE DISPONÍVEL;
-      SE {(QUANTIDADE DISPONÍVEL - VALOR DO INPUT) = 0 ==> DELETAR ELEMENTO JSON; }
-      SE NÃO {VERIFICAR O RESULTADO DE (QUANTIDADE DISPONÍVEL - VALOR DO INPUT) E ATUALIZAR ESTOQUE VIA PUT;}
-      */
+      
+      // VERIFICAÇÃO PARA RETIRADA DO ESTOQUE:
+      // COMPARAR INPUT COM QUANTIDADE DISPONÍVEL;
+      let stockDeduction = selectedProductQuantity - floatInputQuantity
+      console.log(stockDeduction)
+
+      // SE {(QUANTIDADE DISPONÍVEL - VALOR DO INPUT) = 0 ==> DELETAR ELEMENTO JSON; }
+      if(stockDeduction = 0){
+        fetch("")
+      }
+      // SE NÃO {VERIFICAR O RESULTADO DE (QUANTIDADE DISPONÍVEL - VALOR DO INPUT) E ATUALIZAR ESTOQUE VIA PUT;}
+      
       /*
       fetch("http://localhost:3000/sales", {
         method: "POST",
@@ -77,13 +87,24 @@ const SingleClientSales = () => {
         console.log("Enviado com sucesso")
       })
       */
-      const verifyStockQuantity = floatQuantity;
-      console.log(verifyStockQuantity);
     }
   };
+  //STATES PARA ESTOQUE
+  // const [productsList, setProductsList] = useState([])
+  const [dateRequest, setDateRequest] = useState("")
+  // console.log(productsList)
+  var productsList = fetchStock.map(item => {
+    return item.productsList
+  })
+  console.log(productsList)
+  console.log(selectedProductName, selectedProductPrice, selectedProductQuantity)
+  const findItem = productsList.find(item => {
+    return item.productName == selectedProductName;
+  })
 
-  // console.log(fetchClient)
-  // console.log(arrayStock)
+  console.log(findItem)
+
+  // console.log(fetchStock)
   return (
     <>
       <div className="container">

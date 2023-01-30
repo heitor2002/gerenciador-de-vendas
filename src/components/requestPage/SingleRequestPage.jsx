@@ -6,9 +6,15 @@ const SingleRequestPage = () => {
   const { dataFetchInformations } = fetchClients(
     "http://localhost:3000/requests/" + id
   );
+  const { dataFetchInformations:dataStock } = fetchClients(
+    "http://localhost:3000/stock"
+  );
   const navigate = useNavigate()
 
   const allProductsRequest = dataFetchInformations.productsList;
+  const keyPassword = dataFetchInformations.passwordStock;
+  const filterProductsPerKey = dataStock.filter(item => item.passwordStock === keyPassword)
+  console.log(filterProductsPerKey)
 
   const activeOverlay = () => {
     let overlay = document.querySelector(".confirm-overlay")
@@ -23,7 +29,15 @@ const SingleRequestPage = () => {
   const confirmDeleteOrder = () => {
     fetch("http://localhost:3000/requests/" + id, {
       method: "DELETE"
-    }).then(() => {
+    })
+    .then(() => {
+      filterProductsPerKey.forEach(item => {
+        fetch("http://localhost:3000/stock/" + item.id , {
+          method: "DELETE"
+        })
+      })
+    })
+    .then(() => {
       navigate("/requests")
     })
   }

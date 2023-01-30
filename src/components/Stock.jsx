@@ -1,16 +1,9 @@
 import fetchClients from "../fetchClients";
 
 const Stock = () => {
-  const { dataFetchInformations } = fetchClients(
-    "http://localhost:3000/requests"
+  const { dataFetchInformations:stockProducts } = fetchClients(
+    "http://localhost:3000/stock"
   );
-
-  const productStockList = dataFetchInformations.map((info) => {
-    let arrayProducts = info.productsList;
-    return arrayProducts;
-  });
-
-  const arrayStock = productStockList.flat();
 
   return (
     <>
@@ -24,7 +17,7 @@ const Stock = () => {
               <th>Produto</th>
               <th>Quantidade</th>
             </tr>
-            {arrayStock.map((info) => {
+            {stockProducts.map((info) => {
               let quantityString = parseInt(info.productQuantity);
               return (
                 <tr>
