@@ -57,6 +57,16 @@ const PageClient = (props) => {
     ? (colorBalance = "#47a123") && (statusMessage = "Pago")
     : (colorBalance = "#b32917") && (statusMessage = "Devendo");
 
+  //EXCLUIR ITEM DO HISTÓRICO DE PAGAMENTO:
+
+  const handleDeleteHistoryPayment = (id) => {
+    fetch("http://localhost:3000/paymentHistory/" + id, {
+      method: "DELETE"
+    }).then(() => {
+      window.location.reload()
+    })
+  }
+
   return (
     <>
       <div className="container">
@@ -129,7 +139,7 @@ const PageClient = (props) => {
                           <td>R$ {paymentIntNumber}</td>
                           <td>{}</td>
                           <td>
-                            <button className="close-button">
+                            <button className="close-button" onClick={() => handleDeleteHistoryPayment(infoHistory.id)}>
                               <IoMdClose />
                             </button>
                           </td>
