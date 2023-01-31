@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
@@ -47,34 +47,48 @@ const FormNewRequest = () => {
     );
   };
 
+  const postSingleProduct = (key) => {
+    productsList.forEach((item) => {
+      let productName = item.productName;
+      let productPrice = parseFloat(item.productPrice);
+      let productQuantity = parseInt(item.productQuantity);
+      const stockProducts = {
+        productName,
+        productPrice,
+        productQuantity,
+        passwordStock: key,
+      };
+
+      fetch("http://localhost:3000/stock", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(stockProducts),
+      });
+  });
+  }
+
   const handleSubmitRequest = () => {
-    let passwordStock = (dateRequest + productsList[0].productPrice*Math.floor(Math.random() * 999999)+ productsList[0].productQuantity*Math.floor(Math.random() * 999999)).split(" ").join("");
-    console.log(passwordStock)
-    const dataRequest = { dateRequest, productsList, accumulatedRequestValue, passwordStock };
+    let passwordStock = (
+      dateRequest +
+      productsList[0].productPrice * Math.floor(Math.random() * 999999) +
+      productsList[0].productQuantity * Math.floor(Math.random() * 999999)
+    )
+      .split(" ")
+      .join("");
+    const dataRequest = {
+      dateRequest,
+      productsList,
+      accumulatedRequestValue,
+      passwordStock,
+    };
 
     fetch("http://localhost:3000/requests", {
       method: "Post",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dataRequest),
-    })
-      .then(() => {
-        dataRequest.productsList.forEach((item) => {
-          let productName = item.productName;
-          let productPrice = parseFloat(item.productPrice);
-          let productQuantity = parseInt(item.productQuantity);
-          const stockProducts = { productName, productPrice, productQuantity, passwordStock };
-          fetch("http://localhost:3000/stock", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(stockProducts),
-          });
-        });
-      })
-      .then(() => {
-        navigate("/requests");
-      });
+    }).then(() => {
+      postSingleProduct(passwordStock)
+    }).then(() => navigate("/requests"));
   };
 
   return (

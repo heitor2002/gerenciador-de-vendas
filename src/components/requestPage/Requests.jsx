@@ -4,8 +4,7 @@ import fetchClients from "../../fetchClients";
 import CardRequest from "./CardRequest";
 
 const Requests = () => {
-  const { dataFetchInformations } = fetchClients("http://localhost:3000/requests");
-  console.log(dataFetchInformations);
+  const { dataFetchInformations:allRequests } = fetchClients("http://localhost:3000/requests");
 
   return (
     <>
@@ -20,7 +19,7 @@ const Requests = () => {
             </button>
           </Link>
           <div className="all-requests">
-            {dataFetchInformations.map((data) => {
+            {allRequests.map((data) => {
               return (
                 <CardRequest
                   dateRequest={data.dateRequest}

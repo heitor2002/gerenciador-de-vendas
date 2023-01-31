@@ -8,7 +8,7 @@ const SingleClientSales = () => {
     "http://localhost:3000/clients/" + id
   );
   const { dataFetchInformations: fetchStock } = fetchClients(
-    "http://localhost:3000/requests"
+    "http://localhost:3000/stock"
   );
 
   const [productPrice, setProductPrice] = useState(null);
@@ -16,19 +16,9 @@ const SingleClientSales = () => {
   const [selectedProductName, setSelectedProductName] = useState("");
   const [selectedProductPrice, setSelectedProductPrice] = useState(0);
   const [selectedProductQuantity, setSelectedProductQuantity] = useState(0);
-
-  
-
-  const productStockList = fetchStock.map((info) => {
-    let arrayProducts = info.productsList;
-    return arrayProducts;
-  });
+  const [selectedProductId, setSelectedProductId] = useState(null);
 
   var amount = productPrice * productQuantity;
-
-  const arrayStock = productStockList.flat();
-
-  
 
   const activeOverlay = () => {
     let overlay = document.querySelector(".confirm-overlay");
@@ -40,7 +30,7 @@ const SingleClientSales = () => {
     overlay.classList.remove("active-confirm-overlay");
   };
 
-  const handleSubmitSale = (e, id) => {
+  const handleSubmitSale = (e) => {
     e.preventDefault();
     let floatInputPrice = parseFloat(productPrice);
     let floatPrice = parseFloat(selectedProductPrice);
@@ -65,46 +55,40 @@ const SingleClientSales = () => {
         clientKey,
       };
       
-      // VERIFICAÇÃO PARA RETIRADA DO ESTOQUE:
-      // COMPARAR INPUT COM QUANTIDADE DISPONÍVEL;
-      let stockDeduction = selectedProductQuantity - floatInputQuantity
-      console.log(stockDeduction)
+      let stockDeduction = selectedProductQuantity - floatInputQuantity;
 
-      // SE {(QUANTIDADE DISPONÍVEL - VALOR DO INPUT) = 0 ==> DELETAR ELEMENTO JSON; }
-      if(stockDeduction = 0){
-        fetch("")
+      if(stockDeduction === 0){
+        fetch("http://localhost:3000/stock/" + selectedProductId, {
+          method: "DELETE"
+        }).then(() => {
+          window.location.reload()
+        })
+      }else{
+        fetch("http://localhost:3000/stock/" + selectedProductId, {
+          method: "PATCH",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({
+            productQuantity: stockDeduction
+          })
+        }).then(() => {
+          window.location.reload()
+        })
       }
-      // SE NÃO {VERIFICAR O RESULTADO DE (QUANTIDADE DISPONÍVEL - VALOR DO INPUT) E ATUALIZAR ESTOQUE VIA PUT;}
+
       
-      /*
-      fetch("http://localhost:3000/sales", {
-        method: "POST",
-        headers:{
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(productSold)
-      }).then(() => {
-        console.log("Enviado com sucesso")
-      })
-      */
+      // fetch("http://localhost:3000/sales", {
+      //   method: "POST",
+      //   headers:{
+      //     "Content-Type": "application/json"
+      //   },
+      //   body: JSON.stringify(productSold)
+      // }).then(() => {
+      //   console.log("Enviado com sucesso")
+      // })
+      
     }
   };
-  //STATES PARA ESTOQUE
-  // const [productsList, setProductsList] = useState([])
-  const [dateRequest, setDateRequest] = useState("")
-  // console.log(productsList)
-  var productsList = fetchStock.map(item => {
-    return item.productsList
-  })
-  console.log(productsList)
-  console.log(selectedProductName, selectedProductPrice, selectedProductQuantity)
-  const findItem = productsList.find(item => {
-    return item.productName == selectedProductName;
-  })
 
-  console.log(findItem)
-
-  // console.log(fetchStock)
   return (
     <>
       <div className="container">
@@ -114,10 +98,11 @@ const SingleClientSales = () => {
         <div className="flex-content-list-products-for-sale">
           <div className="list-products">
             <ul>
-              {arrayStock.map((product) => {
+              {fetchStock.map((product) => {
                 let productQuantity = product.productQuantity;
                 let productPrice = product.productPrice;
                 let productName = product.productName;
+                let productId = product.id;
                 return (
                   <>
                     <li
@@ -127,6 +112,7 @@ const SingleClientSales = () => {
                           parseFloat(productPrice).toFixed(2)
                         );
                         setSelectedProductQuantity(parseInt(productQuantity));
+                        setSelectedProductId(productId);
                       }}
                     >
                       {productName}
