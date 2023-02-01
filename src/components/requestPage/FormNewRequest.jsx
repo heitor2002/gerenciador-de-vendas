@@ -3,6 +3,13 @@ import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
 const FormNewRequest = () => {
+  const ports = {
+    clients: 3000,
+    paymentHistory: 3500,
+    requests: 4000,
+    sales: 4500,
+    stock: 5000
+  }
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(null);
   const [productQuantity, setProductQuantity] = useState(null);
@@ -59,7 +66,7 @@ const FormNewRequest = () => {
         passwordStock: key,
       };
 
-      fetch("http://localhost:3000/stock", {
+      fetch(`http://localhost:${ports.stock}/stock`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(stockProducts),
@@ -82,7 +89,7 @@ const FormNewRequest = () => {
       passwordStock,
     };
 
-    await fetch("http://localhost:3000/requests", {
+    await fetch(`http://localhost:${ports.requests}/requests`, {
       method: "Post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dataRequest),

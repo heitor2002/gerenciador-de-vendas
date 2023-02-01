@@ -4,11 +4,17 @@ import fetchClients from "../../fetchClients";
 import SingleClient from "./SingleClient";
 
 const Clients = () => {
+  const ports = {
+    clients: 3000,
+    paymentHistory: 3500,
+    requests: 4000,
+    sales: 4500,
+    stock: 5000
+  }
   const { dataFetchInformations } = fetchClients(
-    "http://localhost:3000/clients"
+    `http://localhost:${ports.clients}/clients`
   );
   const [searchTerm, setSearchTerm] = useState("");
-  console.log(dataFetchInformations);
 
   var lengthClients = dataFetchInformations.length;
 

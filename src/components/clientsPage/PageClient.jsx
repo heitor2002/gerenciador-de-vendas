@@ -5,18 +5,25 @@ import { IoMdClose } from "react-icons/io";
 import PaymentTable from "./PaymentTable";
 
 const PageClient = (props) => {
+  const ports = {
+    clients: 3000,
+    paymentHistory: 3500,
+    requests: 4000,
+    sales: 4500,
+    stock: 5000
+  }
   //REQUISIÇÕES DE DB.JSON
   const { id } = useParams();
   const { dataFetchInformations: clientsInformation } = fetchClients(
-    "http://localhost:3000/clients/" + id
+    `http://localhost:${ports.clients}/clients/` + id
   );
 
   const { dataFetchInformations: paymentHistory } = fetchClients(
-    "http://localhost:3000/paymentHistory"
+    `http://localhost:${ports.paymentHistory}/paymentHistory`
   );
 
   const { dataFetchInformations: sold } = fetchClients(
-    "http://localhost:3000/sales"
+    `http://localhost:${ports.sales}/sales`
   );
 
   //MANIPULAÇÃO DE DADOS DE DB.JSON
@@ -60,7 +67,7 @@ const PageClient = (props) => {
   //EXCLUIR ITEM DO HISTÓRICO DE PAGAMENTO:
 
   const handleDeleteHistoryPayment = (id) => {
-    fetch("http://localhost:3000/paymentHistory/" + id, {
+    fetch(`http://localhost:${ports.paymentHistory}/paymentHistory/` + id, {
       method: "DELETE",
     }).then(() => {
       window.location.reload();

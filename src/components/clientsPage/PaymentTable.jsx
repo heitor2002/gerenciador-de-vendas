@@ -3,12 +3,19 @@ import { useParams } from "react-router-dom";
 import fetchClients from "../../fetchClients";
 
 const PaymentTable = (props) => {
+  const ports = {
+    clients: 3000,
+    paymentHistory: 3500,
+    requests: 4000,
+    sales: 4500,
+    stock: 5000
+  }
   const { id } = useParams();
   const { dataFetchInformations: paymentHistory } = fetchClients(
-    "http://localhost:3000/paymentHistory"
+    `http://localhost:${ports.paymentHistory}/paymentHistory`
   );
   const { dataFetchInformations: clientsInformation } = fetchClients(
-    "http://localhost:3000/clients/" + id
+    `http://localhost:${ports.clients}/clients/` + id
   );
   const clientKeyPaymentHistory = clientsInformation.clientKey;
 
@@ -32,7 +39,7 @@ const PaymentTable = (props) => {
       datePaymentHistory,
       clientKeyPaymentHistory,
     };
-    fetch("http://localhost:3000/paymentHistory", {
+    fetch(`http://localhost:${ports.paymentHistory}/paymentHistory`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

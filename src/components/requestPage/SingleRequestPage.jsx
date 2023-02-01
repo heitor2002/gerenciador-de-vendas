@@ -2,12 +2,19 @@ import { useNavigate, useParams } from "react-router-dom";
 import fetchClients from "../../fetchClients";
 
 const SingleRequestPage = () => {
+  const ports = {
+    clients: 3000,
+    paymentHistory: 3500,
+    requests: 4000,
+    sales: 4500,
+    stock: 5000
+  }
   const { id } = useParams();
   const { dataFetchInformations } = fetchClients(
-    "http://localhost:3000/requests/" + id
+    `http://localhost:${ports.requests}/requests/` + id
   );
   const { dataFetchInformations:dataStock } = fetchClients(
-    "http://localhost:3000/stock"
+    `http://localhost:${ports.stock}/stock`
   );
   const navigate = useNavigate()
 
@@ -27,12 +34,12 @@ const SingleRequestPage = () => {
   }
 
   const confirmDeleteOrder = async () => {
-    await fetch("http://localhost:3000/requests/" + id, {
+    await fetch(`http://localhost:${ports.requests}/requests/` + id, {
       method: "DELETE"
     })
     .then(() => {
       filterProductsPerKey.forEach(item => {
-        fetch("http://localhost:3000/stock/" + item.id , {
+        fetch(`http://localhost:${ports.clients}/stock/` + item.id , {
           method: "DELETE"
         })
       })

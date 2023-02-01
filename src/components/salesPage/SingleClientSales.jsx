@@ -3,12 +3,19 @@ import { useParams } from "react-router-dom";
 import fetchClients from "../../fetchClients";
 
 const SingleClientSales = () => {
+  const ports = {
+    clients: 3000,
+    paymentHistory: 3500,
+    requests: 4000,
+    sales: 4500,
+    stock: 5000
+  }
   const { id } = useParams();
   const { dataFetchInformations: fetchClient } = fetchClients(
-    "http://localhost:3000/clients/" + id
+    `http://localhost:${ports.clients}/clients/` + id
   );
   const { dataFetchInformations: fetchStock } = fetchClients(
-    "http://localhost:3000/stock"
+    `http://localhost:${ports.stock}/stock`
   );
 
   const [productPrice, setProductPrice] = useState(null);
@@ -58,13 +65,13 @@ const SingleClientSales = () => {
       let stockDeduction = selectedProductQuantity - floatInputQuantity;
 
       if(stockDeduction === 0){
-        fetch("http://localhost:3000/stock/" + selectedProductId, {
+        fetch(`http://localhost:${ports.stock}/stock/` + selectedProductId, {
           method: "DELETE"
         }).then(() => {
           window.location.reload()
         })
       }else{
-        fetch("http://localhost:3000/stock/" + selectedProductId, {
+        fetch(`http://localhost:${ports.stock}/stock/` + selectedProductId, {
           method: "PATCH",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify({
@@ -76,7 +83,7 @@ const SingleClientSales = () => {
       }
 
       
-      fetch("http://localhost:3000/sales", {
+      fetch(`http://localhost:${ports.sales}/sales`, {
         method: "POST",
         headers:{
           "Content-Type": "application/json"

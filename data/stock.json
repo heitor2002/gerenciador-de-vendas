@@ -1,5 +1,109 @@
 {
   "stock": [
-    
+    {
+      "productName": "Produto 1",
+      "productPrice": 5,
+      "productQuantity": 1,
+      "passwordStock": "1/2/20237988701288000",
+      "id": 1
+    },
+    {
+      "productName": "Produto 2",
+      "productPrice": 5,
+      "productQuantity": 5,
+      "passwordStock": "1/2/20237988701288000",
+      "id": 2
+    },
+    {
+      "productName": "Produto 3",
+      "productPrice": 5,
+      "productQuantity": 5,
+      "passwordStock": "1/2/20237988701288000",
+      "id": 3
+    },
+    {
+      "productName": "Produto 4",
+      "productPrice": 5,
+      "productQuantity": 5,
+      "passwordStock": "1/2/20237988701288000",
+      "id": 4
+    },
+    {
+      "productName": "Produto 5",
+      "productPrice": 5,
+      "productQuantity": 5,
+      "passwordStock": "1/2/20237988701288000",
+      "id": 5
+    },
+    {
+      "productName": "Produto 10",
+      "productPrice": 7,
+      "productQuantity": 7,
+      "passwordStock": "1/2/202313872742624587",
+      "id": 6
+    },
+    {
+      "productName": "Produto 11",
+      "productPrice": 7,
+      "productQuantity": 4,
+      "passwordStock": "1/2/202313872742624587",
+      "id": 7
+    },
+    {
+      "productName": "Produto 12",
+      "productPrice": 7,
+      "productQuantity": 7,
+      "passwordStock": "1/2/202313872742624587",
+      "id": 8
+    },
+    {
+      "productName": "Produto 13",
+      "productPrice": 7,
+      "productQuantity": 7,
+      "passwordStock": "1/2/202313872742624587",
+      "id": 9
+    },
+    {
+      "productName": "Produto 14",
+      "productPrice": 7,
+      "productQuantity": 7,
+      "passwordStock": "1/2/202313872742624587",
+      "id": 10
+    },
+    {
+      "productName": "Produto 20",
+      "productPrice": 6,
+      "productQuantity": 6,
+      "passwordStock": "1/2/20237861202931930",
+      "id": 11
+    },
+    {
+      "productName": "Produto 21",
+      "productPrice": 6,
+      "productQuantity": 6,
+      "passwordStock": "1/2/20237861202931930",
+      "id": 12
+    },
+    {
+      "productName": "Produto 22",
+      "productPrice": 6,
+      "productQuantity": 6,
+      "passwordStock": "1/2/20237861202931930",
+      "id": 13
+    },
+    {
+      "productName": "Produto 23",
+      "productPrice": 6,
+      "productQuantity": 6,
+      "passwordStock": "1/2/20237861202931930",
+      "id": 14
+    },
+    {
+      "productName": "Produto 24",
+      "productPrice": 6,
+      "productQuantity": 6,
+      "passwordStock": "1/2/20237861202931930",
+      "id": 15
+    }
   ]
 }

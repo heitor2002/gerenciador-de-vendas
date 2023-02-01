@@ -1,0 +1,18 @@
+{
+  "sales": [
+    {
+      "selectedProductName": "Produto 11",
+      "floatInputPrice": 8,
+      "floatInputQuantity": 3,
+      "clientKey": "res111113",
+      "id": 1
+    },
+    {
+      "selectedProductName": "Produto 1",
+      "floatInputPrice": 6,
+      "floatInputQuantity": 4,
+      "clientKey": "res111113",
+      "id": 2
+    }
+  ]
+}

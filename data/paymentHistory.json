@@ -1,0 +1,10 @@
+{
+  "paymentHistory": [
+    {
+      "payment": "10",
+      "datePaymentHistory": "1/2/2023",
+      "clientKeyPaymentHistory": "res111113",
+      "id": 1
+    }
+  ]
+}
