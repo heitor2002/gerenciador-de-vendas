@@ -26,8 +26,8 @@ const SingleRequestPage = () => {
     overlay.classList.remove("active-confirm-overlay")
   }
 
-  const confirmDeleteOrder = () => {
-    fetch("http://localhost:3000/requests/" + id, {
+  const confirmDeleteOrder = async () => {
+    await fetch("http://localhost:3000/requests/" + id, {
       method: "DELETE"
     })
     .then(() => {

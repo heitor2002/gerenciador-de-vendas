@@ -10,6 +10,8 @@ const Clients = () => {
   const [searchTerm, setSearchTerm] = useState("");
   console.log(dataFetchInformations);
 
+  var lengthClients = dataFetchInformations.length;
+
   return (
     <>
       <div className="container">
@@ -31,7 +33,7 @@ const Clients = () => {
           <Link to={"/client-register"}>
             <button>Adicionar novo cliente</button>
           </Link>
-          <h5>Numero de clientes registrados: 48</h5>
+          <h5>Numero de clientes registrados: {lengthClients}</h5>
           <div className="information-and-filters">
             <select name="filters-clients" id="filters-clients">
               <option value="">Filtrar por:</option>

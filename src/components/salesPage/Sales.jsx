@@ -29,7 +29,6 @@ const Sales = () => {
             }}
           />
           <br />
-          <h5>Numero de clientes registrados: 48</h5>
           <div className="clients-cards">
             {dataFetchInformations
               .filter((value) => {

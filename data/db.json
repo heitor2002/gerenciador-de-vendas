@@ -21,17 +21,6 @@
       "clientTellNumber": "123123123",
       "clientKey": "ira231232",
       "id": 2
-    },
-    {
-      "clientName": "Sandro Souza",
-      "clientNickname": "",
-      "clientCity": "Presidente Prudente",
-      "clientAddress": "São Sebastião",
-      "clientDistrict": "Vila Boa Nova",
-      "clientNumberAddress": "5252",
-      "clientTellNumber": "222222222",
-      "clientKey": "Souza222222",
-      "id": 3
     }
   ],
   "paymentHistory": [
@@ -64,6 +53,36 @@
       "datePaymentHistory": "30/1/2023",
       "clientKeyPaymentHistory": "res111113",
       "id": 10
+    },
+    {
+      "payment": "200",
+      "datePaymentHistory": "1/2/2023",
+      "clientKeyPaymentHistory": "ira231232",
+      "id": 12
+    },
+    {
+      "payment": "4000",
+      "datePaymentHistory": "1/2/2023",
+      "clientKeyPaymentHistory": "ira231232",
+      "id": 13
+    },
+    {
+      "payment": "15",
+      "datePaymentHistory": "1/2/2023",
+      "clientKeyPaymentHistory": "res111113",
+      "id": 14
+    },
+    {
+      "payment": "15",
+      "datePaymentHistory": "1/2/2023",
+      "clientKeyPaymentHistory": "res111113",
+      "id": 15
+    },
+    {
+      "payment": "50",
+      "datePaymentHistory": "1/2/2023",
+      "clientKeyPaymentHistory": "res111113",
+      "id": 16
     }
   ],
   "sales": [
@@ -80,8 +99,134 @@
       "floatInputQuantity": 3,
       "clientKey": "res111113",
       "id": 2
+    },
+    {
+      "selectedProductName": "Produto 25",
+      "floatInputPrice": 22,
+      "floatInputQuantity": 1,
+      "clientKey": "ira231232",
+      "id": 3
+    },
+    {
+      "selectedProductName": "Produto 21",
+      "floatInputPrice": 22,
+      "floatInputQuantity": 200,
+      "clientKey": "ira231232",
+      "id": 4
+    },
+    {
+      "selectedProductName": "Produto 21",
+      "floatInputPrice": 26,
+      "floatInputQuantity": 11,
+      "clientKey": "res111113",
+      "id": 5
+    },
+    {
+      "selectedProductName": "Produto 23",
+      "floatInputPrice": 23,
+      "floatInputQuantity": 20,
+      "clientKey": "ira231232",
+      "id": 6
+    },
+    {
+      "selectedProductName": "Produto 22",
+      "floatInputPrice": 23,
+      "floatInputQuantity": 15,
+      "clientKey": "res111113",
+      "id": 7
+    },
+    {
+      "selectedProductName": "Produto 22",
+      "floatInputPrice": 23,
+      "floatInputQuantity": 4,
+      "clientKey": "res111113",
+      "id": 8
     }
   ],
-  "requests": [],
-  "stock": []
+  "requests": [
+    {
+      "dateRequest": "1/2/2023",
+      "productsList": [
+        {
+          "productName": "Produto 21",
+          "productPrice": "21",
+          "productQuantity": "211"
+        },
+        {
+          "productName": "Produto 22",
+          "productPrice": "21",
+          "productQuantity": "21"
+        },
+        {
+          "productName": "Produto 23",
+          "productPrice": "21",
+          "productQuantity": "21"
+        },
+        {
+          "productName": "Produto 24",
+          "productPrice": "21",
+          "productQuantity": "21"
+        },
+        {
+          "productName": "Produto 25",
+          "productPrice": "21",
+          "productQuantity": "21"
+        }
+      ],
+      "accumulatedRequestValue": "6195.00",
+      "passwordStock": "1/2/202320717193117966724",
+      "id": 1
+    }
+  ],
+  "stock": [
+    {
+      "productName": "Produto 22",
+      "productPrice": 21,
+      "productQuantity": 21,
+      "passwordStock": "1/2/202320717193117966724",
+      "id": 2
+    },
+    {
+      "productName": "Produto 23",
+      "productPrice": 21,
+      "productQuantity": 1,
+      "passwordStock": "1/2/202320717193117966724",
+      "id": 3
+    },
+    {
+      "productName": "Produto 24",
+      "productPrice": 21,
+      "productQuantity": 21,
+      "passwordStock": "1/2/202320717193117966724",
+      "id": 4
+    },
+    {
+      "productName": "Produto 22",
+      "productPrice": 21,
+      "productQuantity": 2,
+      "passwordStock": "1/2/202320717193117966724",
+      "id": 5
+    },
+    {
+      "productName": "Produto 23",
+      "productPrice": 21,
+      "productQuantity": 21,
+      "passwordStock": "1/2/202320717193117966724",
+      "id": 6
+    },
+    {
+      "productName": "Produto 24",
+      "productPrice": 21,
+      "productQuantity": 21,
+      "passwordStock": "1/2/202320717193117966724",
+      "id": 7
+    },
+    {
+      "productName": "Produto 25",
+      "productPrice": 21,
+      "productQuantity": 20,
+      "passwordStock": "1/2/202320717193117966724",
+      "id": 8
+    }
+  ]
 }

@@ -76,15 +76,13 @@ const SingleClientSales = () => {
       }
 
       
-      // fetch("http://localhost:3000/sales", {
-      //   method: "POST",
-      //   headers:{
-      //     "Content-Type": "application/json"
-      //   },
-      //   body: JSON.stringify(productSold)
-      // }).then(() => {
-      //   console.log("Enviado com sucesso")
-      // })
+      fetch("http://localhost:3000/sales", {
+        method: "POST",
+        headers:{
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(productSold)
+      })
       
     }
   };

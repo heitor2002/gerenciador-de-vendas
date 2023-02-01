@@ -47,8 +47,8 @@ const FormNewRequest = () => {
     );
   };
 
-  const postSingleProduct = (key) => {
-    productsList.forEach((item) => {
+  const postSingleProduct = async (key) => {
+    await productsList.forEach((item) => {
       let productName = item.productName;
       let productPrice = parseFloat(item.productPrice);
       let productQuantity = parseInt(item.productQuantity);
@@ -67,7 +67,7 @@ const FormNewRequest = () => {
   });
   }
 
-  const handleSubmitRequest = () => {
+  const handleSubmitRequest = async () => {
     let passwordStock = (
       dateRequest +
       productsList[0].productPrice * Math.floor(Math.random() * 999999) +
@@ -82,7 +82,7 @@ const FormNewRequest = () => {
       passwordStock,
     };
 
-    fetch("http://localhost:3000/requests", {
+    await fetch("http://localhost:3000/requests", {
       method: "Post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dataRequest),
