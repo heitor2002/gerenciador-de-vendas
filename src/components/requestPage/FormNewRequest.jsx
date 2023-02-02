@@ -8,8 +8,8 @@ const FormNewRequest = () => {
     paymentHistory: 3500,
     requests: 4000,
     sales: 4500,
-    stock: 5000
-  }
+    stock: 5000,
+  };
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(null);
   const [productQuantity, setProductQuantity] = useState(null);
@@ -54,8 +54,10 @@ const FormNewRequest = () => {
     );
   };
 
-  const postSingleProduct = async (key) => {
-    await productsList.forEach((item) => {
+  const singleProducts = [];
+  const postSingleProduct = (key) => {
+    var indexProduct = -1;
+    productsList.forEach((item) => {
       let productName = item.productName;
       let productPrice = parseFloat(item.productPrice);
       let productQuantity = parseInt(item.productQuantity);
@@ -66,13 +68,20 @@ const FormNewRequest = () => {
         passwordStock: key,
       };
 
-      fetch(`http://localhost:${ports.stock}/stock`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(stockProducts),
-      });
-  });
-  }
+      singleProducts.push(stockProducts);
+    });
+    setInterval(() => {
+      // let indexProduct = 0;
+      if (indexProduct < singleProducts.length - 1) {
+        indexProduct++;
+        fetch(`http://localhost:${ports.stock}/stock`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(singleProducts[indexProduct]),
+        });
+      }
+    }, 1000);
+  };
 
   const handleSubmitRequest = async () => {
     let passwordStock = (
@@ -93,9 +102,11 @@ const FormNewRequest = () => {
       method: "Post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dataRequest),
-    }).then(() => {
-      postSingleProduct(passwordStock)
-    }).then(() => navigate("/requests"));
+    })
+      .then(() => {
+        postSingleProduct(passwordStock);
+      })
+      .then(() => navigate("/requests"));
   };
 
   return (
