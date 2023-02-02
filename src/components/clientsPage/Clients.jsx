@@ -14,9 +14,20 @@ const Clients = () => {
   const { dataFetchInformations } = fetchClients(
     `http://localhost:${ports.clients}/clients`
   );
+
   const [searchTerm, setSearchTerm] = useState("");
 
   var lengthClients = dataFetchInformations.length;
+
+  // const alphabetOrder = sort((x,y) => {
+  //   let a = x.clientName.toUpperCase(),
+  //   b = y.clientName.toUpperCase();
+  //   return a == b ? 0 : a > b ? 1 : -1
+  // })
+
+  // const normalOrder = sort();
+
+  // var order = normalOrder;
 
   return (
     <>
@@ -59,6 +70,10 @@ const Clients = () => {
                 ) {
                   return value;
                 }
+              }).sort((x,y) => {
+                let a = x.clientName.toUpperCase(),
+                b = y.clientName.toUpperCase();
+                return a == b ? 0 : a > b ? 1 : -1
               })
               .map((client) => {
                 return (

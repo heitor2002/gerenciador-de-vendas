@@ -70,8 +70,10 @@ const FormNewRequest = () => {
 
       singleProducts.push(stockProducts);
     });
+
+    //TIMER PARA ENVIO DE DADOS PARA O ESTOQUE.
+
     setInterval(() => {
-      // let indexProduct = 0;
       if (indexProduct < singleProducts.length - 1) {
         indexProduct++;
         fetch(`http://localhost:${ports.stock}/stock`, {

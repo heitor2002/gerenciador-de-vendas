@@ -39,7 +39,7 @@ const SingleRequestPage = () => {
     })
     .then(() => {
       filterProductsPerKey.forEach(item => {
-        fetch(`http://localhost:${ports.clients}/stock/` + item.id , {
+        fetch(`http://localhost:${ports.stock}/stock/` + item.id , {
           method: "DELETE"
         })
       })
