@@ -45,9 +45,14 @@ const Balance = () => {
     .reduce((acc, item) => {
       return acc + item;
     }, 0);
-    
+
   const outstandingPayments = allSalesValue - allPaymentHistory;
   const totalSalesProjection = allPaymentHistory + outstandingPayments;
+
+  var colorBalance = "";
+  allPaymentHistory - allRequestsValue < 0
+    ? (colorBalance = "red")
+    : (colorBalance = "green");
 
   return (
     <>
