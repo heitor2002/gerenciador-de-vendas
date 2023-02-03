@@ -15,6 +15,10 @@ const Balance = () => {
     `http://localhost:${ports.requests}/requests`
   );
 
+  const { dataFetchInformations: paymentHistory } = fetchClients(
+    `http://localhost:${ports.paymentHistory}/paymentHistory`
+  );
+
   //MAPEANDO E SOMANDO TODAS AS VENDAS
   const allSalesValue = sales
     .map((item) => {
@@ -33,12 +37,55 @@ const Balance = () => {
       return acc + item;
     }, 0);
 
+  //MAPEANDO HISTÓRICO DE PAGAMENTO
+  const allPaymentHistory = paymentHistory
+    .map((item) => {
+      return parseFloat(item.payment);
+    })
+    .reduce((acc, item) => {
+      return acc + item;
+    }, 0);
+
+  // console.log(allPaymentHistory)
+  // console.log(allSalesValue)
+//   console.log(allSalesValue - allPaymentHistory);
+  const outstandingPayments = allSalesValue - allPaymentHistory;
+  const totalSalesProjection = allPaymentHistory + outstandingPayments
+
   return (
     <>
-      <div className="requests-sales-payments">
-        <h2>Soma total de pedidos: R$<span>{allRequestsValue.toFixed(2)}</span></h2>
-        <h2>Vendas realizadas: R$<span>{allSalesValue.toFixed(2)}</span></h2>
-        <h2>Pagamentos pendentes: R$<span></span></h2>
+      <div className="general-information">
+        <h2>
+          Soma total de pedidos: R$<span>{allRequestsValue.toFixed(2)}</span>
+        </h2>
+        <h2>
+          Vendas realizadas: R$
+          <span>
+            {allPaymentHistory.toFixed(2)}{" "}
+            <span
+              style={{
+                fontSize: "1.3rem",
+                color: "#ccc",
+              }}
+            >
+              +{outstandingPayments.toFixed(2)}
+            </span>
+          </span>
+        </h2>
+        <h2>
+          Pagamentos pendentes: R$
+          <span>{outstandingPayments.toFixed(2)}</span>
+        </h2>
+        <h2>
+          Projeção total das vendas: R$
+          <span>
+            {totalSalesProjection.toFixed(
+              2
+            )}
+          </span>
+        </h2>
+        <h2>Saldo total: R$<span>{(allPaymentHistory - allRequestsValue).toFixed(2)}</span></h2>
+        <h2>Saldo total projetado: R$<span>{(totalSalesProjection - allRequestsValue).toFixed(2)}</span></h2>
       </div>
     </>
   );
