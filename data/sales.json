@@ -1,3 +1,32 @@
 {
-  "sales": []
+  "sales": [
+    {
+      "selectedProductName": "Produto 1",
+      "floatInputPrice": 10,
+      "floatInputQuantity": 3,
+      "clientKey": "res111113",
+      "id": 1
+    },
+    {
+      "selectedProductName": "Produto 3",
+      "floatInputPrice": 10,
+      "floatInputQuantity": 3,
+      "clientKey": "ira231232",
+      "id": 2
+    },
+    {
+      "selectedProductName": "Produto 5",
+      "floatInputPrice": 8,
+      "floatInputQuantity": 4,
+      "clientKey": "res111113",
+      "id": 3
+    },
+    {
+      "selectedProductName": "Produto 4",
+      "floatInputPrice": 7,
+      "floatInputQuantity": 1,
+      "clientKey": "res111113",
+      "id": 4
+    }
+  ]
 }

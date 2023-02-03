@@ -4,14 +4,14 @@ import InformationClient from "./InformationClient";
 import { IoMdClose } from "react-icons/io";
 import PaymentTable from "./PaymentTable";
 
-const PageClient = (props) => {
+const PageClient = () => {
   const ports = {
     clients: 3000,
     paymentHistory: 3500,
     requests: 4000,
     sales: 4500,
-    stock: 5000
-  }
+    stock: 5000,
+  };
   //REQUISIÇÕES DE DB.JSON
   const { id } = useParams();
   const { dataFetchInformations: clientsInformation } = fetchClients(

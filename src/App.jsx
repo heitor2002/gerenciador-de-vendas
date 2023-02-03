@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Sales from "./components/salesPage/Sales";
 import Clientes from "./components/clientsPage/Clients";
 import Stock from "./components/Stock";
-import Analytics from "./components/Analytics";
+import Analytics from "./components/analyticsPage/Analytics";
 import PageClient from "./components/clientsPage/PageClient";
 import Requests from "./components/requestPage/Requests";
 import FormRequests from "./components/requestPage/FormRequests";

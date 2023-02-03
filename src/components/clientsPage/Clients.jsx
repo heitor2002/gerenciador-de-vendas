@@ -9,25 +9,29 @@ const Clients = () => {
     paymentHistory: 3500,
     requests: 4000,
     sales: 4500,
-    stock: 5000
-  }
+    stock: 5000,
+  };
   const { dataFetchInformations } = fetchClients(
     `http://localhost:${ports.clients}/clients`
   );
 
+  // const { dataFetchInformations: sales} = fetchClients("http://localhost:4500/sales")
+  // const { dataFetchInformations: paymentHistory } = fetchClients("http://localhost:3500/paymentHistory")
+
   const [searchTerm, setSearchTerm] = useState("");
+  const [filterClient, setFilterClient] = useState("alphabet")
 
   var lengthClients = dataFetchInformations.length;
 
-  // const alphabetOrder = sort((x,y) => {
+  // const alphabetOrder = dataFetchInformations.sort((x, y) => {
   //   let a = x.clientName.toUpperCase(),
-  //   b = y.clientName.toUpperCase();
-  //   return a == b ? 0 : a > b ? 1 : -1
-  // })
+  //     b = y.clientName.toUpperCase();
+  //   return a == b ? 0 : a > b ? 1 : -1;
+  // });
 
-  // const normalOrder = sort();
+  const normalOrder = dataFetchInformations;
 
-  // var order = normalOrder;
+  var order = normalOrder;
 
   return (
     <>
@@ -52,28 +56,26 @@ const Clients = () => {
           </Link>
           <h5>Numero de clientes registrados: {lengthClients}</h5>
           <div className="information-and-filters">
-            <select name="filters-clients" id="filters-clients">
+            <select name="filters-clients" id="filters-clients" value={filterClient} onChange={(e) => setFilterClient(e.target.value)}>
               <option value="">Filtrar por:</option>
-              <option value="">Devendo</option>
-              <option value="">Ordem Alfabética</option>
-              <option value="">Maior consumidor</option>
-              <option value="">Menor consumidor</option>
+              <option value="debit">Devendo</option>
+              <option value="alphabet">Ordem Alfabética</option>
+              <option value="more">Maior consumidor</option>
+              <option value="less">Menor consumidor</option>
             </select>
           </div>
           <div className="clients-cards">
-            {dataFetchInformations
+            {normalOrder
               .filter((value) => {
                 if (searchTerm == "") {
                   return value;
                 } else if (
-                  value.clientName.toLowerCase().includes(searchTerm.toLowerCase())
+                  value.clientName
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase())
                 ) {
                   return value;
                 }
-              }).sort((x,y) => {
-                let a = x.clientName.toUpperCase(),
-                b = y.clientName.toUpperCase();
-                return a == b ? 0 : a > b ? 1 : -1
               })
               .map((client) => {
                 return (
@@ -81,7 +83,7 @@ const Clients = () => {
                     name={client.clientName}
                     nickname={client.clientNickname}
                     id={client.id}
-                    balance={client.balance}
+                    status={client.balance}
                   />
                 );
               })}

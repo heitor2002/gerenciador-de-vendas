@@ -2,9 +2,21 @@
   "paymentHistory": [
     {
       "payment": "10",
-      "datePaymentHistory": "1/2/2023",
+      "datePaymentHistory": "3/2/2023",
       "clientKeyPaymentHistory": "res111113",
       "id": 1
+    },
+    {
+      "payment": "5",
+      "datePaymentHistory": "3/2/2023",
+      "clientKeyPaymentHistory": "ira231232",
+      "id": 2
+    },
+    {
+      "payment": "8",
+      "datePaymentHistory": "3/2/2023",
+      "clientKeyPaymentHistory": "res111113",
+      "id": 3
     }
   ]
 }
