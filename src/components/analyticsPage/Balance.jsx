@@ -18,6 +18,10 @@ const Balance = () => {
         return acc + item;
     })
 
+    const mapAllRequestsValue = requests.map(item => {
+        return parseFloat(item.accumulatedRequestValue)
+    })
+
     console.log(someAllSales)
     return (
         <>

@@ -32,6 +32,39 @@
       "accumulatedRequestValue": "125.00",
       "passwordStock": "3/2/20233802825468715",
       "id": 1
+    },
+    {
+      "dateRequest": "3/2/2023",
+      "productsList": [
+        {
+          "productName": "Produto 10",
+          "productPrice": "10",
+          "productQuantity": "10"
+        },
+        {
+          "productName": "Produto 11",
+          "productPrice": "10",
+          "productQuantity": "10"
+        },
+        {
+          "productName": "Produto 12",
+          "productPrice": "10",
+          "productQuantity": "10"
+        },
+        {
+          "productName": "Produto 13",
+          "productPrice": "10",
+          "productQuantity": "10"
+        },
+        {
+          "productName": "Produto 14",
+          "productPrice": "10",
+          "productQuantity": "10"
+        }
+      ],
+      "accumulatedRequestValue": "500.00",
+      "passwordStock": "3/2/202327612504373790",
+      "id": 2
     }
   ]
 }
