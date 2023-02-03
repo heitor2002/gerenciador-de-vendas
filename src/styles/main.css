@@ -631,4 +631,17 @@ header ul a li:hover {
 }
 .flex-content-list-products-for-sale .selected-product .card-selected-product form input[type=submit]:hover {
   background-color: green;
+}
+
+.general-information {
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px 2%;
+}
+.general-information .gap-information {
+  margin-bottom: 30px;
+}
+.general-information .gap-information h2 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
 }/*# sourceMappingURL=main.css.map */
