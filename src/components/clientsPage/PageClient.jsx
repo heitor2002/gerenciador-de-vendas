@@ -6,24 +6,21 @@ import PaymentTable from "./PaymentTable";
 
 const PageClient = () => {
   const ports = {
-    clients: 3000,
-    paymentHistory: 3500,
-    requests: 4000,
-    sales: 4500,
+    data: 3000,
     stock: 5000,
   };
   //REQUISIÇÕES DE DB.JSON
   const { id } = useParams();
   const { dataFetchInformations: clientsInformation } = fetchClients(
-    `http://localhost:${ports.clients}/clients/` + id
+    `http://localhost:${ports.data}/clients/` + id
   );
 
   const { dataFetchInformations: paymentHistory } = fetchClients(
-    `http://localhost:${ports.paymentHistory}/paymentHistory`
+    `http://localhost:${ports.data}/paymentHistory`
   );
 
   const { dataFetchInformations: sold } = fetchClients(
-    `http://localhost:${ports.sales}/sales`
+    `http://localhost:${ports.data}/sales`
   );
 
   //MANIPULAÇÃO DE DADOS DE DB.JSON
@@ -67,7 +64,7 @@ const PageClient = () => {
   //EXCLUIR ITEM DO HISTÓRICO DE PAGAMENTO:
 
   const handleDeleteHistoryPayment = (id) => {
-    fetch(`http://localhost:${ports.paymentHistory}/paymentHistory/` + id, {
+    fetch(`http://localhost:${ports.data}/paymentHistory/` + id, {
       method: "DELETE",
     }).then(() => {
       window.location.reload();

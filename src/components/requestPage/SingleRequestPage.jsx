@@ -3,15 +3,12 @@ import fetchClients from "../../fetchClients";
 
 const SingleRequestPage = () => {
   const ports = {
-    clients: 3000,
-    paymentHistory: 3500,
-    requests: 4000,
-    sales: 4500,
+    data: 3000,
     stock: 5000
   }
   const { id } = useParams();
   const { dataFetchInformations } = fetchClients(
-    `http://localhost:${ports.requests}/requests/` + id
+    `http://localhost:${ports.data}/requests/` + id
   );
   const { dataFetchInformations:dataStock } = fetchClients(
     `http://localhost:${ports.stock}/stock`
@@ -34,7 +31,7 @@ const SingleRequestPage = () => {
   }
 
   const confirmDeleteOrder = async () => {
-    await fetch(`http://localhost:${ports.requests}/requests/` + id, {
+    await fetch(`http://localhost:${ports.data}/requests/` + id, {
       method: "DELETE"
     })
     .then(() => {

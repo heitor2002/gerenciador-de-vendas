@@ -4,18 +4,15 @@ import fetchClients from "../../fetchClients";
 
 const PaymentTable = (props) => {
   const ports = {
-    clients: 3000,
-    paymentHistory: 3500,
-    requests: 4000,
-    sales: 4500,
+    data: 3000,
     stock: 5000
   }
   const { id } = useParams();
   const { dataFetchInformations: paymentHistory } = fetchClients(
-    `http://localhost:${ports.paymentHistory}/paymentHistory`
+    `http://localhost:${ports.data}/paymentHistory`
   );
   const { dataFetchInformations: clientsInformation } = fetchClients(
-    `http://localhost:${ports.clients}/clients/` + id
+    `http://localhost:${ports.data}/clients/` + id
   );
   const clientKeyPaymentHistory = clientsInformation.clientKey;
 
@@ -39,7 +36,7 @@ const PaymentTable = (props) => {
       datePaymentHistory,
       clientKeyPaymentHistory,
     };
-    fetch(`http://localhost:${ports.paymentHistory}/paymentHistory`, {
+    fetch(`http://localhost:${ports.data}/paymentHistory`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

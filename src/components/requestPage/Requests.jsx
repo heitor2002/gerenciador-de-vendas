@@ -5,14 +5,11 @@ import CardRequest from "./CardRequest";
 
 const Requests = () => {
   const ports = {
-    clients: 3000,
-    paymentHistory: 3500,
-    requests: 4000,
-    sales: 4500,
+    data: 3000,
     stock: 5000,
   };
   const { dataFetchInformations: allRequests } = fetchClients(
-    `http://localhost:${ports.requests}/requests`
+    `http://localhost:${ports.data}/requests`
   );
 
   return (

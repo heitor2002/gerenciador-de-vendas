@@ -2,21 +2,22 @@ import fetchClients from "../../fetchClients";
 
 const Balance = () => {
   const ports = {
-    clients: 3000,
-    paymentHistory: 3500,
-    requests: 4000,
-    sales: 4500,
+    data: 3000,
     stock: 5000,
   };
   const { dataFetchInformations: sales } = fetchClients(
-    `http://localhost:${ports.sales}/sales`
+    `http://localhost:${ports.data}/sales`
   );
   const { dataFetchInformations: requests } = fetchClients(
-    `http://localhost:${ports.requests}/requests`
+    `http://localhost:${ports.data}/requests`
   );
 
   const { dataFetchInformations: paymentHistory } = fetchClients(
-    `http://localhost:${ports.paymentHistory}/paymentHistory`
+    `http://localhost:${ports.data}/paymentHistory`
+  );
+
+  const { dataFetchInformations: stock } = fetchClients(
+    `http://localhost:${ports.stock}/stock`
   );
 
   //MAPEANDO E SOMANDO TODAS AS VENDAS
@@ -46,13 +47,26 @@ const Balance = () => {
       return acc + item;
     }, 0);
 
+    const stockValue = stock.map(item => {
+      return item.productPrice * item.productQuantity
+    }).reduce((acc, item) => {
+      return acc + item;
+    }, 0)
+
+    console.log(stockValue)
+
   const outstandingPayments = allSalesValue - allPaymentHistory;
   const totalSalesProjection = allPaymentHistory + outstandingPayments;
 
-  var colorBalance = "";
+  var projectedTotalBalanceColor = "";
+  var totalBalanceColor = "";
   allPaymentHistory - allRequestsValue < 0
-    ? (colorBalance = "red")
-    : (colorBalance = "green");
+    ? (projectedTotalBalanceColor = "#b32917")
+    : (projectedTotalBalanceColor = "#47a123");
+
+  allPaymentHistory - allRequestsValue < 0
+    ? (totalBalanceColor = "#b32917")
+    : (totalBalanceColor = "#47a123");
 
   return (
     <>
@@ -89,11 +103,13 @@ const Balance = () => {
         <div className="gap-information">
           <h2>
             Saldo total: R$
-            <span>{(allPaymentHistory - allRequestsValue).toFixed(2)}</span>
+            <span style={{ color: totalBalanceColor }}>{(allPaymentHistory - allRequestsValue).toFixed(2)}</span>
           </h2>
           <h2>
             Saldo total projetado: R$
-            <span>{(totalSalesProjection - allRequestsValue).toFixed(2)}</span>
+            <span style={{ color: projectedTotalBalanceColor }}>
+              {(totalSalesProjection - allRequestsValue).toFixed(2)}
+            </span>
           </h2>
         </div>
       </div>

@@ -5,14 +5,11 @@ import SingleClient from "./SingleClient";
 
 const Clients = () => {
   const ports = {
-    clients: 3000,
-    paymentHistory: 3500,
-    requests: 4000,
-    sales: 4500,
+    data: 3000,
     stock: 5000,
   };
   const { dataFetchInformations } = fetchClients(
-    `http://localhost:${ports.clients}/clients`
+    `http://localhost:${ports.data}/clients`
   );
 
   // const { dataFetchInformations: sales} = fetchClients("http://localhost:4500/sales")

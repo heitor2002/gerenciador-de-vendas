@@ -5,8 +5,12 @@ import SingleClient from "../clientsPage/SingleClient";
 import CardSingleClientSales from "./CardSingleClientSales";
 
 const Sales = () => {
+  const ports = {
+    data: 3000,
+    stock: 5000
+  }
   const { dataFetchInformations } = fetchClients(
-    "http://localhost:3000/clients"
+    `http://localhost:${ports.data}/clients`
   );
   const [searchTerm, setSearchTerm] = useState("");
   console.log(dataFetchInformations);

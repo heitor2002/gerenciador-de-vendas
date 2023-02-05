@@ -4,10 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const FormNewRequest = () => {
   const ports = {
-    clients: 3000,
-    paymentHistory: 3500,
-    requests: 4000,
-    sales: 4500,
+    data: 3000,
     stock: 5000,
   };
   const [productName, setProductName] = useState("");
@@ -100,7 +97,7 @@ const FormNewRequest = () => {
       passwordStock,
     };
 
-    await fetch(`http://localhost:${ports.requests}/requests`, {
+    await fetch(`http://localhost:${ports.data}/requests`, {
       method: "Post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dataRequest),
