@@ -25,13 +25,16 @@ const Stock = () => {
           <table>
             <tr>
               <th>Produto</th>
+              <th>Price</th>
               <th>Quantidade</th>
             </tr>
             {alphabetOrder.map((info) => {
               let quantityString = parseInt(info.productQuantity);
+              let productPrice = parseFloat(info.productPrice)
               return (
                 <tr>
                   <td>{info.productName}</td>
+                  <td>R${productPrice.toFixed(2)}</td>
                   <td>{quantityString}</td>
                 </tr>
               );
