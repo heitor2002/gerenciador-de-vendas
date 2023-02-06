@@ -12,23 +12,18 @@ const Clients = () => {
     `http://localhost:${ports.data}/clients`
   );
 
-  // const { dataFetchInformations: sales} = fetchClients("http://localhost:4500/sales")
-  // const { dataFetchInformations: paymentHistory } = fetchClients("http://localhost:3500/paymentHistory")
-
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterClient, setFilterClient] = useState("alphabet")
+  const [filterClient, setFilterClient] = useState("");
 
   var lengthClients = dataFetchInformations.length;
 
-  // const alphabetOrder = dataFetchInformations.sort((x, y) => {
-  //   let a = x.clientName.toUpperCase(),
-  //     b = y.clientName.toUpperCase();
-  //   return a == b ? 0 : a > b ? 1 : -1;
-  // });
-
-  const normalOrder = dataFetchInformations;
-
-  var order = normalOrder;
+  const clientsInformations = dataFetchInformations.sort((x, y) => {
+    let a = x.clientName.toUpperCase(),
+      b = y.clientName.toUpperCase();
+    if (filterClient === "alphabet") {
+      return a == b ? 0 : a > b ? 1 : -1;
+    }
+  });
 
   return (
     <>
@@ -53,8 +48,13 @@ const Clients = () => {
           </Link>
           <h5>Numero de clientes registrados: {lengthClients}</h5>
           <div className="information-and-filters">
-            <select name="filters-clients" id="filters-clients" value={filterClient} onChange={(e) => setFilterClient(e.target.value)}>
-              <option value="">Filtrar por:</option>
+            <select
+              name="filters-clients"
+              id="filters-clients"
+              value={filterClient}
+              onChange={(e) => setFilterClient(e.target.value)}
+            >
+              <option value="">Ordenar por:</option>
               <option value="debit">Devendo</option>
               <option value="alphabet">Ordem Alfabética</option>
               <option value="more">Maior consumidor</option>
@@ -62,7 +62,7 @@ const Clients = () => {
             </select>
           </div>
           <div className="clients-cards">
-            {normalOrder
+            {clientsInformations
               .filter((value) => {
                 if (searchTerm == "") {
                   return value;
@@ -80,7 +80,7 @@ const Clients = () => {
                     name={client.clientName}
                     nickname={client.clientNickname}
                     id={client.id}
-                    status={client.balance}
+                    status={client.status}
                   />
                 );
               })}
