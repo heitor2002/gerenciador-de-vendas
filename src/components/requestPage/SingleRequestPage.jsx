@@ -32,8 +32,8 @@ const SingleRequestPage = () => {
     overlay.classList.remove("active-confirm-overlay");
   };
 
+  const arrProducts = [];
   const deleteSingleProduct = () => {
-    let arrProducts = [];
     let indexProduct = -1;
     filterProductsPerKey.forEach((item) => {
       arrProducts.push(item.id);
@@ -42,23 +42,30 @@ const SingleRequestPage = () => {
     setInterval(() => {
       if (indexProduct < totalIndex - 1) {
         indexProduct++;
-        fetch(`http://localhost:${ports.stock}/stock/` + arrProducts[indexProduct] , {
-          method: "DELETE"
-        })
+        fetch(
+          `http://localhost:${ports.stock}/stock/` + arrProducts[indexProduct],
+          {
+            method: "DELETE",
+          }
+        );
       }
     }, 1000);
-  }
+  };
 
   const confirmDeleteOrder = () => {
     fetch(`http://localhost:${ports.data}/requests/` + id, {
-      method: "DELETE"
+      method: "DELETE",
     })
-    .then(() => {
-      deleteSingleProduct()
-    })
-    .then(() => {
-      navigate("/requests")
-    })
+      .then(() => {
+        deleteSingleProduct();
+      })
+      .then(() => {
+        let loadingPage = document.querySelector(".loading-page");
+        loadingPage.classList.add("active-loading-page");
+        setTimeout(() => {
+          navigate("/requests");
+        }, arrProducts.length * 1000);
+      });
   };
 
   return (
@@ -118,6 +125,18 @@ const SingleRequestPage = () => {
               Cancelar
             </button>
           </div>
+        </div>
+      </div>
+      <div className="loading-page">
+        <h2>
+          Deletando respectivos produtos do estoque, não saia ou reinicie a
+          página até que o processo acabe...
+        </h2>
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </div>
     </>
