@@ -25,7 +25,7 @@ const Stock = () => {
           <table>
             <tr>
               <th>Produto</th>
-              <th>Price</th>
+              <th>Preço p/ unidade</th>
               <th>Quantidade</th>
             </tr>
             {alphabetOrder.map((info) => {
