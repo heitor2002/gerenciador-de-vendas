@@ -5,30 +5,30 @@ const ExplanatoryCards = () => {
   const [explainedText, setExplainedText] = useState([
     {
       titleText: "Soma total de pedidos:",
-      paragraphText: "Paragraph 1",
+      paragraphText: "Todos os pedidos realizados serão somados neste tópico, não havendo dedução do valor, pois o mesmo será utilizado como métrica para calcular o saldo total desde o início das vendas.",
     },
     {
       titleText: "Vendas realizadas:",
-      paragraphText: "Paragraph 2",
+      paragraphText: "Todas as vendas realizadas serão cadastradas aqui, entretanto, este tópico apresenta os pagamentos realizados pelos clientes mais aqueles que ainda devem ser pagos (valor já pago + valor pendente).",
     },
     {
       titleText: "Pagamentos pendentes:",
-      paragraphText: "Paragraph 3",
+      paragraphText: "Pagamento de produtos comprados que ainda não foram pagos.",
     },
     {
       titleText: "Projeção total das vendas:",
-      paragraphText: "Paragraph 4",
-    },
-    {
-      titleText: "Saldo total:",
-      paragraphText: "Paragraph 5",
-    },
-    {
-      titleText: "Saldo total projetado:",
-      paragraphText: "Paragraph 6",
+      paragraphText: "A soma das vendas realizadas com os pagamentos pendentes.",
     },
     {
       titleText: "Produtos em estoque:",
+      paragraphText: "Paragraph 5",
+    },
+    {
+      titleText: "Saldo total:",
+      paragraphText: "Paragraph 6",
+    },
+    {
+      titleText: "Saldo total projetado:",
       paragraphText: "Paragraph 7",
     },
   ]);

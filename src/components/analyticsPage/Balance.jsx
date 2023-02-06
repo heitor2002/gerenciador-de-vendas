@@ -47,11 +47,13 @@ const Balance = () => {
       return acc + item;
     }, 0);
 
-    const stockValue = stock.map(item => {
-      return item.productPrice * item.productQuantity
-    }).reduce((acc, item) => {
+  const stockValue = stock
+    .map((item) => {
+      return item.productPrice * item.productQuantity;
+    })
+    .reduce((acc, item) => {
       return acc + item;
-    }, 0)
+    }, 0);
 
   const outstandingPayments = allSalesValue - allPaymentHistory;
   const totalSalesProjection = allPaymentHistory + outstandingPayments;
@@ -71,7 +73,10 @@ const Balance = () => {
       <div className="general-information">
         <div className="gap-information">
           <h2>
-            Soma total de pedidos: R$<span style={{color: "#b32917"}}>{allRequestsValue.toFixed(2)}</span>
+            Soma total de pedidos: R$
+            <span style={{ color: "#b32917" }}>
+              {allRequestsValue.toFixed(2)}
+            </span>
           </h2>
         </div>
         <div className="gap-information">
@@ -100,8 +105,15 @@ const Balance = () => {
         </div>
         <div className="gap-information">
           <h2>
+            Produtos em estoque: R$<span>{stockValue.toFixed(2)}</span>
+          </h2>
+        </div>
+        <div className="gap-information">
+          <h2>
             Saldo total: R$
-            <span style={{ color: totalBalanceColor }}>{(allPaymentHistory - allRequestsValue).toFixed(2)}</span>
+            <span style={{ color: totalBalanceColor }}>
+              {(allPaymentHistory - allRequestsValue).toFixed(2)}
+            </span>
           </h2>
           <h2>
             Saldo total projetado: R$
@@ -109,9 +121,6 @@ const Balance = () => {
               {(totalSalesProjection - allRequestsValue).toFixed(2)}
             </span>
           </h2>
-        </div>
-        <div className="gap-information">
-          <h2>Produtos em estoque: R$<span>{stockValue.toFixed(2)}</span></h2>
         </div>
       </div>
     </>
