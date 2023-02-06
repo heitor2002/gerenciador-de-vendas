@@ -644,4 +644,39 @@ header ul a li:hover {
 .general-information .gap-information h2 {
   font-size: 1.2rem;
   margin-bottom: 5px;
+}
+
+.flex-explanatory-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex: 1 1 500px;
+  margin-top: 15px;
+}
+.flex-explanatory-buttons .explanatory-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  gap: 10px;
+}
+.flex-explanatory-buttons .explanatory-buttons button {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: rgb(45, 84, 97);
+  border: 1px solid rgb(45, 84, 97);
+  background-color: white;
+  transition: 0.3s;
+}
+.flex-explanatory-buttons .explanatory-buttons button:hover {
+  background-color: rgb(45, 84, 97);
+  color: white;
+}
+.flex-explanatory-buttons .explanation-area {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px 2%;
 }/*# sourceMappingURL=main.css.map */

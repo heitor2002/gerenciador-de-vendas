@@ -1,4 +1,5 @@
 import Balance from "./Balance";
+import ExplanatoryCards from "./ExplanatoryCards";
 import GraphYear from "./GraphYear";
 
 const Analytics = () => {
@@ -12,6 +13,7 @@ const Analytics = () => {
         </div>
         <GraphYear />
         <Balance />
+        <ExplanatoryCards />
       </div>
     </>
   );

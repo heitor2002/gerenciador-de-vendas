@@ -1,12 +1,47 @@
-.general-information{
-    width: 100%;
-    background-color: #f0f0f0;
-    padding: 10px 2%;
-    .gap-information{
-        margin-bottom: 30px;
-        h2{
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
+.general-information {
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px 2%;
+  .gap-information {
+    margin-bottom: 30px;
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
     }
+  }
+}
+
+.flex-explanatory-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex: 1 1 500px;
+  margin-top: 15px;
+  .explanatory-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    gap: 10px;
+    button {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 0.8rem;
+      cursor: pointer;
+      color: $primary-color;
+      border: 1px solid $primary-color;
+      background-color: white;
+      transition: .3s;
+      &:hover{
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+  .explanation-area {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px 2%;
+  }
 }

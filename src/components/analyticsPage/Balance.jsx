@@ -53,8 +53,6 @@ const Balance = () => {
       return acc + item;
     }, 0)
 
-    console.log(stockValue)
-
   const outstandingPayments = allSalesValue - allPaymentHistory;
   const totalSalesProjection = allPaymentHistory + outstandingPayments;
 
@@ -73,7 +71,7 @@ const Balance = () => {
       <div className="general-information">
         <div className="gap-information">
           <h2>
-            Soma total de pedidos: R$<span>{allRequestsValue.toFixed(2)}</span>
+            Soma total de pedidos: R$<span style={{color: "#b32917"}}>{allRequestsValue.toFixed(2)}</span>
           </h2>
         </div>
         <div className="gap-information">
@@ -111,6 +109,9 @@ const Balance = () => {
               {(totalSalesProjection - allRequestsValue).toFixed(2)}
             </span>
           </h2>
+        </div>
+        <div className="gap-information">
+          <h2>Produtos em estoque: R$<span>{stockValue.toFixed(2)}</span></h2>
         </div>
       </div>
     </>
