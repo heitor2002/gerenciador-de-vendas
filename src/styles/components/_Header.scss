@@ -31,3 +31,28 @@ header{
         }
     }
 }
+
+.mobile-menu{
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background-color: $primary-color;
+    color: white;
+    font-size: 2rem;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    nav{
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            li{
+                &:hover{
+                    transform: scale(1.07);
+                }
+            }
+        }
+    }
+}

@@ -17,6 +17,12 @@ const Clients = () => {
 
   var lengthClients = dataFetchInformations.length;
 
+  const { dataFetchInformations: sales} = fetchClients(`http://localhost:${ports.data}/sales`)
+  const { dataFetchInformations: paymentHistory } = fetchClients(`http://localhost:${ports.data}/paymentHistory`)
+
+  console.log(sales)
+  console.log(paymentHistory)
+
   const clientsInformations = dataFetchInformations.sort((x, y) => {
     let a = x.clientName.toUpperCase(),
       b = y.clientName.toUpperCase();

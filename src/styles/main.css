@@ -109,6 +109,28 @@ header ul a li:hover {
   background-color: #ccc;
 }
 
+.mobile-menu {
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: rgb(45, 84, 97);
+  color: white;
+  font-size: 2rem;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mobile-menu nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.mobile-menu nav ul li:hover {
+  transform: scale(1.07);
+}
+
 .content-clients-page {
   padding: 30px 0;
 }

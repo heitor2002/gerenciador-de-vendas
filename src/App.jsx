@@ -14,13 +14,16 @@ import "./styles/main.css";
 import NotFound from "./components/NotFound";
 import ClientRegisterPage from "./components/clientsPage/ClientRegisterPage";
 import SingleClientSales from "./components/salesPage/SingleClientSales";
+import { AiOutlineMenu } from 'react-icons/ai';
+import MobileMenu from "./components/MobileMenu";
 
 function App() {
   return (
     <>
       <Router>
         <div className="flex-panel-content">
-          <Header />
+          {/* <Header /> */}
+          <MobileMenu />
           <div className="panel-content">
             <Routes>
               <Route path="/" element={<Home />} />
