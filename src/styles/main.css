@@ -679,4 +679,13 @@ header ul a li:hover {
   width: 100%;
   max-width: 500px;
   padding: 15px 2%;
+}
+.flex-explanatory-buttons .explanation-area h2 {
+  color: rgb(45, 84, 97);
+  margin-bottom: 15px;
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+.flex-explanatory-buttons .explanation-area p {
+  font-size: 1.1rem;
 }/*# sourceMappingURL=main.css.map */
