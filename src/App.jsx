@@ -22,7 +22,7 @@ function App() {
     <>
       <Router>
         <div className="flex-panel-content">
-          {/* <Header /> */}
+          <Header />
           <MobileMenu />
           <div className="panel-content">
             <Routes>
