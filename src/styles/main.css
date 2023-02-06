@@ -115,7 +115,6 @@ header ul a li:hover {
   position: sticky;
   top: 0;
   background-color: rgb(45, 84, 97);
-  color: white;
   font-size: 2rem;
   padding: 0 10px;
   display: flex;
@@ -127,7 +126,10 @@ header ul a li:hover {
   flex-direction: column;
   gap: 30px;
 }
-.mobile-menu nav ul li:hover {
+.mobile-menu nav ul a {
+  color: white;
+}
+.mobile-menu nav ul a li:hover {
   transform: scale(1.07);
 }
 
