@@ -21,15 +21,15 @@ const ExplanatoryCards = () => {
     },
     {
       titleText: "Produtos em estoque:",
-      paragraphText: "Paragraph 5",
+      paragraphText: "O valor total do estoque atual.",
     },
     {
       titleText: "Saldo total:",
-      paragraphText: "Paragraph 6",
+      paragraphText: "A diferença entre produtos vendidos (levando em consideração apenas valores pagos pelos clientes) e os pedidos dos produtos.",
     },
     {
       titleText: "Saldo total projetado:",
-      paragraphText: "Paragraph 7",
+      paragraphText: "A diferença entre produtos vendidos (não levando em consideração valores pagos pelos clientes, apenas o preço da venda do produto) e os pedidos dos produtos.",
     },
   ]);
   return (
