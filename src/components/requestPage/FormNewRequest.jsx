@@ -105,7 +105,12 @@ const FormNewRequest = () => {
       .then(() => {
         postSingleProduct(passwordStock);
       })
-      .then(() => navigate("/requests"));
+      .then(() => {
+        console.log("Cadastrando produtos...")
+        setTimeout(() => {
+          navigate("/requests")
+        }, singleProducts.length * 1000)
+      });
   };
 
   return (

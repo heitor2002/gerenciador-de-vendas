@@ -9,6 +9,12 @@ const Stock = () => {
     `http://localhost:${ports.stock}/stock`
   );
 
+  const alphabetOrder = stockProducts.sort((x, y) => {
+    let a = x.productName.toUpperCase(),
+      b = y.productName.toUpperCase();
+    return a == b ? 0 : a > b ? 1 : -1;
+  });
+
   return (
     <>
       <div className="container">
@@ -21,7 +27,7 @@ const Stock = () => {
               <th>Produto</th>
               <th>Quantidade</th>
             </tr>
-            {stockProducts.map((info) => {
+            {alphabetOrder.map((info) => {
               let quantityString = parseInt(info.productQuantity);
               return (
                 <tr>

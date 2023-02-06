@@ -34,6 +34,55 @@
       "productQuantity": 6,
       "passwordStock": "5/2/202325581244565076",
       "id": 5
+    },
+    {
+      "productName": "Saladeira",
+      "productPrice": 50,
+      "productQuantity": 5,
+      "passwordStock": "6/2/2023254025504719180",
+      "id": 6
+    },
+    {
+      "productName": "Eco Tupper",
+      "productPrice": 19,
+      "productQuantity": 7,
+      "passwordStock": "6/2/2023254025504719180",
+      "id": 7
+    },
+    {
+      "productName": "Jeitoso",
+      "productPrice": 19,
+      "productQuantity": 8,
+      "passwordStock": "6/2/2023254025504719180",
+      "id": 8
+    },
+    {
+      "productName": "A",
+      "productPrice": 5,
+      "productQuantity": 5,
+      "passwordStock": "6/2/20238832753620085",
+      "id": 9
+    },
+    {
+      "productName": "B",
+      "productPrice": 5,
+      "productQuantity": 5,
+      "passwordStock": "6/2/20238832753620085",
+      "id": 10
+    },
+    {
+      "productName": "C",
+      "productPrice": 5,
+      "productQuantity": 5,
+      "passwordStock": "6/2/20238832753620085",
+      "id": 11
+    },
+    {
+      "productName": "D",
+      "productPrice": 5,
+      "productQuantity": 5,
+      "passwordStock": "6/2/20238832753620085",
+      "id": 12
     }
   ]
 }
