@@ -107,6 +107,8 @@ const FormNewRequest = () => {
       })
       .then(() => {
         console.log("Cadastrando produtos...")
+        let loadingPage = document.querySelector(".loading-page")
+        loadingPage.classList.add("active-loading-page")
         setTimeout(() => {
           navigate("/requests")
         }, singleProducts.length * 1000)
@@ -185,6 +187,10 @@ const FormNewRequest = () => {
           Concluir pedido
         </button>
       )}
+      <div className="loading-page">
+        <h2>Cadastrando produtos no estoque, não saia ou reinicie a página até que o processo acabe...</h2>
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+      </div>
     </>
   );
 };

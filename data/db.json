@@ -64,57 +64,6 @@
       "accumulatedRequestValue": "180.00",
       "passwordStock": "5/2/202325581244565076",
       "id": 1
-    },
-    {
-      "dateRequest": "6/2/2023",
-      "productsList": [
-        {
-          "productName": "Saladeira",
-          "productPrice": "50",
-          "productQuantity": "5"
-        },
-        {
-          "productName": "Eco Tupper",
-          "productPrice": "19",
-          "productQuantity": "7"
-        },
-        {
-          "productName": "Jeitoso",
-          "productPrice": "19",
-          "productQuantity": "8"
-        }
-      ],
-      "accumulatedRequestValue": "535.00",
-      "passwordStock": "6/2/2023254025504719180",
-      "id": 2
-    },
-    {
-      "dateRequest": "6/2/2023",
-      "productsList": [
-        {
-          "productName": "A",
-          "productPrice": "5",
-          "productQuantity": "5"
-        },
-        {
-          "productName": "B",
-          "productPrice": "5",
-          "productQuantity": "5"
-        },
-        {
-          "productName": "C",
-          "productPrice": "5",
-          "productQuantity": "5"
-        },
-        {
-          "productName": "D",
-          "productPrice": "5",
-          "productQuantity": "5"
-        }
-      ],
-      "accumulatedRequestValue": "100.00",
-      "passwordStock": "6/2/20238832753620085",
-      "id": 3
     }
   ],
   "sales": [
