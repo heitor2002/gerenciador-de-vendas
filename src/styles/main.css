@@ -264,6 +264,19 @@ header ul a li:hover {
 .single-client .requests-list table tr td {
   padding: 10px 5px;
 }
+.single-client .requests-list table tr td button.close-button {
+  width: 100%;
+  border: 0;
+  font-size: 1.5rem;
+  background-color: rgb(45, 84, 97);
+  cursor: pointer;
+  color: white;
+  padding: 10px 0;
+  transition: 0.3s;
+}
+.single-client .requests-list table tr td button.close-button:hover {
+  background-color: #b32917;
+}
 .single-client .requests-list table tr td.payment-buttons {
   display: flex;
   justify-content: center;

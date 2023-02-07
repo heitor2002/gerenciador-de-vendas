@@ -116,7 +116,21 @@
         }
         td {
           padding: 10px 5px;
+          button.close-button {
+            width: 100%;
+            border: 0;
+            font-size: 1.5rem;
+            background-color: $primary-color;
+            cursor: pointer;
+            color: white;
+            padding: 10px 0;
+            transition: 0.3s;
+            &:hover {
+              background-color: $red;
+            }
+          }
         }
+
         td.payment-buttons {
           display: flex;
           justify-content: center;
@@ -229,39 +243,39 @@
   }
 }
 
-.client-register{
-    padding: 20px 0;
-    form{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-        label{
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: $primary-color;
-        }
-        input{
-            width: 100%;
-            max-width: 300px;
-            padding: 5px;
-        }
-        button{
-            width: 100%;
-            max-width: 300px;
-            margin-top: 20px;
-            padding: 10px 0;
-            background-color: $green;
-            font-size: 1.3rem;
-            border: 0;
-            color: white;
-            cursor: pointer;
-            transition: .3s;
-            &:hover{
-                background-color: rgb(4, 151, 4) ;
-                transform: scale(1.01);
-            }
-        }
+.client-register {
+  padding: 20px 0;
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    label {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: $primary-color;
     }
+    input {
+      width: 100%;
+      max-width: 300px;
+      padding: 5px;
+    }
+    button {
+      width: 100%;
+      max-width: 300px;
+      margin-top: 20px;
+      padding: 10px 0;
+      background-color: $green;
+      font-size: 1.3rem;
+      border: 0;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        background-color: rgb(4, 151, 4);
+        transform: scale(1.01);
+      }
+    }
+  }
 }

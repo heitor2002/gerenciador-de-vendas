@@ -118,7 +118,7 @@ const PageClient = () => {
                             singleProduct.floatInputPrice
                           ).toFixed(2)}
                         </td>
-                        <td className="close-button"><IoMdClose /></td>
+                        <td><button className="close-button"><IoMdClose /></button></td>
                       </tr>
                     );
                   })}
