@@ -72,7 +72,9 @@ const PageClient = () => {
   };
 
   const cancelSale = () => {
-    
+    //DELETAR DA TABELA DE VENDA;
+
+    //PRODUTO RETORNA AO ESTOQUE;
   }
 
   return (
@@ -101,6 +103,7 @@ const PageClient = () => {
                     <th>Quantidade</th>
                     <th>Preço Unitário</th>
                     <th>Valor total</th>
+                    <th>Cancelar venda</th>
                   </tr>
                   {filterKeySold.map((singleProduct) => {
                     return (
@@ -115,6 +118,7 @@ const PageClient = () => {
                             singleProduct.floatInputPrice
                           ).toFixed(2)}
                         </td>
+                        <td className="close-button"><IoMdClose /></td>
                       </tr>
                     );
                   })}
