@@ -3,6 +3,7 @@ import fetchClients from "../../fetchClients";
 import InformationClient from "./InformationClient";
 import { IoMdClose } from "react-icons/io";
 import PaymentTable from "./PaymentTable";
+import { useState } from "react";
 
 const PageClient = () => {
   const ports = {
@@ -71,11 +72,35 @@ const PageClient = () => {
     });
   };
 
-  const cancelSale = () => {
+  const handleCancelSale = (name, price, quantity, key, id) => {
     //DELETAR DA TABELA DE VENDA;
+    let productName, productPrice, productQuantity, passwordStock;
+    productName = name;
+    productPrice = parseFloat(price);
+    productQuantity = quantity;
+    passwordStock = key;
+    const infoProducts = {
+      productName,
+      productPrice,
+      productQuantity,
+      passwordStock,
+    };
 
+    fetch(`http://localhost:${ports.stock}/stock`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(infoProducts)
+    }).then(() => {
+      fetch(`http://localhost:${ports.data}/sales/` + id, {
+        method: "DELETE"
+      })
+    }).then(() => window.location.reload())
+
+    console.log(infoProducts)
+
+    // console.log(infoProducts);
     //PRODUTO RETORNA AO ESTOQUE;
-  }
+  };
 
   return (
     <>
@@ -106,19 +131,26 @@ const PageClient = () => {
                     <th>Cancelar venda</th>
                   </tr>
                   {filterKeySold.map((singleProduct) => {
+                    let name = singleProduct.selectedProductName;
+                    let price = singleProduct.floatInputPrice.toFixed(2);
+                    let selectedPrice = singleProduct.selectedProductPrice
+                    let quantity = singleProduct.floatInputQuantity;
+                    let key = singleProduct.selectedProductKey;
+                    let id = singleProduct.id;
                     return (
                       <tr>
-                        <td>{singleProduct.selectedProductName}</td>
-                        <td>{singleProduct.floatInputQuantity}</td>
-                        <td>R$ {singleProduct.floatInputPrice.toFixed(2)}</td>
+                        <td>{name}</td>
+                        <td>{quantity}</td>
+                        <td>R$ {price}</td>
                         <td>
                           {"R$ "}
-                          {(
-                            singleProduct.floatInputQuantity *
-                            singleProduct.floatInputPrice
-                          ).toFixed(2)}
+                          {(quantity * price).toFixed(2)}
                         </td>
-                        <td><button className="close-button"><IoMdClose /></button></td>
+                        <td>
+                          <button className="close-button" onClick={() => handleCancelSale(name, selectedPrice, quantity, key, id)}>
+                            <IoMdClose />
+                          </button>
+                        </td>
                       </tr>
                     );
                   })}

@@ -21,6 +21,7 @@ const SingleClientSales = () => {
   const [selectedProductPrice, setSelectedProductPrice] = useState(0);
   const [selectedProductQuantity, setSelectedProductQuantity] = useState(0);
   const [selectedProductId, setSelectedProductId] = useState(null);
+  const [selectedProductKey, setSelectedProductKey] = useState("");
 
   var amount = productPrice * productQuantity;
 
@@ -54,6 +55,8 @@ const SingleClientSales = () => {
     } else {
       const productSold = {
         selectedProductName,
+        selectedProductKey,
+        selectedProductPrice,
         floatInputPrice,
         floatInputQuantity,
         clientKey,
@@ -105,6 +108,7 @@ const SingleClientSales = () => {
                 let productPrice = product.productPrice;
                 let productName = product.productName;
                 let productId = product.id;
+                let productKey = product.passwordStock;
                 return (
                   <>
                     <li
@@ -115,6 +119,8 @@ const SingleClientSales = () => {
                         );
                         setSelectedProductQuantity(parseInt(productQuantity));
                         setSelectedProductId(productId);
+                        setSelectedProductKey(productKey);
+                        setSelectedFirstPrice()
                       }}
                     >
                       {productName}

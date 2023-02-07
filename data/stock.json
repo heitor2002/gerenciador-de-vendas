@@ -1,3 +1,39 @@
 {
-  "stock": []
+  "stock": [
+    {
+      "productName": "A",
+      "productPrice": 5,
+      "productQuantity": 5,
+      "passwordStock": "7/2/202320499901451870",
+      "id": 1
+    },
+    {
+      "productName": "B",
+      "productPrice": 5,
+      "productQuantity": 5,
+      "passwordStock": "7/2/202320499901451870",
+      "id": 2
+    },
+    {
+      "productName": "C",
+      "productPrice": 5,
+      "productQuantity": 5,
+      "passwordStock": "7/2/202320499901451870",
+      "id": 3
+    },
+    {
+      "productName": "D",
+      "productPrice": 5,
+      "productQuantity": 1,
+      "passwordStock": "7/2/202320499901451870",
+      "id": 4
+    },
+    {
+      "productName": "D",
+      "productPrice": 5,
+      "productQuantity": 1,
+      "passwordStock": "7/2/202320499901451870",
+      "id": 5
+    }
+  ]
 }

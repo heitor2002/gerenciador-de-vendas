@@ -23,67 +23,36 @@
       "id": 2
     }
   ],
-  "paymentHistory": [
+  "paymentHistory": [],
+  "requests": [
     {
-      "payment": "15",
-      "datePaymentHistory": "5/2/2023",
-      "clientKeyPaymentHistory": "res111113",
+      "dateRequest": "7/2/2023",
+      "productsList": [
+        {
+          "productName": "A",
+          "productPrice": "5",
+          "productQuantity": "5"
+        },
+        {
+          "productName": "B",
+          "productPrice": "5",
+          "productQuantity": "5"
+        },
+        {
+          "productName": "C",
+          "productPrice": "5",
+          "productQuantity": "5"
+        },
+        {
+          "productName": "D",
+          "productPrice": "5",
+          "productQuantity": "5"
+        }
+      ],
+      "accumulatedRequestValue": "100.00",
+      "passwordStock": "7/2/202320499901451870",
       "id": 1
-    },
-    {
-      "payment": "500",
-      "datePaymentHistory": "6/2/2023",
-      "clientKeyPaymentHistory": "ira231232",
-      "id": 2
-    },
-    {
-      "payment": "400",
-      "datePaymentHistory": "6/2/2023",
-      "clientKeyPaymentHistory": "ira231232",
-      "id": 3
-    },
-    {
-      "payment": "470",
-      "datePaymentHistory": "6/2/2023",
-      "clientKeyPaymentHistory": "ira231232",
-      "id": 4
-    },
-    {
-      "payment": "6",
-      "datePaymentHistory": "6/2/2023",
-      "clientKeyPaymentHistory": "res111113",
-      "id": 5
     }
   ],
-  "requests": [],
-  "sales": [
-    {
-      "selectedProductName": "Produto 1",
-      "floatInputPrice": 7,
-      "floatInputQuantity": 3,
-      "clientKey": "res111113",
-      "id": 1
-    },
-    {
-      "selectedProductName": "Mousepad",
-      "floatInputPrice": 55,
-      "floatInputQuantity": 6,
-      "clientKey": "ira231232",
-      "id": 2
-    },
-    {
-      "selectedProductName": "Mouse",
-      "floatInputPrice": 170,
-      "floatInputQuantity": 6,
-      "clientKey": "ira231232",
-      "id": 3
-    },
-    {
-      "selectedProductName": "Mousepad",
-      "floatInputPrice": 55,
-      "floatInputQuantity": 3,
-      "clientKey": "ira231232",
-      "id": 4
-    }
-  ]
+  "sales": []
 }
