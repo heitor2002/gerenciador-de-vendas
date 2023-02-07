@@ -71,6 +71,10 @@ const PageClient = () => {
     });
   };
 
+  const cancelSale = () => {
+    
+  }
+
   return (
     <>
       <div className="container">
