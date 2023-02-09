@@ -111,6 +111,7 @@ const PageClient = () => {
             </div>
             <div className="single-client">
               <InformationClient
+                name={clientsInformation.clientName}
                 nickname={clientsInformation.clientNickname}
                 city={clientsInformation.clientCity}
                 address={clientsInformation.clientAddress}
