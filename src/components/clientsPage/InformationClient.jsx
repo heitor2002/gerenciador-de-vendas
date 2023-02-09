@@ -1,32 +1,32 @@
 import { useState } from "react";
 import { AiFillEdit } from "react-icons/ai";
 
-const [clientName, setClientName] = useState("");
-const [clientNickname, setClientNickname] = useState("");
-const [clientCity, setClientCity] = useState("");
-const [clientAddress, setClientAddress] = useState("");
-const [clientDistrict, setClientDistrict] = useState("");
-const [clientNumberAddress, setClientNumberAddress] = useState();
-const [clientTellNumber, setClientTellNumber] = useState();
-
-const activeEditProfile = () => {
-  let divEditProfile = document.querySelector(".edit-profile");
-  setClientName(props.name);
-  setClientNickname(props.nickname);
-  setClientCity(props.city);
-  setClientAddress(props.address);
-  setClientDistrict(props.district);
-  setClientNumberAddress(props.addressNumber);
-  setClientTellNumber(props.phone);
-  divEditProfile.style.display = "block";
-};
-
-const desactiveEditProfile = () => {
-  let divEditProfile = document.querySelector(".edit-profile");
-  divEditProfile.style.display = "none";
-};
-
 const InformationClient = (props) => {
+  const [clientName, setClientName] = useState("");
+  const [clientNickname, setClientNickname] = useState("");
+  const [clientCity, setClientCity] = useState("");
+  const [clientAddress, setClientAddress] = useState("");
+  const [clientDistrict, setClientDistrict] = useState("");
+  const [clientNumberAddress, setClientNumberAddress] = useState();
+  const [clientTellNumber, setClientTellNumber] = useState();
+  
+  const activeEditProfile = () => {
+    let divEditProfile = document.querySelector(".edit-profile");
+    setClientName(props.name);
+    setClientNickname(props.nickname);
+    setClientCity(props.city);
+    setClientAddress(props.address);
+    setClientDistrict(props.district);
+    setClientNumberAddress(props.addressNumber);
+    setClientTellNumber(props.phone);
+    divEditProfile.style.display = "block";
+  };
+
+  const desactiveEditProfile = () => {
+    let divEditProfile = document.querySelector(".edit-profile");
+    divEditProfile.style.display = "none";
+  }
+
   const handleEditProfile = (e) => {
     e.preventDefault();
   };
@@ -92,12 +92,7 @@ const InformationClient = (props) => {
             onChange={(e) => setClientTellNumber(e.target.value)}
           />
           <input type="submit" value={"Editar"} name={"acao"} />
-          <button
-            className="cancel-edit-profile"
-            onClick={desactiveEditProfile}
-          >
-            Cancelar
-          </button>
+          <button className="cancel-edit-profile" onClick={desactiveEditProfile}>Cancelar</button>
         </form>
       </div>
     </>
