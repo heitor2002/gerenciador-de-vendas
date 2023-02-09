@@ -4,9 +4,9 @@ https://github.com/heitor2002/gerenciador-de-vendas/blob/main/LICENSE
 
 ## Sobre o projeto
 
-Visando atender pequenos revendedores, o projeto foi criado como uma forma de administrar um pequeno negócio. Este sistema manipula dados e os apresenta de maneira agradável na tela do vendedor, de maneira que o mesmo tem seu tempo otimizado, já que todo o processo de manipulação de dados é feita de forma automática.
+Visando atender pequenos revendedores, o projeto foi criado como uma forma de administrar um pequeno negócio. Este sistema manipula dados e os apresenta de maneira agradável na tela do vendedor, fazendo com que o mesmo tenha seu tempo otimizado devido à automatização do processo administrativo.
 
-Além de possuir um visual simples e intuitivo, todas as instruções de uso são apresentadas na página inicial. O vendedor tem possui um menu com acesso a seis telas com as suas respectivas ramificações;
+Além de possuir um visual simples e intuitivo, todas as instruções de uso são apresentadas na página inicial. O vendedor possui um menu com acesso a seis telas com as suas respectivas ramificações;
 
 ### Home:
 
@@ -34,7 +34,7 @@ Além de possuir um visual simples e intuitivo, todas as instruções de uso sã
 
 ## Inicialização do projeto
 
-<p>A ferramenta de construção utilizada no projeto foi o Vite, sendo que o projeto foi programado em ReactJs. Além disso, para que o projeto seja executado, algumas bibliotecas e dependências precisam ser instaladas.</p>
+<p>A ferramenta de construção utilizada no projeto foi o Vite, sendo que este foi programado em ReactJS. Além disso, para que o projeto seja executado, algumas bibliotecas e dependências precisam ser instaladas.</p>
 
 ### Com o Node instalado na máquina, abriremos o projeto e faremos as seguintes instalações utilizando o terminal:
 
