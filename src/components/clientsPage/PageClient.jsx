@@ -2,7 +2,9 @@ import { useParams } from "react-router-dom";
 import fetchClients from "../../fetchClients";
 import InformationClient from "./InformationClient";
 import { IoMdClose } from "react-icons/io";
+import { AiFillEdit } from "react-icons/ai";
 import PaymentTable from "./PaymentTable";
+import { useState } from "react";
 
 const PageClient = () => {
   const ports = {
@@ -22,6 +24,20 @@ const PageClient = () => {
   const { dataFetchInformations: sold } = fetchClients(
     `http://localhost:${ports.data}/sales`
   );
+
+  //FORMULÁRIO DE EDIÇÃO DE PERFIL
+
+  const handleEditProfile = (e) => {
+    e.preventDefault()
+  }
+
+  const [clientName, setClientName] = useState("");
+  const [clientNickname, setClientNickname] = useState("");
+  const [clientCity, setClientCity] = useState("");
+  const [clientAddress, setClientAddress] = useState("");
+  const [clientDistrict, setClientDistrict] = useState("");
+  const [clientNumberAddress, setClientNumberAddress] = useState();
+  const [clientTellNumber, setClientTellNumber] = useState();
 
   //MANIPULAÇÃO DE DADOS DE DB.JSON
 
@@ -87,15 +103,17 @@ const PageClient = () => {
 
     fetch(`http://localhost:${ports.stock}/stock`, {
       method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(infoProducts)
-    }).then(() => {
-      fetch(`http://localhost:${ports.data}/sales/` + id, {
-        method: "DELETE"
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(infoProducts),
+    })
+      .then(() => {
+        fetch(`http://localhost:${ports.data}/sales/` + id, {
+          method: "DELETE",
+        });
       })
-    }).then(() => window.location.reload())
+      .then(() => window.location.reload());
 
-    console.log(infoProducts)
+    console.log(infoProducts);
 
     // console.log(infoProducts);
     //PRODUTO RETORNA AO ESTOQUE;
@@ -119,6 +137,31 @@ const PageClient = () => {
                 addressNumber={clientsInformation.clientNumberAddress}
                 phone={clientsInformation.clientTellNumber}
               />
+              <button>
+                Editar:
+                <AiFillEdit />
+              </button>
+              <div className="edit-profile">
+                <form onSubmit={handleEditProfile}>
+                  <input
+                    type="text"
+                    value={clientName}
+                    onChange={(e) => setClientName(e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    value={clientNickname}
+                    placeholder="Apelido"
+                  />
+                  <input type="text" value={clientCity} />
+                  <input type="text" value={clientAddress} />
+                  <input type="number" value={clientNumberAddress} />
+                  <input type="text" value={clientDistrict} />
+                  <input type="number" value={clientTellNumber} />
+                  <input type="submit" value={"Editar"} name={"acao"} />
+                  <button className="cancel-edit-profile">Cancelar</button>
+                </form>
+              </div>
               {/* <InformationClient /> */}
               <div className="requests-list">
                 <h2>Pedidos:</h2>
@@ -133,7 +176,7 @@ const PageClient = () => {
                   {filterKeySold.map((singleProduct) => {
                     let name = singleProduct.selectedProductName;
                     let price = singleProduct.floatInputPrice.toFixed(2);
-                    let selectedPrice = singleProduct.selectedProductPrice
+                    let selectedPrice = singleProduct.selectedProductPrice;
                     let quantity = singleProduct.floatInputQuantity;
                     let key = singleProduct.selectedProductKey;
                     let id = singleProduct.id;
@@ -147,7 +190,18 @@ const PageClient = () => {
                           {(quantity * price).toFixed(2)}
                         </td>
                         <td>
-                          <button className="close-button" onClick={() => handleCancelSale(name, selectedPrice, quantity, key, id)}>
+                          <button
+                            className="close-button"
+                            onClick={() =>
+                              handleCancelSale(
+                                name,
+                                selectedPrice,
+                                quantity,
+                                key,
+                                id
+                              )
+                            }
+                          >
                             <IoMdClose />
                           </button>
                         </td>

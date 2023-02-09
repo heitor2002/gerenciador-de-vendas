@@ -250,8 +250,38 @@ header ul a li:hover {
   color: white;
   cursor: pointer;
 }
-.single-client .edit-profile h2 {
-  color: black;
+.single-client .edit-profile {
+  margin-top: 15px;
+}
+.single-client .edit-profile form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  gap: 10px;
+}
+.single-client .edit-profile form input {
+  padding: 10px 5px;
+}
+.single-client .edit-profile form input[type=submit] {
+  background-color: #47a123;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.single-client .edit-profile form input[type=submit]:hover {
+  background-color: green;
+}
+.single-client .edit-profile form button.cancel-edit-profile {
+  width: 100%;
+  max-width: 300px;
+  background-color: #b32917;
+  transition: 0.3s;
+  margin-top: 0;
+}
+.single-client .edit-profile form button.cancel-edit-profile:hover {
+  background-color: rgb(117, 21, 21);
 }
 .single-client .requests-list {
   width: 100%;

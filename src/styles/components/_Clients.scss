@@ -93,7 +93,7 @@
       font-weight: 500;
     }
   }
-  button{
+  button {
     width: 100%;
     max-width: 100px;
     padding: 10px 0;
@@ -102,15 +102,44 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    font-size: .9rem;
+    font-size: 0.9rem;
     border: 0;
     background-color: $primary-color;
     color: white;
     cursor: pointer;
   }
-  .edit-profile{
-    h2{
-      color: black;
+
+  .edit-profile {
+    margin-top: 15px;
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 300px;
+      gap: 10px;
+      input {
+        padding: 10px 5px;
+      }
+      input[type="submit"] {
+        background-color: $green;
+        border: 0;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+          background-color: green;
+        }
+      }
+      button.cancel-edit-profile {
+        width: 100%;
+        max-width: 300px;
+        background-color: $red;
+        transition: 0.3s;
+        margin-top: 0;
+        &:hover {
+          background-color: rgb(117, 21, 21);
+        }
+      }
     }
   }
   .requests-list {
