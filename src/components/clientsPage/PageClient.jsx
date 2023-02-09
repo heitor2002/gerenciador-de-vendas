@@ -89,30 +89,31 @@ const PageClient = () => {
       passwordStock,
     };
 
-    //SE EXISTIR "KEY" NO ESTOQUE {ATUALIZAR DADOS}
-    const findProductStock = stock.find(item => {
-      if(item.productName === infoProducts.productName && item.passwordStock === infoProducts.passwordStock){
-        console.log(productQuantity + item.productQuantity)
+    //VERIFICAÇÃO NO ESTOQUE DA EXISTÊNCIA DO PRODUTO CANCELADO;
+    stock.find((item) => {
+      if (
+        item.productName === infoProducts.productName &&
+        item.passwordStock === infoProducts.passwordStock
+      ) {
+        //ATUALIZAR OS DADOS DO ESTOQUE
+        console.log(productQuantity + item.productQuantity);
+        //DELETAR OS DADOS ANTIGOS
+      } else {
+        //ENVIAR DADOS NOVOS
+        // fetch(`http://localhost:${ports.stock}/stock`, {
+        //   method: "POST",
+        //   headers: {"Content-Type": "application/json"},
+        //   body: JSON.stringify(infoProducts)
+        // }).then(() => {
+        //   fetch(`http://localhost:${ports.data}/sales/` + id, {
+        //     method: "DELETE"
+        //   })
+        // }).then(() => window.location.reload())
+        //DELETAR OS DADOS ANTIGOS
       }
-      // return item.productName === infoProducts.productName
-    })
-    console.log(findProductStock)
-    //SE NÃO EXISTIR A "KEY" {ENVIAR DADOS NOVOS}
+    });
 
-    // fetch(`http://localhost:${ports.stock}/stock`, {
-    //   method: "POST",
-    //   headers: {"Content-Type": "application/json"},
-    //   body: JSON.stringify(infoProducts)
-    // }).then(() => {
-    //   fetch(`http://localhost:${ports.data}/sales/` + id, {
-    //     method: "DELETE"
-    //   })
-    // }).then(() => window.location.reload())
-
-    console.log(infoProducts)
-
-    // console.log(infoProducts);
-    //PRODUTO RETORNA AO ESTOQUE;
+    console.log(infoProducts);
   };
 
   return (
@@ -147,7 +148,7 @@ const PageClient = () => {
                   {filterKeySold.map((singleProduct) => {
                     let name = singleProduct.selectedProductName;
                     let price = singleProduct.floatInputPrice.toFixed(2);
-                    let selectedPrice = singleProduct.selectedProductPrice
+                    let selectedPrice = singleProduct.selectedProductPrice;
                     let quantity = singleProduct.floatInputQuantity;
                     let key = singleProduct.selectedProductKey;
                     let id = singleProduct.id;
@@ -161,7 +162,18 @@ const PageClient = () => {
                           {(quantity * price).toFixed(2)}
                         </td>
                         <td>
-                          <button className="close-button" onClick={() => handleCancelSale(name, selectedPrice, quantity, key, id)}>
+                          <button
+                            className="close-button"
+                            onClick={() =>
+                              handleCancelSale(
+                                name,
+                                selectedPrice,
+                                quantity,
+                                key,
+                                id
+                              )
+                            }
+                          >
                             <IoMdClose />
                           </button>
                         </td>
