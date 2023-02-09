@@ -92,5 +92,24 @@
       "id": 2
     }
   ],
-  "sales": []
+  "sales": [
+    {
+      "selectedProductName": "Produto E",
+      "selectedProductKey": "7/2/202348481104513580",
+      "selectedProductPrice": "5.00",
+      "floatInputPrice": 7,
+      "floatInputQuantity": 2,
+      "clientKey": "res111113",
+      "id": 1
+    },
+    {
+      "selectedProductName": "Produto D",
+      "selectedProductKey": "7/2/202348481104513580",
+      "selectedProductPrice": "5.00",
+      "floatInputPrice": 7,
+      "floatInputQuantity": 5,
+      "clientKey": "res111113",
+      "id": 2
+    }
+  ]
 }

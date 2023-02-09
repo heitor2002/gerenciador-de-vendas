@@ -23,6 +23,10 @@ const PageClient = () => {
     `http://localhost:${ports.data}/sales`
   );
 
+  const { dataFetchInformations: stock } = fetchClients(
+    `http://localhost:${ports.stock}/stock`
+  );
+
   //MANIPULAÇÃO DE DADOS DE DB.JSON
 
   const clientKeyPaymentHistory = clientsInformation.clientKey;
@@ -85,15 +89,25 @@ const PageClient = () => {
       passwordStock,
     };
 
-    fetch(`http://localhost:${ports.stock}/stock`, {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(infoProducts)
-    }).then(() => {
-      fetch(`http://localhost:${ports.data}/sales/` + id, {
-        method: "DELETE"
-      })
-    }).then(() => window.location.reload())
+    //SE EXISTIR "KEY" NO ESTOQUE {ATUALIZAR DADOS}
+    const findProductStock = stock.find(item => {
+      if(item.productName === infoProducts.productName && item.passwordStock === infoProducts.passwordStock){
+        console.log(productQuantity + item.productQuantity)
+      }
+      // return item.productName === infoProducts.productName
+    })
+    console.log(findProductStock)
+    //SE NÃO EXISTIR A "KEY" {ENVIAR DADOS NOVOS}
+
+    // fetch(`http://localhost:${ports.stock}/stock`, {
+    //   method: "POST",
+    //   headers: {"Content-Type": "application/json"},
+    //   body: JSON.stringify(infoProducts)
+    // }).then(() => {
+    //   fetch(`http://localhost:${ports.data}/sales/` + id, {
+    //     method: "DELETE"
+    //   })
+    // }).then(() => window.location.reload())
 
     console.log(infoProducts)
 
