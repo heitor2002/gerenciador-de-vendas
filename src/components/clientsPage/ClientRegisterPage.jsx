@@ -7,9 +7,7 @@ const ClientRegisterPage = () => {
   const [clientAddress, setClientAddress] = useState("");
   const [clientDistrict, setClientDistrict] = useState("");
   const [clientNumberAddress, setClientNumberAddress] = useState();
-  const [clientTellNumber, setClientTellNumber] = useState();
-  const [clientSales, setClientSales] = useState([]);
-  const [clientPaymentHistory, setClientPaymentHistory] = useState([]);
+  const [clientPhone, setClientPhone] = useState();
 
   const handleSubmitClientRegister = (e) => {
     e.preventDefault();
@@ -20,7 +18,7 @@ const ClientRegisterPage = () => {
         .split(" ")
         .join("")
         .slice(numAllLetters - 6) +
-      clientTellNumber.slice(clientTellNumber.length - 5) +
+      clientPhone.slice(clientPhone.length - 5) +
       clientNumberAddress.slice(clientNumberAddress.length - 1);
     //ENVIAR DADOS PARA DB.JSON
     const dataClientRegister = {
@@ -30,7 +28,7 @@ const ClientRegisterPage = () => {
       clientAddress,
       clientDistrict,
       clientNumberAddress,
-      clientTellNumber,
+      clientPhone,
       clientKey,
     };
     fetch("http://localhost:3000/clients", {
@@ -115,8 +113,8 @@ const ClientRegisterPage = () => {
               type="number"
               name="cell"
               id="cell"
-              value={clientTellNumber}
-              onChange={(e) => setClientTellNumber(e.target.value)}
+              value={clientPhone}
+              onChange={(e) => setClientPhone(e.target.value)}
               required
             />
             <button>Cadastrar</button>

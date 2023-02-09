@@ -7,7 +7,7 @@
       "clientAddress": "Rua Gonçalo de Carvalho",
       "clientDistrict": "Bairro Independência",
       "clientNumberAddress": "3123",
-      "clientTellNumber": "111111111",
+      "clientPhone": "111111111",
       "clientKey": "res111113",
       "id": 1
     },
@@ -18,7 +18,7 @@
       "clientAddress": "São Sebastião",
       "clientDistrict": "Vila Boa Nova",
       "clientNumberAddress": "1112",
-      "clientTellNumber": "123123123",
+      "clientPhone": "123123123",
       "clientKey": "ira231232",
       "id": 2
     }

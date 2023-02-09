@@ -117,7 +117,7 @@ const PageClient = () => {
                 address={clientsInformation.clientAddress}
                 district={clientsInformation.clientDistrict}
                 addressNumber={clientsInformation.clientNumberAddress}
-                phone={clientsInformation.clientTellNumber}
+                phone={clientsInformation.clientPhone}
               />
               {/* <InformationClient /> */}
               <div className="requests-list">
