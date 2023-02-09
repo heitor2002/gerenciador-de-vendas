@@ -4,7 +4,7 @@ https://github.com/heitor2002/gerenciador-de-vendas/blob/main/LICENSE
 
 ## Sobre o projeto
 
-Visando atender pequenos revendedores, o projeto foi criado como uma forma de administrar um pequeno negócio. Como uma forma de substituir as tradicionais tabelas de excel, este sistema manipula dados e os apresenta de maneira agradável na tela do vendedor, de maneira que o mesmo tem seu tempo otimizado, já que todo o processo de manipulação de dados é feita de forma automática.
+Visando atender pequenos revendedores, o projeto foi criado como uma forma de administrar um pequeno negócio. Este sistema manipula dados e os apresenta de maneira agradável na tela do vendedor, de maneira que o mesmo tem seu tempo otimizado, já que todo o processo de manipulação de dados é feita de forma automática.
 
 Além de possuir um visual simples e intuitivo, todas as instruções de uso são apresentadas na página inicial. O vendedor tem possui um menu com acesso a seis telas com as suas respectivas ramificações;
 
