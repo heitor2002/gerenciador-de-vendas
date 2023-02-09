@@ -24,7 +24,8 @@ const InformationClient = (props) => {
     divEditProfile.style.display = "block";
   };
 
-  const desactiveEditProfile = () => {
+  const desactiveEditProfile = (e) => {
+    e.preventDefault()
     let divEditProfile = document.querySelector(".edit-profile");
     divEditProfile.style.display = "none";
   };
