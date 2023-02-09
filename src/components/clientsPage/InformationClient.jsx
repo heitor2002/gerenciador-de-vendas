@@ -10,7 +10,7 @@ const InformationClient = (props) => {
   const [clientAddress, setClientAddress] = useState("");
   const [clientDistrict, setClientDistrict] = useState("");
   const [clientNumberAddress, setClientNumberAddress] = useState();
-  const [clientTellNumber, setClientTellNumber] = useState();
+  const [clientPhone, setClientPhone] = useState();
 
   const activeEditProfile = () => {
     let divEditProfile = document.querySelector(".edit-profile");
@@ -20,7 +20,7 @@ const InformationClient = (props) => {
     setClientAddress(props.address);
     setClientDistrict(props.district);
     setClientNumberAddress(props.addressNumber);
-    setClientTellNumber(props.phone);
+    setClientPhone(props.phone);
     divEditProfile.style.display = "block";
   };
 
@@ -39,7 +39,7 @@ const InformationClient = (props) => {
       clientAddress,
       clientDistrict,
       clientNumberAddress,
-      clientTellNumber,
+      clientPhone,
     };
     fetch("http://localhost:3000/clients/" + id, {
       method: "PATCH",
@@ -108,8 +108,8 @@ const InformationClient = (props) => {
           />
           <input
             type="number"
-            value={clientTellNumber}
-            onChange={(e) => setClientTellNumber(e.target.value)}
+            value={clientPhone}
+            onChange={(e) => setClientPhone(e.target.value)}
           />
           <input type="submit" value={"Editar"} name={"acao"} />
           <button
