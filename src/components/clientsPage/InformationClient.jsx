@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { AiFillEdit } from "react-icons/ai";
+import { useParams } from "react-router-dom";
 
 const InformationClient = (props) => {
+  const { id } = useParams();
   const [clientName, setClientName] = useState("");
   const [clientNickname, setClientNickname] = useState("");
   const [clientCity, setClientCity] = useState("");
@@ -9,7 +11,7 @@ const InformationClient = (props) => {
   const [clientDistrict, setClientDistrict] = useState("");
   const [clientNumberAddress, setClientNumberAddress] = useState();
   const [clientTellNumber, setClientTellNumber] = useState();
-  
+
   const activeEditProfile = () => {
     let divEditProfile = document.querySelector(".edit-profile");
     setClientName(props.name);
@@ -25,10 +27,27 @@ const InformationClient = (props) => {
   const desactiveEditProfile = () => {
     let divEditProfile = document.querySelector(".edit-profile");
     divEditProfile.style.display = "none";
-  }
+  };
 
   const handleEditProfile = (e) => {
     e.preventDefault();
+    const clientInformation = {
+      clientName,
+      clientNickname,
+      clientCity,
+      clientAddress,
+      clientDistrict,
+      clientNumberAddress,
+      clientTellNumber,
+    };
+    fetch("http://localhost:3000/clients/" + id, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(clientInformation)
+    }).then(() => {
+      console.log("Atualizado com sucesso!");
+      window.location.reload()
+    });
   };
   return (
     <>
@@ -92,7 +111,12 @@ const InformationClient = (props) => {
             onChange={(e) => setClientTellNumber(e.target.value)}
           />
           <input type="submit" value={"Editar"} name={"acao"} />
-          <button className="cancel-edit-profile" onClick={desactiveEditProfile}>Cancelar</button>
+          <button
+            className="cancel-edit-profile"
+            onClick={desactiveEditProfile}
+          >
+            Cancelar
+          </button>
         </form>
       </div>
     </>
