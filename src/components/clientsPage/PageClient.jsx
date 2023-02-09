@@ -96,7 +96,18 @@ const PageClient = () => {
         item.passwordStock === infoProducts.passwordStock
       ) {
         //ATUALIZAR OS DADOS DO ESTOQUE
-        console.log(productQuantity + item.productQuantity);
+        productQuantity = quantity + item.productQuantity;
+        let findIdStock = item.id;
+        fetch(`http://localhost:${ports.stock}/stock/` + findIdStock, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(
+            productName,
+            productPrice,
+            productQuantity,
+            passwordStock
+          ),
+        });
         //DELETAR OS DADOS ANTIGOS
       } else {
         //ENVIAR DADOS NOVOS
