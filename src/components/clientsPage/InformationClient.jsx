@@ -1,3 +1,5 @@
+import { AiFillEdit } from "react-icons/ai";
+
 const InformationClient = (props) => {
   return (
     <>
@@ -16,6 +18,10 @@ const InformationClient = (props) => {
       <h3>
         Telefone: <span>{props.phone}</span>
       </h3>
+      <button>Editar:<AiFillEdit /></button>
+      <div className="edit-profile">
+        <h2>Ola mundo</h2>
+      </div>
     </>
   );
 };

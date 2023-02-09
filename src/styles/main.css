@@ -81,7 +81,6 @@ header {
   text-align: center;
   padding: 20px 2%;
   color: white;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
@@ -116,7 +115,6 @@ header ul a li:hover {
 
 .mobile-menu {
   height: 100vh;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   background-color: rgb(45, 84, 97);
@@ -236,6 +234,9 @@ header ul a li:hover {
 .single-client h3 span {
   font-size: 1.1rem;
   font-weight: 500;
+}
+.single-client .edit-profile h2 {
+  color: black;
 }
 .single-client .requests-list {
   width: 100%;
@@ -613,29 +614,17 @@ header ul a li:hover {
   margin: 8px;
   border: 8px solid #9e4444;
   border-radius: 50%;
-  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: #a03737 transparent transparent transparent;
 }
 .loading-page .lds-ring div:nth-child(1) {
-  -webkit-animation-delay: -0.45s;
-          animation-delay: -0.45s;
+  animation-delay: -0.45s;
 }
 .loading-page .lds-ring div:nth-child(2) {
-  -webkit-animation-delay: -0.3s;
-          animation-delay: -0.3s;
+  animation-delay: -0.3s;
 }
 .loading-page .lds-ring div:nth-child(3) {
-  -webkit-animation-delay: -0.15s;
-          animation-delay: -0.15s;
-}
-@-webkit-keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  animation-delay: -0.15s;
 }
 @keyframes lds-ring {
   0% {

@@ -8,9 +8,6 @@ const PaymentTable = (props) => {
     stock: 5000
   }
   const { id } = useParams();
-  const { dataFetchInformations: paymentHistory } = fetchClients(
-    `http://localhost:${ports.data}/paymentHistory`
-  );
   const { dataFetchInformations: clientsInformation } = fetchClients(
     `http://localhost:${ports.data}/clients/` + id
   );

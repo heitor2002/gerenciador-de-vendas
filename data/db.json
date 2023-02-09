@@ -29,29 +29,67 @@
       "dateRequest": "7/2/2023",
       "productsList": [
         {
-          "productName": "A",
+          "productName": "Produto A",
           "productPrice": "5",
           "productQuantity": "5"
         },
         {
-          "productName": "B",
+          "productName": "Produto B",
           "productPrice": "5",
           "productQuantity": "5"
         },
         {
-          "productName": "C",
+          "productName": "Produto C",
           "productPrice": "5",
           "productQuantity": "5"
         },
         {
-          "productName": "D",
+          "productName": "Produto D",
+          "productPrice": "5",
+          "productQuantity": "5"
+        },
+        {
+          "productName": "Produto E",
           "productPrice": "5",
           "productQuantity": "5"
         }
       ],
-      "accumulatedRequestValue": "100.00",
-      "passwordStock": "7/2/202320499901451870",
+      "accumulatedRequestValue": "125.00",
+      "passwordStock": "7/2/202348481104513580",
       "id": 1
+    },
+    {
+      "dateRequest": "8/2/2023",
+      "productsList": [
+        {
+          "productName": "P1",
+          "productPrice": "5",
+          "productQuantity": "5"
+        },
+        {
+          "productName": "P2",
+          "productPrice": "5",
+          "productQuantity": "5"
+        },
+        {
+          "productName": "P3",
+          "productPrice": "5",
+          "productQuantity": "5"
+        },
+        {
+          "productName": "P5",
+          "productPrice": "5",
+          "productQuantity": "5"
+        },
+        {
+          "productName": "P4",
+          "productPrice": "5",
+          "productQuantity": "5"
+        }
+      ],
+      "accumulatedRequestValue": "125.00",
+      "passwordStock": "8/2/202342432751917780",
+      "id": 2
     }
   ],
   "sales": []

@@ -3,7 +3,6 @@ import fetchClients from "../../fetchClients";
 import InformationClient from "./InformationClient";
 import { IoMdClose } from "react-icons/io";
 import PaymentTable from "./PaymentTable";
-import { useState } from "react";
 
 const PageClient = () => {
   const ports = {

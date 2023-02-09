@@ -15,6 +15,10 @@ const Stock = () => {
     return a == b ? 0 : a > b ? 1 : -1;
   });
 
+  alphabetOrder.forEach((item, index) => {
+    console.log(item)
+  })
+
   return (
     <>
       <div className="container">
