@@ -235,6 +235,12 @@ header ul a li:hover {
   font-size: 1.1rem;
   font-weight: 500;
 }
+.single-client button {
+  width: 100%;
+  max-width: 100px;
+  padding: 10px 0;
+  margin-top: 10px;
+}
 .single-client .edit-profile h2 {
   color: black;
 }
