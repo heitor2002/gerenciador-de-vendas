@@ -1,18 +1,35 @@
 import { useState } from "react";
 import { AiFillEdit } from "react-icons/ai";
 
+const [clientName, setClientName] = useState("");
+const [clientNickname, setClientNickname] = useState("");
+const [clientCity, setClientCity] = useState("");
+const [clientAddress, setClientAddress] = useState("");
+const [clientDistrict, setClientDistrict] = useState("");
+const [clientNumberAddress, setClientNumberAddress] = useState();
+const [clientTellNumber, setClientTellNumber] = useState();
+
+const activeEditProfile = () => {
+  let divEditProfile = document.querySelector(".edit-profile");
+  setClientName(props.name);
+  setClientNickname(props.nickname);
+  setClientCity(props.city);
+  setClientAddress(props.address);
+  setClientDistrict(props.district);
+  setClientNumberAddress(props.addressNumber);
+  setClientTellNumber(props.phone);
+  divEditProfile.style.display = "block";
+};
+
+const desactiveEditProfile = () => {
+  let divEditProfile = document.querySelector(".edit-profile");
+  divEditProfile.style.display = "none";
+};
+
 const InformationClient = (props) => {
   const handleEditProfile = (e) => {
     e.preventDefault();
   };
-
-  const [clientName, setClientName] = useState(clientInformation.clientName);
-  // const [clientNickname, setClientNickname] = useState("");
-  // const [clientCity, setClientCity] = useState("");
-  // const [clientAddress, setClientAddress] = useState("");
-  // const [clientDistrict, setClientDistrict] = useState("");
-  // const [clientNumberAddress, setClientNumberAddress] = useState();
-  // const [clientTellNumber, setClientTellNumber] = useState();
   return (
     <>
       <h2>Informações:</h2>
@@ -32,7 +49,7 @@ const InformationClient = (props) => {
       <h3>
         Telefone: <span>{props.phone}</span>
       </h3>
-      <button>
+      <button onClick={activeEditProfile}>
         Editar:
         <AiFillEdit />
       </button>
@@ -43,14 +60,44 @@ const InformationClient = (props) => {
             value={clientName}
             onChange={(e) => setClientName(e.target.value)}
           />
-          {/* <input type="text" value={clientNickname} placeholder="Apelido" />
-          <input type="text" value={clientCity} />
-          <input type="text" value={clientAddress} />
-          <input type="number" value={clientNumberAddress} />
-          <input type="text" value={clientDistrict} />
-          <input type="number" value={clientTellNumber} /> */}
+          <input
+            type="text"
+            value={clientNickname}
+            placeholder="Apelido"
+            onChange={(e) => setClientNickname(e.target.value)}
+          />
+          <input
+            type="text"
+            value={clientCity}
+            onChange={(e) => setClientCity(e.target.value)}
+          />
+          <input
+            type="text"
+            value={clientAddress}
+            onChange={(e) => setClientAddress(e.target.value)}
+          />
+          <input
+            type="number"
+            value={clientNumberAddress}
+            onChange={(e) => setClientNumberAddress(e.target.value)}
+          />
+          <input
+            type="text"
+            value={clientDistrict}
+            onChange={(e) => setClientDistrict(e.target.value)}
+          />
+          <input
+            type="number"
+            value={clientTellNumber}
+            onChange={(e) => setClientTellNumber(e.target.value)}
+          />
           <input type="submit" value={"Editar"} name={"acao"} />
-          <button className="cancel-edit-profile">Cancelar</button>
+          <button
+            className="cancel-edit-profile"
+            onClick={desactiveEditProfile}
+          >
+            Cancelar
+          </button>
         </form>
       </div>
     </>

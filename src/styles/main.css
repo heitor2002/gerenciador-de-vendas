@@ -251,6 +251,7 @@ header ul a li:hover {
   cursor: pointer;
 }
 .single-client .edit-profile {
+  display: none;
   margin-top: 15px;
 }
 .single-client .edit-profile form {
