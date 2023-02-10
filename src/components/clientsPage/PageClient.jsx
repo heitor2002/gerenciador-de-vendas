@@ -92,19 +92,44 @@ const PageClient = () => {
       passwordStock,
     };
 
-    const findEqualProduct = stock.find(item => {return item.productName === infoProducts.productName})
-    if(findEqualProduct !== undefined){
-      infoProducts.productQuantity = infoProducts.productQuantity + findEqualProduct.productQuantity;
-      console.log(infoProducts)
-      console.log("Disponível no estoque.")
-    }else{
-      console.log("Não disponível no estoque.")
+    const findEqualProduct = stock.find((item) => {
+      return item.productName === infoProducts.productName;
+    });
+    if (findEqualProduct !== undefined) {
+      infoProducts.productQuantity =
+        infoProducts.productQuantity + findEqualProduct.productQuantity;
+      console.log(infoProducts);
+      console.log("Disponível no estoque.");
+      fetch("http://localhost:5000/stock/" + findEqualProduct.id, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(infoProducts),
+      })
+        .then(() => {
+          fetch(`http://localhost:${ports.data}/sales/` + id, {
+            method: "DELETE",
+          });
+        })
+        .then(() => window.location.reload());
+    } else {
+      console.log("Não disponível no estoque.");
+      fetch(`http://localhost:${ports.stock}/stock`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(infoProducts),
+      })
+        .then(() => {
+          fetch(`http://localhost:${ports.data}/sales/` + id, {
+            method: "DELETE",
+          });
+        })
+        .then(() => window.location.reload());
     }
     // console.log(findEqualProduct)
 
     //ATUALIZAÇÃO DA QUANTIDADE
     // findStockProduct.productQuantity = infoProducts.productQuantity + findStockProduct.productQuantity;
-    
+
     /*
       console.log(findStockProduct)
       console.log(infoProducts.productQuantity)
