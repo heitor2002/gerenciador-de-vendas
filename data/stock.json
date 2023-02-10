@@ -15,16 +15,9 @@
       "id": 2
     },
     {
-      "productName": "Produto C",
-      "productPrice": 5,
-      "productQuantity": 5,
-      "passwordStock": "7/2/202348481104513580",
-      "id": 3
-    },
-    {
       "productName": "Produto E",
       "productPrice": 5,
-      "productQuantity": 3,
+      "productQuantity": 1,
       "passwordStock": "7/2/202348481104513580",
       "id": 5
     },

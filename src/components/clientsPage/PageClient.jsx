@@ -77,6 +77,9 @@ const PageClient = () => {
 
   const handleCancelSale = (name, price, quantity, key, id) => {
     //DELETAR DA TABELA DE VENDA;
+
+    //VERIFICAÇÃO NO ESTOQUE DA EXISTÊNCIA DO PRODUTO CANCELADO;
+
     let productName, productPrice, productQuantity, passwordStock;
     productName = name;
     productPrice = parseFloat(price);
@@ -89,42 +92,35 @@ const PageClient = () => {
       passwordStock,
     };
 
-    //VERIFICAÇÃO NO ESTOQUE DA EXISTÊNCIA DO PRODUTO CANCELADO;
-    stock.find((item) => {
-      if (
-        item.productName === infoProducts.productName &&
-        item.passwordStock === infoProducts.passwordStock
-      ) {
-        //ATUALIZAR OS DADOS DO ESTOQUE
-        productQuantity = quantity + item.productQuantity;
-        let findIdStock = item.id;
-        fetch(`http://localhost:${ports.stock}/stock/` + findIdStock, {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(
-            productName,
-            productPrice,
-            productQuantity,
-            passwordStock
-          ),
-        });
-        //DELETAR OS DADOS ANTIGOS
-      } else {
-        //ENVIAR DADOS NOVOS
-        // fetch(`http://localhost:${ports.stock}/stock`, {
-        //   method: "POST",
-        //   headers: {"Content-Type": "application/json"},
-        //   body: JSON.stringify(infoProducts)
-        // }).then(() => {
-        //   fetch(`http://localhost:${ports.data}/sales/` + id, {
-        //     method: "DELETE"
-        //   })
-        // }).then(() => window.location.reload())
-        //DELETAR OS DADOS ANTIGOS
-      }
-    });
+    const findEqualProduct = stock.find(item => {return item.productName === infoProducts.productName})
+    if(findEqualProduct !== undefined){
+      infoProducts.productQuantity = infoProducts.productQuantity + findEqualProduct.productQuantity;
+      console.log(infoProducts)
+      console.log("Disponível no estoque.")
+    }else{
+      console.log("Não disponível no estoque.")
+    }
+    // console.log(findEqualProduct)
 
-    console.log(infoProducts);
+    //ATUALIZAÇÃO DA QUANTIDADE
+    // findStockProduct.productQuantity = infoProducts.productQuantity + findStockProduct.productQuantity;
+    
+    /*
+      console.log(findStockProduct)
+      console.log(infoProducts.productQuantity)
+      */
+
+    /*
+    fetch(`http://localhost:${ports.stock}/stock`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(infoProducts)
+    }).then(() => {
+      fetch(`http://localhost:${ports.data}/sales/` + id, {
+        method: "DELETE"
+      })
+    }).then(() => window.location.reload())
+    */
   };
 
   return (
